@@ -11,15 +11,19 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#command-format">3. Command Format</a></li>
+<li><a href="#command-format-rules">3. Command Format / Rules</a></li>
 <li><a href="#global-commands">4. Global Commands</a>
 <ul class="sectlevel2">
-<li><a href="#getting-into-flashcard-function-code-fc-code">4.1. Getting into Flashcard function: <code>fc</code></a></li>
+<li><a href="#getting-into-fiveflash-function-code-ff-code">4.1. Getting into FiveFlash function: <code>ff</code></a></li>
 <li><a href="#getting-into-fivenotes-function-code-fn-code">4.2. Getting into FiveNotes function: <code>fn</code></a></li>
-<li><a href="#viewing-help-code-help-code">4.3. Viewing Help: <code>help</code></a></li>
+<li><a href="#getting-into-fivecheat-function-code-fc-code">4.3. Getting into FiveCheat function: <code>fc</code></a></li>
+<li><a href="#listing-tags-code-tag-list-code">4.4. Listing tags: <code>tag list</code></a></li>
+<li><a href="#editing-tags-code-tag-edit-code">4.5. Editing tags: <code>tag edit</code></a></li>
+<li><a href="#deleting-tags-code-tag-delete-code">4.6. Deleting tags: <code>tag delete</code></a></li>
+<li><a href="#viewing-help-code-help-code">4.7. Viewing Help: <code>help</code></a></li>
 </ul>
 </li>
-<li><a href="#flashcards">5. Flashcards</a>
+<li><a href="#fiveflash">5. FiveFlash</a>
 <ul class="sectlevel2">
 <li><a href="#creating-flashcards-code-new-code">5.1. Creating flashcards: <code>new</code></a></li>
 <li><a href="#viewing-flashcards-code-view-code">5.2. Viewing flashcards: <code>view</code></a></li>
@@ -31,15 +35,25 @@
 </li>
 <li><a href="#fivenotes">6. FiveNotes</a>
 <ul class="sectlevel2">
-<li><a href="#creating-notes-code-add-code">6.1. Creating notes: <code>add</code></a></li>
-<li><a href="#deleting-notes-code-delete-code">6.2. Deleting notes: <code>delete</code></a></li>
-<li><a href="#listing-notes-code-list-code">6.3. Listing notes: <code>list</code></a></li>
-<li><a href="#editing-notes-code-edit-code">6.4. Editing notes: <code>edit</code></a></li>
+<li><a href="#creating-notes-code-new-code">6.1. Creating notes: <code>new</code></a></li>
+<li><a href="#editing-notes-code-edit-code">6.2. Editing notes: <code>edit</code></a></li>
+<li><a href="#deleting-notes-code-delete-code">6.3. Deleting notes: <code>delete</code></a></li>
+<li><a href="#viewing-notes-code-view-code">6.4. Viewing notes: <code>view</code></a></li>
+<li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">7. FAQ</a></li>
-<li><a href="#command-summary">8. Command Summary</a></li>
-<li><a href="#mock-up-user-interface">9. Mock-up User Interface</a></li>
+<li><a href="#fivecheat">7. FiveCheat</a>
+<ul class="sectlevel2">
+<li><a href="#creating-cheatsheets-code-new-code">7.1. Creating cheatsheets: <code>new</code></a></li>
+<li><a href="#editing-cheatsheets-code-edit-code">7.2. Editing cheatsheets: <code>edit</code></a></li>
+<li><a href="#deleting-cheatsheets-code-delete-code">7.3. Deleting cheatsheets: <code>delete</code></a></li>
+<li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatsheets: <code>list</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">8. FAQ</a></li>
+<li><a href="#command-summary">9. Command Summary</a></li>
+<li><a href="#mock-up-user-interface">10. Mock-up User Interface</a></li>
+<li><a href="#draft-workflow-to-be-removed">11. Draft Workflow (To-be-removed)</a></li>
 </ul>
 </div>
 </div>
@@ -66,23 +80,77 @@ manage their studies efficiently and faster than traditional GUI apps.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-format"><a class="link" href="#command-format">3. Command Format</a></h2>
+<h2 id="command-format-rules"><a class="link" href="#command-format-rules">3. Command Format / Rules</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Things noted here are standardization of the User Guide.
+These points are absolute, unless stated otherwise in the specific section(s).</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user
-e.g. in <code>add &lt;n/NAME&gt;</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>All commands are written in ENGLISH with no weird symbols.</p>
 </li>
 <li>
-<p>Items in square brackets are optional
-e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.
+E.g. <code>add &lt;t/TITLE&gt;</code> &#8594; <code>TITLE</code> is a parameter which can be used as <code>add t/Midterm notes</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times
-e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items in square brackets are optional.
+E.g <code>t/TITLE [t/TAG]</code> can be used as <code>t/Midterm note t/exam</code> or as <code>t/Midterm</code>.</p>
+</li>
+<li>
+<p>Items with <code>&#8230;&#8203;</code>​ after them can be used multiple times including zero times.
+E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code></p>
+</li>
+<li>
+<p>All flashcards, notes, cheatsheets objects will be given a unique <code>id</code> on creation.</p>
+</li>
+<li>
+<p>All flashcards, notes, cheatsheets objects can have a maximum of 5 <code>TAG</code> each.</p>
+</li>
+<li>
+<p>All <code>MODULE</code> parameters are a <code>TAG</code>.</p>
+</li>
+<li>
+<p>In EDITING (<code>edit</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All optional fields provided, except <code>t/TAG</code>, will overwrite their relevant fields.</p>
+</li>
+<li>
+<p><code>t/TAG</code> optional field, will be added to the flashcard, if they do not already exist.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In DELETING (<code>delete</code>), Confirmation reply of <code>y</code> or <code>n</code> has to be given, else no objects is deleted.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>y</code> indicates <code>YES</code> and notes will be deleted.</p>
+</li>
+<li>
+<p><code>n</code> indicates <code>NO</code> and notes will not be deleted.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Any indexes (<code>id</code>) must be positive integer (e.g. 1, 2, 3, &#8230;&#8203;).
+The indexes refers to the index number shown in the displayed list of objects (e.g. flashcards, notes, cheatsheets, tags).</p>
+</li>
+<li>
+<p>Only exact matches of any searches will be returned.
+E.g. "noted" will return "noted" but not "note" or "notes"</p>
+</li>
+<li>
+<p>All searches are case insensitive.
+E.g. 'cs2103t' will match 'CS2103T'</p>
 </li>
 </ul>
 </div>
@@ -94,13 +162,13 @@ e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 <h2 id="global-commands"><a class="link" href="#global-commands">4. Global Commands</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="getting-into-flashcard-function-code-fc-code"><a class="link" href="#getting-into-flashcard-function-code-fc-code">4.1. Getting into Flashcard function: <code>fc</code></a></h3>
+<h3 id="getting-into-fiveflash-function-code-ff-code"><a class="link" href="#getting-into-fiveflash-function-code-ff-code">4.1. Getting into FiveFlash function: <code>ff</code></a></h3>
 <div class="paragraph">
-<p>Brings the user to the Flashcard section, regardless of where the user is.</p>
+<p>Brings the user to the FiveFlash section, regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: fc</pre>
+<pre>Format: ff</pre>
 </div>
 </div>
 </div>
@@ -116,61 +184,229 @@ e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.3. Viewing Help: <code>help</code></a></h3>
+<h3 id="getting-into-fivecheat-function-code-fc-code"><a class="link" href="#getting-into-fivecheat-function-code-fc-code">4.3. Getting into FiveCheat function: <code>fc</code></a></h3>
+<div class="paragraph">
+<p>Brings the user to the FiveCheat section, regardless of where the user is.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: fc</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-tags-code-tag-list-code"><a class="link" href="#listing-tags-code-tag-list-code">4.4. Listing tags: <code>tag list</code></a></h3>
+<div class="paragraph">
+<p>Lists all the tags available in the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: tag list</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-tags-code-tag-edit-code"><a class="link" href="#editing-tags-code-tag-edit-code">4.5. Editing tags: <code>tag edit</code></a></h3>
+<div class="paragraph">
+<p>Replaces the existing tag with &lt;TAG_ID&gt; with &lt;NEW_TAG_NAME&gt; in the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: tag edit id/TAG_ID n/NEW_TAG_NAME</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tags-code-tag-delete-code"><a class="link" href="#deleting-tags-code-tag-delete-code">4.6. Deleting tags: <code>tag delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes all tags from the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: tag delete [-c]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-c</code> is flagged, all contents tagged to the all tags are deleted.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.7. Viewing Help: <code>help</code></a></h3>
 <div class="paragraph">
 <p>Views the help session of all the functionality.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: help [-fc] [-fn]</pre>
+<pre>Format: help [-fc] [-fn] [-ff]</pre>
 </div>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Only ONE of the optional fields can be provided in one command.</p>
+<p>Only ONE of the optional fields can be provided in one command. E.g.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Correct commands: "help", "help -fc", "help -fn", "help -ff"</p>
 </li>
 <li>
-<p>If <code>fc</code> flag is raised, returns the help section of the 'Flashcard' feature.</p>
+<p>Wrong commands: "help -fc -fn", "help -fc -fn -ff"</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>If <code>fn</code> flag is raised, returns the help section of the 'FiveNotes' feature.</p>
+<p>If <code>fc</code> flagged, returns the help section of the 'FiveCheat' feature.</p>
+</li>
+<li>
+<p>If <code>fn</code> flagged, returns the help section of the 'FiveNotes' feature.</p>
+</li>
+<li>
+<p>If <code>ff</code> flagged, returns the help section of the 'FiveFlash' feature.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="flashcards"><a class="link" href="#flashcards">5. Flashcards</a></h2>
+<h2 id="fiveflash"><a class="link" href="#fiveflash">5. FiveFlash</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="creating-flashcards-code-new-code"><a class="link" href="#creating-flashcards-code-new-code">5.1. Creating flashcards: <code>new</code></a></h3>
-
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creates a new flashcard from user input question &lt;QUESTION&gt; and answer &lt;ANSWER&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: new q/QUESTION a/ANSWER t/TITLE m/MODULE [h/HINT] [tag/TAG]...</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Creates a new flashcard from file input &lt;FILE_NAME&gt; and answer &lt;ANSWER&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: new f/&lt;FILE_NAME&gt; a/ANSWER t/TITLE m/MODULE [h/HINT] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>File must be in specified directory.</p>
+</li>
+<li>
+<p>File input must be of type jpg.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect2">
 <h3 id="viewing-flashcards-code-view-code"><a class="link" href="#viewing-flashcards-code-view-code">5.2. Viewing flashcards: <code>view</code></a></h3>
-
+<div class="paragraph">
+<p>Displays flashcard &lt;FLASHCARD_ID&gt; to user without answer.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: view id/FLASHCARD_ID [-h] [-a] [-tag]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-h</code>, <code>-a</code> or <code>-tag</code> can be used after entering view flashcard mode to view flashcard&#8217;s hint, answer or tags respectively.</p>
+</li>
+<li>
+<p>View page displays flashcard title, module and question by default.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="editing-flashcards-code-edit-code"><a class="link" href="#editing-flashcards-code-edit-code">5.3. Editing flashcards: <code>edit</code></a></h3>
-
+<div class="paragraph">
+<p>Edits flashcard &lt;FLASHCARD_ID&gt; by changing any field of the flashcard.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit id/FLASHCARD_ID [m/MODULE] [q/NEW_QUESTION] [f/FILE_NAME] [a/ANSWER] [t/TITLE] [h/HINT] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="listing-flashcards-code-list-code"><a class="link" href="#listing-flashcards-code-list-code">5.4. Listing flashcards: <code>list</code></a></h3>
-
+<div class="paragraph">
+<p>Lists all flashcards.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If more than one tag is specified, lists only flashcards which satisfy all specified tags.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="deleting-flashcards-code-delete-code"><a class="link" href="#deleting-flashcards-code-delete-code">5.5. Deleting flashcards: <code>delete</code></a></h3>
-
+<div class="paragraph">
+<p>Deletes the flashcard with &lt;FLASHCARD_ID&gt; or flashcard(s) with specified tag(s).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete [id/FLASHCARD_ID] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be specified.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="time-trial-code-time-code"><a class="link" href="#time-trial-code-time-code">5.6. Time Trial: <code>time</code></a></h3>
-
+<div class="paragraph">
+<p>Starts a time trial for flashcards with tag &lt;TAG&gt; for &lt;TIME&gt; seconds per flashcard.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: time [time/TIME] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one tag must be specified.</p>
+</li>
+<li>
+<p>If more than one tag is specified, selects only flashcards which satisfy all specified tags.</p>
+</li>
+<li>
+<p>Default &lt;TIME&gt; will be 30 seconds, if not specified.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -178,133 +414,248 @@ e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 <h2 id="fivenotes"><a class="link" href="#fivenotes">6. FiveNotes</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="creating-notes-code-add-code"><a class="link" href="#creating-notes-code-add-code">6.1. Creating notes: <code>add</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Adds a module named &lt;MODULE_CODE&gt; into the notes.</p>
+<h3 id="creating-notes-code-new-code"><a class="link" href="#creating-notes-code-new-code">6.1. Creating notes: <code>new</code></a></h3>
+<div class="paragraph">
+<p>Creates a notes with empty content, unless specified, under &lt;MODULE&gt; section.</p>
+</div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: add mc/MODULE_CODE</pre>
+<pre>Format: new m/MODULE [t/NOTE_TITLE] [c/NOTE_CONTENT] [tag/TAG]...</pre>
 </div>
-</div>
-</li>
-<li>
-<p>Adds a note with title &lt;NOTE_TITLE&gt; and content &lt;NOTE_CONTENT&gt; to the module &lt;MODULE_CODE&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: add mc/MODULE_CODE nt/NOTE_TITLE nc/NOTE_CONTENT</pre>
-</div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-notes-code-delete-code"><a class="link" href="#deleting-notes-code-delete-code">6.2. Deleting notes: <code>delete</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deletes all notes from module &lt;MODULE_CODE&gt;.</p>
+<h3 id="editing-notes-code-edit-code"><a class="link" href="#editing-notes-code-edit-code">6.2. Editing notes: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits the specified note&#8217;s title or content or tag(s).</p>
+</div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: delete mc/MODULE_CODE</pre>
+<pre>Format: edit id/NOTE_ID [t/TITLE] [c/NOTE_CONTENT] [tag/TAG]...</pre>
 </div>
 </div>
-</li>
-<li>
-<p>Deletes the note with title &lt;NOTE_TITLE&gt; from module &lt;MODULE_CODE&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: delete &lt;MODULE_CODE&gt; &lt;NOTE_TITLE&gt;</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-notes-code-list-code"><a class="link" href="#listing-notes-code-list-code">6.3. Listing notes: <code>list</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Lists all modules user is taking in the current semester.
-If -a flag is raised, lists all modules found in the user&#8217;s notes.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list [-a]</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Lists all note titles from module &lt;MODULE_CODE&gt;.
-If &lt;NOTE_TITLE&gt; is given, returns all notes with title containing the given &lt;NOTE_TITLE&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list mc/MODULE_CODE [nt/NOTE_TITLE]</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="sidebarblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g 'lab' will match 'Lab'</p>
-</li>
-<li>
-<p>Partial words will also be matched e.g. 'lab' will match with 'the laboratory 4'</p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. 'Lab 4' will match '4 Lab'</p>
-</li>
-<li>
-<p>Note titles matching ALL keywords will be returned.
-e.g. 'lab 4' will return 'the lab 4 exercise', 'the lab 4' but will NOT return 'the lab exercise', 'the 4'</p>
+<p>At least one of the optional fields must be specified.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
 <div class="sect2">
-<h3 id="editing-notes-code-edit-code"><a class="link" href="#editing-notes-code-edit-code">6.4. Editing notes: <code>edit</code></a></h3>
+<h3 id="deleting-notes-code-delete-code"><a class="link" href="#deleting-notes-code-delete-code">6.3. Deleting notes: <code>delete</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Opens up the note with title index &lt;NOTE_TITLE_ID&gt; from module &lt;MODULE_CODE&gt; for editing.</p>
+<p>Deletes notes with specified &lt;MODULE&gt; or specified note with &lt;NOTE_ID&gt; or all notes.</p>
 <div class="literalblock">
 <div class="content">
-<pre>Format: edit mc/MODULE_CODE nti/NOTE_TITLE_ID</pre>
+<pre>Format: delete [m/MODULE] [id/NOTE_ID] [-a]</pre>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be specified.</p>
+</li>
+<li>
+<p>If <code>a</code> is flagged, all notes will be deleted.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Deletes specified tag(s) of note with &lt;NOTE_ID&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete id/NOTE_ID [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one tag must be specified.</p>
+</li>
+</ul>
 </div>
 </li>
 </ol>
 </div>
-<div class="sidebarblock">
+</div>
+<div class="sect2">
+<h3 id="viewing-notes-code-view-code"><a class="link" href="#viewing-notes-code-view-code">6.4. Viewing notes: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views the note with &lt;NOTE_ID&gt;.</p>
+</div>
+<div class="literalblock">
 <div class="content">
+<pre>Format: view id/NOTE_ID</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-notes-code-list-code"><a class="link" href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lists all notes found in the user&#8217;s notes.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list [-m] [-t]</pre>
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Title index MUST be positive integer (e.g. 1, 2, 3, &#8230;&#8203;). The title index refers to the index number shown in the displayed title list.</p>
+<p>If <code>-m</code> flagged, lists all modules found in notes.</p>
 </li>
 <li>
-<p>Only exact match of module code will be returned.</p>
-</li>
-<li>
-<p>The search is case insensitive. e.g. 'cs2103t' will match 'CS2103T'</p>
+<p>If <code>-t</code> flagged, lists all titles found in notes.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Lists all notes from &lt;MODULE&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list m/MODULE [-t]</pre>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-t</code> flagged, lists all titles found in notes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">7. FAQ</a></h2>
+<h2 id="fivecheat"><a class="link" href="#fivecheat">7. FiveCheat</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="creating-cheatsheets-code-new-code"><a class="link" href="#creating-cheatsheets-code-new-code">7.1. Creating cheatsheets: <code>new</code></a></h3>
+<div class="paragraph">
+<p>Creates a new cheatsheet with &lt;TITLE&gt; and &lt;MODULE&gt;.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: new t/TITLE m/MODULE [tag/TAG]...</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-cheatsheets-code-edit-code"><a class="link" href="#editing-cheatsheets-code-edit-code">7.2. Editing cheatsheets: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits cheatsheet&#8217;s content with &lt;CHEATSHEET_ID&gt;, unless optional fields are specified.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit id/CHEATSHEET_ID [t/TITLE] [m/MODULE] [tag/TAG]...</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-cheatsheets-code-delete-code"><a class="link" href="#deleting-cheatsheets-code-delete-code">7.3. Deleting cheatsheets: <code>delete</code></a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deletes cheatsheets with specified &lt;MODULE&gt; or specified cheatsheet with &lt;CHEATSHEET_ID&gt; or all cheatsheets.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete [m/MODULE] [id/CHEATSHEET_ID] [-a]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be specified.</p>
+</li>
+<li>
+<p>If <code>-a</code> flagged, all cheatsheets will be deleted.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Deletes specified tag(s) of cheatsheet with &lt;CHEATSHEET_ID&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete id/CHEATSHEET_ID [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one tag must be specified.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.4. Listing cheatsheets: <code>list</code></a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lists all cheatsheets found in the user&#8217;s notes.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list [-m] [-t]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-m</code> flagged, lists all modules found in the user&#8217;s cheatsheets.</p>
+</li>
+<li>
+<p>If <code>-t</code> flagged, lists all titles found in the user&#8217;s cheatsheets.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Lists all cheatsheets from &lt;MODULE&gt;.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list m/MODULE [-t]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-t</code> flagged, lists all titles found in the user&#8217;s cheatsheets.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">8. FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: Do I need to create a new tag before using the tag?<br>
+<strong>A</strong>: No, you do not need to. Tags, if not exist, are automatically created.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">9. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
@@ -312,18 +663,27 @@ e.g. 'lab 4' will return 'the lab 4 exercise', 'the lab 4' but will NOT return '
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">8. Command Summary</a></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="mock-up-user-interface"><a class="link" href="#mock-up-user-interface">9. Mock-up User Interface</a></h2>
+<h2 id="mock-up-user-interface"><a class="link" href="#mock-up-user-interface">10. Mock-up User Interface</a></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/UiMockUpDraft.png" alt="UiMockUpDraft" width="790">
+<img src="images/UiMockUp1.png" alt="UiMockUp1" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UiMockUp2.png" alt="UiMockUp2" width="790">
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-26 16:14:27 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="draft-workflow-to-be-removed"><a class="link" href="#draft-workflow-to-be-removed">11. Draft Workflow (To-be-removed)</a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/WorkflowDraft.png" alt="WorkflowDraft" width="790">
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-29 16:50:00 UTC</div></div></div></body></html>
