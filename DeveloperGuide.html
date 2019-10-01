@@ -33,7 +33,11 @@
 <li><a href="#dev-ops">6. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-user-story-1">C.1. Use case: User story 1</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -868,7 +872,353 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>StudyBuddy</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<h3 id="strong-user-story-1-strong" class="discrete"><strong>User story 1:</strong></h3>
+<div class="paragraph">
+<p>As a student who is busy with revision and has no time to create a cheatsheet, the cheatsheet
+generation feature will help me save time on creating cheatsheets and let me spend more time on revision.</p>
+</div>
+<h3 id="use-case-uc01-create-a-cheatsheet" class="discrete">Use case: UC01 – Create a cheatsheet</h3>
+<div class="paragraph">
+<p>Preconditions: StuddyBuddy application is opened</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User navigates to cheetsheat section.</p>
+</li>
+<li>
+<p>User chooses to create new cheatsheet.</p>
+</li>
+<li>
+<p>StuddyBuddy asks user for new cheatsheet’s title.</p>
+</li>
+<li>
+<p>User inputs new cheatsheet’s title.</p>
+</li>
+<li>
+<p>StuddyBuddy asks user for new cheatsheet’s module.</p>
+</li>
+<li>
+<p>User inputs new cheatsheet’s module.</p>
+</li>
+<li>
+<p>StuddyBuddy asks for new cheatsheet’s tags.</p>
+</li>
+<li>
+<p>User inputs new cheatsheet’s tags.</p>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-uc02-list-cheatsheets" class="discrete">Use case: UC02 – List cheatsheets</h3>
+<div class="paragraph">
+<p>Preconditions: StuddyBuddy application is opened</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User navigates to cheetsheat section.</p>
+</li>
+<li>
+<p>User chooses to list all cheatsheet.</p>
+</li>
+<li>
+<p>StudyBuddy displays all cheatsheets.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-uc03-edit-a-cheatsheet" class="discrete">Use case: UC03 – Edit a cheatsheet</h3>
+<div class="paragraph">
+<p>Preconditions: StudyBuddy application is opened, User knows cheatsheet ID</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User navigates to cheetsheat section.</p>
+</li>
+<li>
+<p>User chooses to edit cheatsheet.</p>
+</li>
+<li>
+<p>StudyBuddy asks for cheatsheet ID for cheatsheet to be edited.</p>
+</li>
+<li>
+<p>User inputs cheatsheet ID.</p>
+</li>
+<li>
+<p>StudyBuddy asks for parameters to be edited.</p>
+</li>
+<li>
+<p>User inputs perimeters to be edited.</p>
+</li>
+<li>
+<p>StudyBuddy displays edited cheatsheet.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-uc04-view-a-cheatsheet" class="discrete">Use case: UC04 – View a cheatsheet</h3>
+<div class="paragraph">
+<p>Preconditions: StudyBuddy application is opened, User knows cheatsheet ID</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User navigates to cheetsheat section.</p>
+</li>
+<li>
+<p>User chooses to view cheatsheet.</p>
+</li>
+<li>
+<p>StudyBuddy asks for cheatsheet ID for cheatsheet to be viewed.</p>
+</li>
+<li>
+<p>User inputs cheatsheet ID.</p>
+</li>
+<li>
+<p>StudyBuddy displays cheatsheet.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="use-case-user-story-1"><a class="link" href="#use-case-user-story-1">C.1. Use case: User story 1</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <em>creates cheatsheet (UC01)</em>.</p>
+</li>
+<li>
+<p>User <em>views cheatsheet (UC04)</em>.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. User chooses to edit cheatsheet.</p>
+<div class="paragraph">
+<p>2a1. User <em>edits cheatsheet (UC03)</em>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{Fix indent}</p>
+</div>
+<div class="paragraph">
+<p>+
+Use case ends.</p>
+</div>
+<h3 id="user-story-2" class="discrete">User story 2:</h3>
+<div class="paragraph">
+<p>As a student who finds it very cumbersome to store tutorial questions that I would like to revise, I can make use of the flashcard function to just store a screenshot of the question for future reference.</p>
+</div>
+<h3 id="use-case-uc05-create-a-flashcard-from-image" class="discrete">Use case: UC05 – Create a flashcard from image</h3>
+<div class="paragraph">
+<p>Software system: StudyBuddy, OS</p>
+</div>
+<div class="paragraph">
+<p>Preconditions: StudyBuddy application is opened</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User finds a tutorial question he/she would like to revise.</p>
+</li>
+<li>
+<p>User takes screenshot of tutorial question.</p>
+</li>
+<li>
+<p>OS asks user where screenshot should be saved.</p>
+</li>
+<li>
+<p>User saves screenshot in designated StudyBuddy image folder with custom name.</p>
+</li>
+<li>
+<p>User opens StudyBuddy application.</p>
+</li>
+<li>
+<p>User navigates to flashcard section.</p>
+</li>
+<li>
+<p>User chooses to create new flashcard from image source.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for file name.</p>
+</li>
+<li>
+<p>User inputs file name.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for flashcard’s answer.</p>
+</li>
+<li>
+<p>User inputs flashcard’s answer.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for flashcard’s title.</p>
+</li>
+<li>
+<p>User inputs flashcard’s title.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for flashcard’s module.</p>
+</li>
+<li>
+<p>User inputs flashcard’s module.</p>
+</li>
+<li>
+<p>StudyBuddy displays created flashcard.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>15a. User wants to input additional flashcard hint.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>15a1. User inputs flashcard’s hint.</p>
+</div>
+<div class="paragraph">
+<p>{Todo markup indent}</p>
+</div>
+<div class="paragraph">
+<p>+
+Use case resumes from step 16.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>15b. User wants to input additional flashcard tags.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>15a2. User inputs flashcard’s tags.</p>
+</div>
+<div class="paragraph">
+<p>{Todo markup indent}</p>
+</div>
+<div class="paragraph">
+<p>+
+Use case resumes from step 16.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>15c. User wants to input additional hint and tags.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>15c1. User inputs flashcard’s hint.</p>
+</div>
+<div class="paragraph">
+<p>15c2. User inputs flashcard’s tags.</p>
+</div>
+<div class="paragraph">
+<p>{Todo markup indent}</p>
+</div>
+<div class="paragraph">
+<p>+
+Use case resumes from step 16.</p>
+</div>
+<h3 id="use-case-uc06-start-time-trial" class="discrete">Use case: UC06 – Start time trial</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User navigates to flashcard section.</p>
+</li>
+<li>
+<p>User chooses to start time trial.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for time per flashcard.</p>
+</li>
+<li>
+<p>User inputs time per flashcard.</p>
+</li>
+<li>
+<p>StudyBuddy asks user for tags to select flashcards for inclusion.</p>
+</li>
+<li>
+<p>User inputs tags.</p>
+</li>
+<li>
+<p>StudyBuddy starts time trial with specified parameters.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-user-story-2" class="discrete">Use case: User story 2</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <em>creates flashcards from image (UC05)</em> with tag “tutorial questions”.</p>
+</li>
+<li>
+<p>User <em>starts time trial (UC06)</em> with tag “tutorial questions”.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{Todo delete later}</p>
 </div>
 <h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
 <div class="paragraph">
@@ -921,6 +1271,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -1108,4 +1459,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-30 05:32:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-01 03:46:48 UTC</div></div></div></body></html>
