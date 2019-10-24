@@ -1,36 +1,44 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>StudyBuddy Pro Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>StudyBuddy Pro Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team AY1920S1-CS2103T-W13-3</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#callouts-signs">1.1. Callouts Signs</a></li>
+<li><a href="#syntax">1.2. Syntax</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#implementation">4. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#logging">4.1. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.2. Configuration</a></li>
+<li><a href="#tagging-feature">4.3. Tagging Feature</a></li>
+<li><a href="#auto-generated-cheatsheet-with-customizable-contents-feature">4.4. Auto-generated cheatsheet with customizable contents feature</a></li>
+<li><a href="#remind-flashcard-feature">4.5. Remind Flashcard Feature</a></li>
+<li><a href="#note-feature">4.6. Note feature</a></li>
+</ul>
+</li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
@@ -44,26 +52,136 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#saving-data">G.2. Saving data</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+<p>Welcome to StudyBuddy Pro!
+StudyBuddy Pro is a desktop-based application intended for
+students in the School of Computing at NUS that prefer to use a to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>StudyBuddy Pro effectively tackles the problem of target users having spent large amount of time for quality study revision.
+To lessen time consumption to produce same study revision quality for target users, StudyBuddy Pro provides a centralized platform for them to revise using flashcards, take notes and generate cheatsheets.</p>
+</div>
+<div class="paragraph">
+<p>This Developer Guide (DG) is written for anyone who wishes to contribute to our project. In here, you will find StudyBuddy Pro&#8217;s information for set-ups, its architectures and its key features.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to know more details about StudyBuddy Pro, please do not hesitate to contact us!</p>
+</div>
+<div class="sect2">
+<h3 id="callouts-signs"><a class="link" href="#callouts-signs">1.1. Callouts Signs</a></h3>
+<div class="paragraph">
+<p>Do refer to the signs below that will be used across the documents for references. These will prove to be useful when you are reading this document.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are to be adhere as potential problems may be encountered if you are not careful.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are crucial to understand so that you will be able to follow the flow of the document. Confusion may arise if you do not grasp the information here.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are note-worthy. Do read them for more information and better understandings.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates additional information that are helpful. Fret not, tips can be good to know but are not vital.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="syntax"><a class="link" href="#syntax">1.2. Syntax</a></h3>
+<div class="paragraph">
+<p>Do refer to the syntax below that will be used across the documents for references. These will prove to be useful when you are reading this document.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Syntax Table</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>exampleCommand</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates technical terms like <em>commands</em>, <em>classes</em> and <em>methods</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#1">link</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates internal/external links</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Do refer to the guide <a href="SettingUp.html">here</a> to set up our StudyBuddy Pro on your device(s)!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -80,14 +198,14 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/">diagrams</a> folder.
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/docs/diagrams/">diagrams</a> folder.
 Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -143,7 +261,7 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component in <em>Figure 2</em> defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -151,36 +269,65 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
+<h4 id="how-the-application-modes-works" class="discrete">How the application modes works?</h4>
+<div class="paragraph">
+<p>The <em>StudyBuddy Pro</em> application has 3 modes for all the features: Flashcard, Cheatsheet and Notes.
+The users use <code>switch</code> command to switch between the modes.
+In each mode, the users will interact with only the modes' commands, unless it is a <em>global</em> command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>switch fc</code> - switches to flashcard mode</p>
+</li>
+<li>
+<p><code>switch cs</code> - switches to cheatsheet mode</p>
+</li>
+<li>
+<p><code>switch notes</code> - switches to notes mode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following is an Activity Diagram that describes the execution of the <code>switch</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/SwitchActivityDiagram.png" alt="SwitchActivityDiagram">
+</div>
+<div class="title">Figure 3. Activity Diagram of <code>Switch</code> command execution</div>
+</div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>Assuming that the user is currently in the <em>flashcard</em> mode.
+The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 4. Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 5. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>ActivityWindow</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -197,27 +344,27 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 6. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>StudyBuddyParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a cheatsheet).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -230,35 +377,42 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+<div class="paragraph">
+<p>Assuming that the user is in the <em>flashcard</em> mode.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
+<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p>IMPORTANT</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>The lifeline for <code>DeleteFlashcardCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
+<div class="paragraph">
+<div class="title">Structure of the Model Component</div>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -269,33 +423,13 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
+<p>stores the StudyBuddyBook data.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -303,7 +437,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -314,254 +448,34 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in json format and read it back.</p>
+<p>can save the StudyBuddyBook data in json format and read it back.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.studybuddy.commons</code> package.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.1. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.2, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -592,15 +506,479 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.2. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tagging-feature"><a class="link" href="#tagging-feature">4.3. Tagging Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.3.1. Implementation</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The current implementation of StudyBuddyItems in StudyBuddyPro is such that it contains a Set of Tags.</p>
+</li>
+<li>
+<p>The following objects of each individual feature shares similar Tagging behaviour, as shown in the class diagram below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/kaibindiagrams/TaggingFeatureClassDiagram.png" alt="TaggingFeatureClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.3.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>As explained in the class diagram above, each StudyBuddyItem is limited to a total number of 10 tags.</p>
+</li>
+<li>
+<p>It is designed as such to prevent users from over-cluttering the result display when they view items that have too many tags.</p>
+</li>
+<li>
+<p>To reduce confusion for the user, all tags will be converted to lower-case upon initialization.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usage-of-tags"><a class="link" href="#usage-of-tags">4.3.3. Usage of Tags</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Inside each feature</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The user is able to specify a tag name to get a list view of all the items with that specified tag in the mode they are currently in (e.g. <code>list tag/cs2100</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Using Tags globally</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The user is also able to indicate a tag name get a list view of all the StudyBuddyItems across all 3 modes in StudyBuddyPro.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Currently, the user is able to specify multiple tags in his/her query.</p>
+</li>
+<li>
+<p>The sequence diagram below shows how listing all items across StudyBuddyPro by a specified tag works.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/kaibindiagrams/ListAllByTagSequenceDiagram.png" alt="ListAllByTagSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements"><a class="link" href="#proposed-future-improvements">4.3.4. [Proposed] Future improvements</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Supporting deletion of Tags</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allow the user to delete a specified Tag.</p>
+</li>
+<li>
+<p>All StudyBuddyItems must be updated in response to the deletion.</p>
+</li>
+<li>
+<p>A proposed implementation would be to store all Tags in a Global Data Structure, and have each StudyBuddyItem reference to that Data Structure.</p>
+</li>
+<li>
+<p>As such, we can apply an Observer pattern to update each StudyBuddyItem upon deletion of a tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Supporting statistics for Tags</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Display a list of all Tags, with each Tag displaying the amount of Flashcards, Notes, CheatSheets there are.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-generated-cheatsheet-with-customizable-contents-feature"><a class="link" href="#auto-generated-cheatsheet-with-customizable-contents-feature">4.4. Auto-generated cheatsheet with customizable contents feature</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the operations assume the user is in the <em>cheatsheet</em> mode.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.4.1. Implementation</a></h4>
+<div class="paragraph">
+<p>This feature has a two-step implementation.
+The first step is to auto-generate cheatsheet, and the second step is to enable removal of contents in the generated cheatsheet.</p>
+</div>
+<div class="sect4">
+<h5 id="step-1-auto-generation"><a class="link" href="#step-1-auto-generation">Step 1: Auto-generation</a></h5>
+<div class="paragraph">
+<p>The auto-generation mechanism is used in the <code>AddCheatSheetCommand</code> during creation of the cheatsheet.
+After creation, the cheatsheet is then stored in the <code>studyBuddy</code> storage.</p>
+</div>
+<div class="paragraph">
+<p>It is involved in the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AddCheatSheetCommand#execute()</code>&#8201;&#8212;&#8201;Creates the cheatsheet</p>
+</li>
+<li>
+<p><code>AddCheatSheetCommand#getRelevantContents()</code>&#8201;&#8212;&#8201;Gets all the contents from <em>flashcard</em> and <em>notes</em> according to the <em>tags</em> specified</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first operation is exposed in the <code>Model</code> interface as <code>Model#setCheatSheet()</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the auto-generation operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/AddCheatSheetSequenceDiagram.png" alt="AddCheatSheetSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="step-2-customizing-contents"><a class="link" href="#step-2-customizing-contents">Step 2: Customizing contents</a></h5>
+<div class="paragraph">
+<p>The customization is based on the contents that the user wants to remove.</p>
+</div>
+<div class="paragraph">
+<p>The auto-generation mechanism is used in
+the AddCheatSheetCommand during creation of the cheatsheet.
+After creation, the cheatsheet is then stored in the studyBuddy storage</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.4.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect"><a class="link" href="#aspect">Aspect:</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements-2"><a class="link" href="#proposed-future-improvements-2">4.4.3. [Proposed] Future improvements</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="remind-flashcard-feature"><a class="link" href="#remind-flashcard-feature">4.5. Remind Flashcard Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.5.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The  remind feature is facilitated by ``</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/RemindFeatureRelevantClassDiagram.png" alt="RemindFeatureRelevantClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.5.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was"><a class="link" href="#aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was">Aspect: Implementation of utility attributes or classes to keep track of number of times a <code>Flashcard</code> object was</a></h5>
+<div class="paragraph">
+<p>viewed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Design a new <code>ViewCount</code> class and make a <code>Flashcard</code> object store a <code>ViewCount</code>
+object.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use an integer attribute field in <code>Flashcard</code> object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to maintain: The addition of a new class increases overall coupling compared to adding a single new
+attribute.</p>
+</li>
+<li>
+<p>Cons: Bad OOP practice and makes it difficult to implement future changes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-2"><a class="link" href="#aspect-2">Aspect:</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future improvements</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved formula for reminding</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Take into account other factors such as user confidence level or number of times flashcard was answered correctly
+or incorrectly to create a more dynamic reminding schedule.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Link to <code>exit</code> command</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Checks if the user viewed all flashcards to be revised on the day.</p>
+</li>
+<li>
+<p>If some of the relevant flashcards were not viewed, reminds user about remaining flashcards and stalls
+application exit.</p>
+</li>
+<li>
+<p>User can either go back into StudyBuddy and view the relevant flashcards or supply an <code>exit</code> command again to
+close the application.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>More statistics for motivation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tracks how often user viewed flashcards on time and how many flashcards users missed viewing on the relevant
+deadline.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="note-feature"><a class="link" href="#note-feature">4.6. Note feature</a></h3>
+<div class="paragraph">
+<p>Notes are used in the creation of CheatSheet objects as well as in general use of StudyBuddyPro.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.6.1. Implementation</a></h4>
+<div class="paragraph">
+<p>Notes contain a Title and some Content, with optional Tags, as shown in the diagram below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">4.6.2. Usages of Notes</a></h4>
+<div class="paragraph">
+<p>Notes can be used to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Store information under a title</p>
+</li>
+<li>
+<p>Categorize information via the use of Tags</p>
+</li>
+<li>
+<p>Provide information to CheatSheets for collation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Notes can currently be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added to StudyBuddyBook</p>
+</li>
+<li>
+<p>Deleted from StudyBuddyBook</p>
+</li>
+<li>
+<p>Viewed from StudyBuddyBook</p>
+</li>
+<li>
+<p>Viewed with filter from StudyBuddyBook</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below describes the calls within the Model component upon the addition of a Note object:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/samDiagrams/AddNoteSequenceDiagram.png" alt="AddNoteSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The two main steps of the process are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The parsing of a Command from the input String</p>
+</li>
+<li>
+<p>The execution of the Command which alters Model</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-note-content-tagging-feature"><a class="link" href="#proposed-note-content-tagging-feature">4.6.3. [Proposed] Note content tagging feature</a></h4>
+<div class="paragraph">
+<p>The proposed feature involves the application of tags within the Note content.</p>
+</div>
+<div class="sect4">
+<h5 id="design-implementation"><a class="link" href="#design-implementation">Design Implementation</a></h5>
+<div class="paragraph">
+<p>This feature can be achieved by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Including a user-inputted tag within portions of the Note content</p>
+</li>
+<li>
+<p>Parsing for this content tag when filtering by tag</p>
+</li>
+<li>
+<p>Listing these content fragments upon filtering by tag</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="usages-of-feature"><a class="link" href="#usages-of-feature">Usages of feature</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>More precise inclusion of tags when creating CheatSheet objects</p>
+</li>
+<li>
+<p>Ability to nest tags inside each other</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -608,7 +986,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -616,7 +994,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -632,7 +1010,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>is a computer science student in NUS</p>
+<p>is a Computer Science major student in NUS</p>
 </li>
 <li>
 <p>is a visual learner that benefits from using flashcards</p>
@@ -1220,29 +1598,6 @@ Use case resumes from step 16.</p>
 <div class="paragraph">
 <p>{Todo delete later}</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to list persons</p>
-</li>
-<li>
-<p>AddressBook shows a list of persons</p>
-</li>
-<li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
@@ -1259,7 +1614,7 @@ Use case resumes from step 16.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. StudyBuddyBook shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1321,7 +1676,7 @@ Use case resumes from step 16.</p>
 </dd>
 <dt class="hdlist1"><a id="time-trial"></a> Time-Trial</dt>
 <dd>
-<p>A mode of answering flashcards in which you must provide the answer within a deisgnated time period.</p>
+<p>A mode of answering flashcards in which you must provide the answer within a designated time period.</p>
 </dd>
 </dl>
 </div>
@@ -1421,39 +1776,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deleting a person while all persons are listed</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
-</li>
-<li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
-</li>
-<li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
-</li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.2. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1473,4 +1796,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-15 14:53:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 03:15:18 UTC</div></div></div></body></html>
