@@ -19,7 +19,7 @@
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Ui">3.2. User Interface (UI) component</a></li>
 <li><a href="#Design-Logic">3.3. Logic component</a></li>
 <li><a href="#Design-Model">3.4. Model component</a></li>
 <li><a href="#Design-Storage">3.5. Storage component</a></li>
@@ -32,13 +32,15 @@
 <li><a href="#Implementation-Configuration">4.2. Configuration</a></li>
 <li><a href="#tagging-feature">4.3. Tagging Feature</a></li>
 <li><a href="#auto-generated-cheatsheet-with-customizable-contents-feature">4.4. Auto-generated cheatsheet with customizable contents feature</a></li>
-<li><a href="#remind-flashcard-feature">4.5. Remind Flashcard Feature</a></li>
-<li><a href="#note-feature">4.6. Note feature</a></li>
+<li><a href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></li>
+<li><a href="#remind-flashcard-feature">4.6. Remind Flashcard Feature</a></li>
+<li><a href="#note-feature">4.7. Note feature</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
 <li><a href="#testing">6. Testing</a></li>
 <li><a href="#dev-ops">7. Dev Ops</a></li>
+<li><a href="#appendixes">8. Appendixes</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
@@ -62,13 +64,13 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to StudyBuddy Pro!
-StudyBuddy Pro is a desktop-based application intended for
-students in the School of Computing at NUS that prefer to use a to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+<p>Welcome to StudyBuddy Pro!</p>
 </div>
 <div class="paragraph">
-<p>StudyBuddy Pro effectively tackles the problem of target users having spent large amount of time for quality study revision.
-To lessen time consumption to produce same study revision quality for target users, StudyBuddy Pro provides a centralized platform for them to revise using flashcards, take notes and generate cheatsheets.</p>
+<p>StudyBuddy Pro is a desktop-based application with a Graphical User Interface (GUI). It is intended for students in the School of Computing at National University of Singapore (NUS) who prefer to work with a Command Line Interface (CLI).</p>
+</div>
+<div class="paragraph">
+<p>StudyBuddy Pro aims to lessen target users' revision time consumption without compromising the quality of studies. The application provides a centralized platform for them to revise using flashcards, take notes and generate cheatsheets.</p>
 </div>
 <div class="paragraph">
 <p>This Developer Guide (DG) is written for anyone who wishes to contribute to our project. In here, you will find StudyBuddy Pro&#8217;s information for set-ups, its architectures and its key features.</p>
@@ -141,7 +143,7 @@ To lessen time consumption to produce same study revision quality for target use
 <div class="sect2">
 <h3 id="syntax"><a class="link" href="#syntax">1.2. Syntax</a></h3>
 <div class="paragraph">
-<p>Do refer to the syntax below that will be used across the documents for references. These will prove to be useful when you are reading this document.</p>
+<p>Do refer to <em>Table 1</em> below for the various syntax that will be used across the documents for references. These will prove to be useful when you are reading this document.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Syntax Table</caption>
@@ -166,6 +168,29 @@ To lessen time consumption to produce same study revision quality for target use
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>These syntax will be used in any context across the document. Possible places that they may appear are in <em>examples</em>, <em>explanations</em> and <em>descriptions</em>. Take note of these syntax as they may have different meaning compared to normal texts!</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>switch</code> is a command for you to type in the CLI so that the function can be executed. However, 'switch' in plain text can mean the switch device itself or to switch amongst some things.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>An example of <code>switch</code> versus 'switch':</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8230;&#8203; <code>switch</code> to toggle between the features &#8230;&#8203;</p>
+</li>
+<li>
+<p>&#8230;&#8203; is able to switch between features &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -180,16 +205,19 @@ To lessen time consumption to produce same study revision quality for target use
 <div class="sect1">
 <h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The following sections will show how StudyBuddy Pro is being constructed in details.</p>
+</div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<div class="paragraph">
+<p>The <em>figure 1</em> below displays the high-level design of our StudyBuddy Pro.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
 <div class="title">Figure 1. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -203,6 +231,9 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The architecture diagram describes the relationships between the components, and here is a quick overview of each component:</p>
 </div>
 <div class="paragraph">
 <p><code>Main</code> has two classes called <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
@@ -269,6 +300,9 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
+<div class="paragraph">
+<p>The <code>logic</code> component&#8217;s class diagram shows the relationships between the components it interacts with. Also, it provides the flow of the actions with arrows.</p>
+</div>
 <h4 id="how-the-application-modes-works" class="discrete">How the application modes works?</h4>
 <div class="paragraph">
 <p>The <em>StudyBuddy Pro</em> application has 3 modes for all the features: Flashcard, Cheatsheet and Notes.
@@ -289,7 +323,7 @@ In each mode, the users will interact with only the modes' commands, unless it i
 </ul>
 </div>
 <div class="paragraph">
-<p>The following is an Activity Diagram that describes the execution of the <code>switch</code> command.</p>
+<p>The following <em>figure 3</em> is an activity diagram that describes the execution of the <code>switch</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -297,28 +331,52 @@ In each mode, the users will interact with only the modes' commands, unless it i
 </div>
 <div class="title">Figure 3. Activity Diagram of <code>Switch</code> command execution</div>
 </div>
+<div class="paragraph">
+<p>From the activity diagram above, it shows the logic flow of the actions taken when user executes the <code>switch</code> command. Also, it shows the checks taken placed to verify the command that was parsed.</p>
+</div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>Assuming that the user is currently in the <em>flashcard</em> mode.
-The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>figure 4</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Assuming that the user is currently in the <em>flashcard</em> mode.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 4. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 4. Sequence diagram of component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
-<p>The sections below give more details of each component.</p>
+<p>The above sequence diagram illustrates the relationships between each components in the StudyBuddy Pro&#8217;s architecture. The sections below will give more details of each of those components.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. User Interface (UI) component</a></h3>
+<div class="paragraph">
+<p>This section describes the behaviour of the <code>UI</code> component in details.
+The <em>figure 5</em> below portrays the internal structures of the <code>UI</code> components and their interactions.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the UI Component</div>
+<div class="title">Figure 5. Class diagram of the structure of the <code>UI</code> Component</div>
+</div>
+<div class="paragraph">
+<p>The class diagram above draws out the relationships between the internal components and their flow of actions.
+The segment below provides more details of the <code>UI</code> components and its API&#8217;s link.</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -345,11 +403,19 @@ The <em>Sequence Diagram</em> below shows how the components interact with each 
 </div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
+<div class="paragraph">
+<p>This section describes the behaviour of the <code>logic</code> component in details.
+The <em>figure 6</em> below portrays the internal structures of the <code>logic</code> components and their interactions.</p>
+</div>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 6. Structure of the Logic Component</div>
+<div class="title">Figure 6. Class diagram of the structure of the <code>logic</code> Component</div>
+</div>
+<div class="paragraph">
+<p>The class diagram above draws out the relationships between the internal components and their flow of actions.
+The segment below provides more details of the <code>logic</code> components and its API&#8217;s link.</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -375,7 +441,7 @@ The <em>Sequence Diagram</em> below shows how the components interact with each 
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>The <em>figure 7</em> below is the sequence diagram for the interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -395,17 +461,24 @@ The <em>Sequence Diagram</em> below shows how the components interact with each 
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 7. Sequence diagram for the interactions Inside the <code>logic</code> Component for the <code>delete 1</code> Command</div>
 </div>
-<div class="paragraph">
-<p>IMPORTANT</p>
-</div>
-<div class="exampleblock">
-<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>The lifeline for <code>DeleteFlashcardCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
+<div class="paragraph">
+<p>The above sequence diagram clearly portrays the execution of the <code>delete 1</code> command with relevant <em>methods</em> being called. Also, it provides the action flow and <em>return variables</em> accordingly.</p>
 </div>
 </div>
 <div class="sect2">
@@ -430,11 +503,19 @@ The <em>Sequence Diagram</em> below shows how the components interact with each 
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
+<div class="paragraph">
+<p>This section describes the behaviour of the <code>storage</code> component in details.
+The <em>figure 8</em> below portrays the internal structures of the <code>storage</code> components and their interactions.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 8. Class diagram of the structure of the <code>Storage</code> Component</div>
+</div>
+<div class="paragraph">
+<p>The class diagram above draws out the relationships between the internal components and their flow of actions.
+The segment below provides more details of the <code>storage</code> components and its API&#8217;s link.</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -727,9 +808,155 @@ After creation, the cheatsheet is then stored in the studyBuddy storage</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remind-flashcard-feature"><a class="link" href="#remind-flashcard-feature">4.5. Remind Flashcard Feature</a></h3>
+<h3 id="flashcards-time-trial-feature"><a class="link" href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">4.5.1. Implementation</a></h4>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The time trial mechanism is facilitated by the <code>FlashcardTabWindowController</code>, and mainly uses the <code>Timeline</code>, <code>KeyFrame</code> and <code>KeyValue</code> class from the JavaFX package to support its functionality.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">image</dt>
+<dd>
+<p>To be added</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
+</li>
+<li>
+<p>Upon initialization of the StudyBuddy and switching to the Flashcard window, the StudyBuddyParser’s function enum will be set to parse ‘Flashcard’ commands.</p>
+</li>
+<li>
+<p>The user executes (timetrial cs2100), and the StartTimeTrialCommand retrieves a List of flashcards with the associated tag through the Model#getTaggedFlashcards, which is then passed into the FlashcardTabWindowController.</p>
+</li>
+<li>
+<p>The FlashcardTabWindowController then calls the FlashcardTabWindowController#startTimeTrial, which in turns construct a timeline with the following added for 3 flashcards:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A KeyFrame to call the FlashcardTabWindowController #loadTimeTrial method, which displays the question of the flashcard on the window, with a KeyValue that starts the timer on the screen.</p>
+</li>
+<li>
+<p>A KeyFrame to call the FlashcardTabWindowController#showFlashcardAns method, which hides the Timer and flashes the answer of the flashcard for a set period of time.</p>
+</li>
+<li>
+<p>A KeyFrame is then added to the timeline to call the FlashcardTabWindowController#resetViews method, which in turn empties the qnsTextArea and ansTextArea. [TO BE REFORMATTED]</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.5.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-the-timetrial-is-implemented"><a class="link" href="#aspect-how-the-timetrial-is-implemented">Aspect: How the timetrial is implemented</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> 1.	Using the <code>TimeLine</code> class to set the timer
+object.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Tidier and easier to understand.</p>
+</li>
+<li>
+<p>Cons: Have to read up on the API and learn about the relevant classes such as <code>KeyFrame</code> and <code>KeyValue</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Looping Thread.sleep() to set the timer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement</p>
+</li>
+<li>
+<p>Cons: Code will be messier and harder to read</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-continue-the-time-trial"><a class="link" href="#aspect-how-to-continue-the-time-trial">Aspect: How to continue the time trial</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Each flashcard and its’ respective answer is displayed for a set period of time before the next flashcard</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement</p>
+</li>
+<li>
+<p>Cons: Inflexible as user can only view the answer for a set amount of time</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Allowing users to input commands to display the flashcard answer / move on to the next flashcard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Better flow of time trial feature and improved user experience</p>
+</li>
+<li>
+<p>Cons: Hard to implement</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future improvements</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowing users to set their own time limit for each flashcard in the time trial mode</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Command will be inputted to set the duration of the timer for each flashcard</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Allowing users to decide when to move on to the next flashcard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Question will still be shown for a fixed period of time, but a command will be required to move on to the next flashcard instead of just flashing the answer for a set amount of time</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remind-flashcard-feature"><a class="link" href="#remind-flashcard-feature">4.6. Remind Flashcard Feature</a></h3>
+<div class="paragraph">
+<p>{To be completed soon}</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The  remind feature is facilitated by ``</p>
 </div>
@@ -740,7 +967,7 @@ After creation, the cheatsheet is then stored in the studyBuddy storage</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was"><a class="link" href="#aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was">Aspect: Implementation of utility attributes or classes to keep track of number of times a <code>Flashcard</code> object was</a></h5>
 <div class="paragraph">
@@ -814,7 +1041,7 @@ attribute.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.3. [Proposed] Future improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -862,12 +1089,24 @@ deadline.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="note-feature"><a class="link" href="#note-feature">4.6. Note feature</a></h3>
+<h3 id="note-feature"><a class="link" href="#note-feature">4.7. Note feature</a></h3>
 <div class="paragraph">
 <p>Notes are used in the creation of CheatSheet objects as well as in general use of StudyBuddyPro.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.6.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">4.7.1. Implementation</a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the operations assume that the user is in the <em>notes</em> mode.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Notes contain a Title and some Content, with optional Tags, as shown in the diagram below:</p>
 </div>
@@ -878,7 +1117,7 @@ deadline.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">4.6.2. Usages of Notes</a></h4>
+<h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">4.7.2. Usages of Notes</a></h4>
 <div class="paragraph">
 <p>Notes can be used to:</p>
 </div>
@@ -937,7 +1176,7 @@ deadline.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-note-content-tagging-feature"><a class="link" href="#proposed-note-content-tagging-feature">4.6.3. [Proposed] Note content tagging feature</a></h4>
+<h4 id="proposed-note-content-tagging-feature"><a class="link" href="#proposed-note-content-tagging-feature">4.7.3. [Proposed] Note content tagging feature</a></h4>
 <div class="paragraph">
 <p>The proposed feature involves the application of tags within the Note content.</p>
 </div>
@@ -981,7 +1220,7 @@ deadline.</p>
 <h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="Documentation.html">here</a>.</p>
+<p>Please do refer to the guide <a href="Documentation.html">here</a> for more information about this section!</p>
 </div>
 </div>
 </div>
@@ -989,7 +1228,7 @@ deadline.</p>
 <h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="Testing.html">here</a>.</p>
+<p>Please do refer to the guide <a href="Testing.html">here</a> for more information about this section!</p>
 </div>
 </div>
 </div>
@@ -997,7 +1236,29 @@ deadline.</p>
 <h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Refer to the guide <a href="DevOps.html">here</a>.</p>
+<p>Please do refer to the guide <a href="DevOps.html">here</a> for more information about this section!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendixes"><a class="link" href="#appendixes">8. Appendixes</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following sections will be titled as '<em>Appendix</em>' followed by an alphabet in alphabetical order to denote the different appendixes.
+The following is an example of an appendix heading.</p>
+</div>
+<div class="paragraph">
+<p><strong>Appendix Z: ABC</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alphabet 'Z' indicates its placing in the order of appendixes</p>
+</li>
+<li>
+<p>Phrase 'ABC' indicates the title of the appendix</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1796,4 +2057,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 03:15:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 15:56:29 UTC</div></div></div></body></html>

@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>StudyBuddy - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>StudyBuddyPro - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>StudyBuddy - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>StudyBuddyPro - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team AY1920S1-CS2103T-W13-3</code></p>
@@ -10,50 +10,55 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#quick-start">2. Quick Start</a>
+<ul class="sectlevel2">
+<li><a href="#running-the-jar-file">2.1. Running the jar file</a></li>
+</ul>
+</li>
 <li><a href="#command-format-rules">3. Command Format / Rules</a></li>
 <li><a href="#global-commands">4. Global Commands</a>
 <ul class="sectlevel2">
-<li><a href="#getting-into-fiveflash-function-code-ff-code">4.1. Getting into FiveFlash function: <code>ff</code></a></li>
-<li><a href="#getting-into-fivenotes-function-code-fn-code">4.2. Getting into FiveNotes function: <code>fn</code></a></li>
-<li><a href="#getting-into-fivecheat-function-code-fc-code">4.3. Getting into FiveCheat function: <code>fc</code></a></li>
-<li><a href="#listing-tags-code-tag-list-code">4.4. Listing tags: <code>tag list</code></a></li>
-<li><a href="#editing-tags-code-tag-edit-code">4.5. Editing tags: <code>tag edit</code></a></li>
-<li><a href="#deleting-tags-code-tag-delete-code">4.6. Deleting tags: <code>tag delete</code></a></li>
-<li><a href="#viewing-help-code-help-code">4.7. Viewing Help: <code>help</code></a></li>
+<li><a href="#entering-the-various-modes-of-studybuddypro">4.1. Entering the various modes of StudyBuddyPro</a></li>
+<li><a href="#viewing-help-code-help-code">4.2. Viewing Help: <code>help</code></a></li>
+<li><a href="#listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall [tag/CS2100]</code></a></li>
+<li><a href="#exiting-the-application-code-exit-code">4.4. Exiting the application: <code>exit</code></a></li>
 </ul>
 </li>
-<li><a href="#fiveflash">5. FiveFlash</a>
+<li><a href="#flashcard-feature">5. Flashcard Feature</a>
 <ul class="sectlevel2">
-<li><a href="#creating-flashcards-code-new-code">5.1. Creating flashcards: <code>new</code></a></li>
-<li><a href="#viewing-flashcards-code-view-code">5.2. Viewing flashcards: <code>view</code></a></li>
-<li><a href="#editing-flashcards-code-edit-code">5.3. Editing flashcards: <code>edit</code></a></li>
-<li><a href="#listing-flashcards-code-list-code">5.4. Listing flashcards: <code>list</code></a></li>
-<li><a href="#deleting-flashcards-code-delete-code">5.5. Deleting flashcards: <code>delete</code></a></li>
-<li><a href="#time-trial-code-time-code">5.6. Time Trial: <code>time</code></a></li>
+<li><a href="#creating-a-flashcard-code-add-code">5.1. Creating a flashcard: <code>add</code></a></li>
+<li><a href="#viewing-a-flashcard-code-view-code">5.2. Viewing a flashcard: <code>view</code></a></li>
+<li><a href="#revealing-a-flashcard-s-answer-code-show-code">5.3. Revealing a flashcard&#8217;s answer: <code>show</code></a></li>
+<li><a href="#editing-a-flashcard-code-edit-code">5.4. Editing a flashcard: <code>edit</code></a></li>
+<li><a href="#listing-flashcards-code-list-code">5.5. Listing flashcards: <code>list</code></a></li>
+<li><a href="#deleting-a-flashcard-code-delete-code">5.6. Deleting a flashcard: <code>delete</code></a></li>
+<li><a href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></li>
+<li><a href="#remind">5.9. Remind</a></li>
 </ul>
 </li>
-<li><a href="#fivenotes">6. FiveNotes</a>
+<li><a href="#notes-feature">6. Notes Feature:</a>
 <ul class="sectlevel2">
-<li><a href="#creating-notes-code-new-code">6.1. Creating notes: <code>new</code></a></li>
-<li><a href="#editing-notes-code-edit-code">6.2. Editing notes: <code>edit</code></a></li>
-<li><a href="#deleting-notes-code-delete-code">6.3. Deleting notes: <code>delete</code></a></li>
-<li><a href="#viewing-notes-code-view-code">6.4. Viewing notes: <code>view</code></a></li>
+<li><a href="#creating-a-note-code-add-code">6.1. Creating a note: <code>add</code></a></li>
+<li><a href="#deleting-a-note-code-delete-code">6.2. Deleting a note: <code>delete</code></a></li>
+<li><a href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></li>
+<li><a href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></li>
 <li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></li>
 </ul>
 </li>
-<li><a href="#fivecheat">7. FiveCheat</a>
+<li><a href="#cheatsheet-feature">7. CheatSheet Feature:</a>
 <ul class="sectlevel2">
-<li><a href="#creating-cheatsheets-code-new-code">7.1. Creating cheatsheets: <code>new</code></a></li>
-<li><a href="#editing-cheatsheets-code-edit-code">7.2. Editing cheatsheets: <code>edit</code></a></li>
-<li><a href="#deleting-cheatsheets-code-delete-code">7.3. Deleting cheatsheets: <code>delete</code></a></li>
-<li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatsheets: <code>list</code></a></li>
+<li><a href="#creating-a-cheatsheet-code-add-code">7.1. Creating a cheatSheet: <code>add</code></a></li>
+<li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></li>
+<li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></li>
+<li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">8. FAQ</a></li>
-<li><a href="#command-summary">9. Command Summary</a></li>
-<li><a href="#mock-up-user-interface">10. Mock-up User Interface</a></li>
-<li><a href="#draft-workflow-to-be-removed">11. Draft Workflow (To-be-removed)</a></li>
+<li><a href="#command-summary">8. Command Summary</a></li>
+<li><a href="#mock-up-user-interface">9. Mock-up User Interface</a></li>
+<li><a href="#draft-workflow-to-be-removed">10. Draft Workflow (To-be-removed)</a></li>
 </ul>
 </div>
 </div>
@@ -61,13 +66,13 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>StudyBuddy Level 1 is for students in the School of Computing at NUS
+<p>StudyBuddy Pro specifically caters to students in the School of Computing at NUS
 that prefer to use a desktop app to help their studies.
 StudyBuddy is also optimized for those who prefer to work with
 a Command Line Interface (CLI) while still having the benefits of a
 Graphical User Interface (GUI). Being highly familiar working with CLI,
 Computing Students can greatly benefit from the app to
-manage their studies efficiently and faster than traditional GUI apps.</p>
+manage their studies efficiently which also aims to be faster than traditional GUI apps.</p>
 </div>
 </div>
 </div>
@@ -75,7 +80,50 @@ manage their studies efficiently and faster than traditional GUI apps.</p>
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>&lt;NOT IN DRAFT&gt;</p>
+<p>To begin, download the latest version of <code>StudyBuddy</code> <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/releases">here</a>
+and double-click the downloaded jar file. If double-clicking does not work, please follow the instructions below.</p>
+</div>
+<div class="sect2">
+<h3 id="running-the-jar-file"><a class="link" href="#running-the-jar-file">2.1. Running the jar file</a></h3>
+<div class="sect3">
+<h4 id="for-cross-platform-users"><a class="link" href="#for-cross-platform-users">2.1.1. For cross-platform users</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Open your PC&#8217;s terminal/command prompt</p>
+</li>
+<li>
+<p>Type java -jar StudyBuddyPro.jar</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="for-windows-users"><a class="link" href="#for-windows-users">2.1.2. For Windows users</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Open your PC&#8217;s terminal/command prompt</p>
+</li>
+<li>
+<p>Type java -jar StudyBuddyPro-Win.jar</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="for-mac-users"><a class="link" href="#for-mac-users">2.1.3. For Mac users</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Open your PC&#8217;s terminal/command prompt</p>
+</li>
+<li>
+<p>Type java -jar StudyBuddyPro-Mac.jar</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -91,14 +139,14 @@ These points are absolute, unless stated otherwise in the specific section(s).</
 <div class="ulist">
 <ul>
 <li>
-<p>All commands are written in ENGLISH with no weird symbols.</p>
+<p>All commands are written in ENGLISH with only alphanumeric characters.</p>
 </li>
 <li>
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.
 E.g. <code>add &lt;t/TITLE&gt;</code> &#8594; <code>TITLE</code> is a parameter which can be used as <code>add t/Midterm notes</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional.
+<p>Items indicated in square brackets are optional.
 E.g <code>t/TITLE [t/TAG]</code> can be used as <code>t/Midterm note t/exam</code> or as <code>t/Midterm</code>.</p>
 </li>
 <li>
@@ -109,7 +157,7 @@ E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e.
 <p>All flashcards, notes, cheatsheets objects will be given a unique <code>id</code> on creation.</p>
 </li>
 <li>
-<p>All flashcards, notes, cheatsheets objects can have a maximum of 5 <code>TAG</code> each.</p>
+<p>All flashcards, notes, cheatsheets objects can have a maximum of 10 <code>TAG</code> each.</p>
 </li>
 <li>
 <p>All <code>MODULE</code> parameters are a <code>TAG</code>.</p>
@@ -161,32 +209,18 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 <div class="sect1">
 <h2 id="global-commands"><a class="link" href="#global-commands">4. Global Commands</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="getting-into-fiveflash-function-code-ff-code"><a class="link" href="#getting-into-fiveflash-function-code-ff-code">4.1. Getting into FiveFlash function: <code>ff</code></a></h3>
 <div class="paragraph">
-<p>Brings the user to the FiveFlash section, regardless of where the user is.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Format: ff</pre>
-</div>
-</div>
+<p>Global commands in StudyBuddyPro, are commands that can be called regardless of which mode the user is currently in.</p>
 </div>
 <div class="sect2">
-<h3 id="getting-into-fivenotes-function-code-fn-code"><a class="link" href="#getting-into-fivenotes-function-code-fn-code">4.2. Getting into FiveNotes function: <code>fn</code></a></h3>
+<h3 id="entering-the-various-modes-of-studybuddypro"><a class="link" href="#entering-the-various-modes-of-studybuddypro">4.1. Entering the various modes of StudyBuddyPro</a></h3>
 <div class="paragraph">
-<p>Brings the user to the FiveNotes section, regardless of where the user is.</p>
+<p>Upon startup, you will be prompted to enter one of the modes before you can proceed.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Format: fn</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="getting-into-fivecheat-function-code-fc-code"><a class="link" href="#getting-into-fivecheat-function-code-fc-code">4.3. Getting into FiveCheat function: <code>fc</code></a></h3>
+<div class="sect3">
+<h4 id="getting-into-flashcard-mode-code-fc-code"><a class="link" href="#getting-into-flashcard-mode-code-fc-code">4.1.1. Getting into Flashcard mode: <code>fc</code></a></h4>
 <div class="paragraph">
-<p>Brings the user to the FiveCheat section, regardless of where the user is.</p>
+<p>Brings the user to the Flashcard section, regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -194,144 +228,227 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-tags-code-tag-list-code"><a class="link" href="#listing-tags-code-tag-list-code">4.4. Listing tags: <code>tag list</code></a></h3>
+<div class="sect3">
+<h4 id="getting-into-notes-function-code-notes-code"><a class="link" href="#getting-into-notes-function-code-notes-code">4.1.2. Getting into Notes function: <code>notes</code></a></h4>
 <div class="paragraph">
-<p>Lists all the tags available in the application.</p>
+<p>Brings the user to the Notes section, regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: tag list</pre>
+<pre>Format: notes</pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="editing-tags-code-tag-edit-code"><a class="link" href="#editing-tags-code-tag-edit-code">4.5. Editing tags: <code>tag edit</code></a></h3>
+<div class="sect3">
+<h4 id="getting-into-cheatsheet-function-code-cs-code"><a class="link" href="#getting-into-cheatsheet-function-code-cs-code">4.1.3. Getting into CheatSheet function: <code>cs</code></a></h4>
 <div class="paragraph">
-<p>Replaces the existing tag with &lt;TAG_ID&gt; with &lt;NEW_TAG_NAME&gt; in the application.</p>
+<p>Brings the user to the CheatSheet section, regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: tag edit id/TAG_ID n/NEW_TAG_NAME</pre>
+<pre>Format: cs</pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-tags-code-tag-delete-code"><a class="link" href="#deleting-tags-code-tag-delete-code">4.6. Deleting tags: <code>tag delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes all tags from the application.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Format: tag delete [-c]</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If <code>-c</code> is flagged, all contents tagged to the all tags are deleted.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.7. Viewing Help: <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.2. Viewing Help: <code>help</code></a></h3>
 <div class="paragraph">
 <p>Views the help session of all the functionality.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: help [-fc] [-fn] [-ff]</pre>
+<pre>Format: help</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Only ONE of the optional fields can be provided in one command. E.g.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Correct commands: "help", "help -fc", "help -fn", "help -ff"</p>
-</li>
-<li>
-<p>Wrong commands: "help -fc -fn", "help -fc -fn -ff"</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>A pop-up dialog box will display a URL link to a help document.</p>
 </div>
-</li>
-<li>
-<p>If <code>fc</code> flagged, returns the help section of the 'FiveCheat' feature.</p>
-</li>
-<li>
-<p>If <code>fn</code> flagged, returns the help section of the 'FiveNotes' feature.</p>
-</li>
-<li>
-<p>If <code>ff</code> flagged, returns the help section of the 'FiveFlash' feature.</p>
-</li>
-</ul>
+</div>
+<div class="sect2">
+<h3 id="listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code"><a class="link" href="#listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall [tag/CS2100]</code></a></h3>
+<div class="paragraph">
+<p>Lists all StudyBuddy items with matching tags in the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: filterall tag/CS2100</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+    List the whole StudyBuddy by tag(s) :
+CS2100
+Flashcard: 6.
+    Question: What is 101 Binary in its Decimal form?
+    Answer: 5
+    Title: BinaryQn
+    Tags: [cs2100]
+CheatSheet: 7.
+    Title: cs2100 stuff
+    Tags: [cs2100]
+    Contents: [ 1. Pipelining is a process where.. ]
+        [ 2. Question: What is 101 Binary in its Decimal form?; Answer: 5 ]
+Note: 5.
+    Title: Pipelining Defition
+    Content: Pipelining is a process where..
+    Tags: [cs2100]
+Note Fragment: 3.1.
+    Title: About
+    Content: highlighted
+    Tags: [cs2100]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The user is also able to specify a multiple number of tags.
+For example,</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>filterall tag/CS2100 tag/difficult</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will list all items that match at least one of the specified tags.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-application-code-exit-code"><a class="link" href="#exiting-the-application-code-exit-code">4.4. Exiting the application: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Checks if there are any remaining flashcards to revise for the day
+or overdue flashcards to revise before exiting the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: exit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are flashcards due for revision today but no overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Are you sure you want to exit? You still have the following flashcards overdue or left
+to revise for today:
+Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?
+Type 'exit' again to exit the application!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are no flashcards due for revision today but there are overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Are you sure you want to exit? You still have the following flashcards overdue or left
+to revise for today:
+Here are your overdue flashcards:
+1. Math Question 1 - What is 2 x 2? (Was due on 2019-10-30)
+Type 'exit' again to exit the application!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are both flashcards due for revision today and overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Are you sure you want to exit? You still have the following flashcards overdue or left
+to revise for today:
+Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?
+Here are your overdue flashcards:
+1. Math Question 2 - What is 3 x 2? (Was due on 2019-10-30)
+Type 'exit' again to exit the application!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After any of the 3 scenarios above user can override the warning by entering the <code>exit</code> command again.</p>
+</div>
+<div class="paragraph">
+<p>if no remaining or overdue flashcards for revision found, application exits immediately.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="fiveflash"><a class="link" href="#fiveflash">5. FiveFlash</a></h2>
+<h2 id="flashcard-feature"><a class="link" href="#flashcard-feature">5. Flashcard Feature</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="creating-flashcards-code-new-code"><a class="link" href="#creating-flashcards-code-new-code">5.1. Creating flashcards: <code>new</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Creates a new flashcard from user input question &lt;QUESTION&gt; and answer &lt;ANSWER&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: new q/QUESTION a/ANSWER t/TITLE m/MODULE [h/HINT] [tag/TAG]...</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Creates a new flashcard from file input &lt;FILE_NAME&gt; and answer &lt;ANSWER&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: new f/&lt;FILE_NAME&gt; a/ANSWER t/TITLE m/MODULE [h/HINT] [tag/TAG]...</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>File must be in specified directory.</p>
-</li>
-<li>
-<p>File input must be of type jpg.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-flashcards-code-view-code"><a class="link" href="#viewing-flashcards-code-view-code">5.2. Viewing flashcards: <code>view</code></a></h3>
+<h3 id="creating-a-flashcard-code-add-code"><a class="link" href="#creating-a-flashcard-code-add-code">5.1. Creating a flashcard: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Displays flashcard &lt;FLASHCARD_ID&gt; to user without answer.</p>
+<p>Adds a flashcard from user input question &lt;QUESTION&gt; and answer &lt;ANSWER&gt;.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: view id/FLASHCARD_ID [-h] [-a] [-tag]</pre>
+<pre>Format: add q/QUESTION a/ANSWER t/TITLE [tag/TAG]...</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>-h</code>, <code>-a</code> or <code>-tag</code> can be used after entering view flashcard mode to view flashcard&#8217;s hint, answer or tags respectively.</p>
-</li>
-<li>
-<p>View page displays flashcard title, module and question by default.</p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: add q/What is 100 Binary in its Decimal form? a/4 t/Binary Stuff tag/CS2100</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: New flashcard added:
+    Title: Binary Stuff
+    Question: What is 100 Binary in its Decimal form?
+    Answer: 4
+    Tags: [cs2100]</pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-flashcards-code-edit-code"><a class="link" href="#editing-flashcards-code-edit-code">5.3. Editing flashcards: <code>edit</code></a></h3>
+<h3 id="viewing-a-flashcard-code-view-code"><a class="link" href="#viewing-a-flashcard-code-view-code">5.2. Viewing a flashcard: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Displays flashcard &lt;FLASHCARD_INDEX&gt; to user without answer.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: view (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: view 6</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Viewing flashcard:
+    Title: BinaryQn
+    Question: What is 101 Binary in its Decimal form?
+    Tags: [cs2100]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revealing-a-flashcard-s-answer-code-show-code"><a class="link" href="#revealing-a-flashcard-s-answer-code-show-code">5.3. Revealing a flashcard&#8217;s answer: <code>show</code></a></h3>
+<div class="paragraph">
+<p>Displays the answer of the flashcard currently loaded.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: show</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: show</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Flashcard answer loaded</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-flashcard-code-edit-code"><a class="link" href="#editing-a-flashcard-code-edit-code">5.4. Editing a flashcard: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>{Coming in v2.0}</p>
+</div>
 <div class="paragraph">
 <p>Edits flashcard &lt;FLASHCARD_ID&gt; by changing any field of the flashcard.</p>
 </div>
@@ -349,43 +466,53 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-flashcards-code-list-code"><a class="link" href="#listing-flashcards-code-list-code">5.4. Listing flashcards: <code>list</code></a></h3>
+<h3 id="listing-flashcards-code-list-code"><a class="link" href="#listing-flashcards-code-list-code">5.5. Listing flashcards: <code>list</code></a></h3>
 <div class="paragraph">
 <p>Lists all flashcards.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: list [tag/TAG]...</pre>
+<pre>Format: list</pre>
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If more than one tag is specified, lists only flashcards which satisfy all specified tags.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-flashcards-code-delete-code"><a class="link" href="#deleting-flashcards-code-delete-code">5.5. Deleting flashcards: <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes the flashcard with &lt;FLASHCARD_ID&gt; or flashcard(s) with specified tag(s).</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: delete [id/FLASHCARD_ID] [tag/TAG]...</pre>
+<pre>Expected output: Listed all flashcards:
+Question: What is my name?
+Answer: Sahil
+Title: Test Name Question 1
+Statistics: This flashcard was last viewed on: 2019-10-29. This flashcard should next be viewed on 2019-10-30 for optimum revision!
+Tags: [pop]</pre>
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At least one of the optional fields must be specified.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="time-trial-code-time-code"><a class="link" href="#time-trial-code-time-code">5.6. Time Trial: <code>time</code></a></h3>
+<h3 id="deleting-a-flashcard-code-delete-code"><a class="link" href="#deleting-a-flashcard-code-delete-code">5.6. Deleting a flashcard: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the flashcard by &lt;FLASHCARD_INDEX&gt;.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: delete 6</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Deleted Flashcard:
+    Question: What is 101 Binary in its Decimal form?
+    Answer: 5
+    Title: BinaryQn
+    Tags: [cs2100]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="time-trial-code-timetrial-code"><a class="link" href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></h3>
 <div class="paragraph">
 <p>Starts a time trial for flashcards with tag &lt;TAG&gt; for &lt;TIME&gt; seconds per flashcard.</p>
 </div>
@@ -403,248 +530,511 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 <p>If more than one tag is specified, selects only flashcards which satisfy all specified tags.</p>
 </li>
 <li>
-<p>Default &lt;TIME&gt; will be 30 seconds, if not specified.</p>
+<p>Default &lt;TIME&gt; will be 5 seconds.</p>
+</li>
+<li>
+<p>Answer will be flashed for 10 seconds.</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Filters the flashcard library by the user specified tag(s).</p>
+</li>
+<li>
+<p>The user must specify at least one tag.</p>
+</li>
+<li>
+<p>The user is able to specify multiple tags.</p>
+</li>
+<li>
+<p>Flashcards that match at least one of the specified tags will be displayed.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: filter tag/TAG [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: filter tag/difficult</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expeted output: Filter flashcards by tag(s) :
+    [difficult]
+    8. Question: What is 1+1?
+        Title: Basic addition
+        Tags: [difficult]
+    10. Question: What is 2x3?
+        Title: Maths
+        Tags: [difficult][important]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remind"><a class="link" href="#remind">5.9. Remind</a></h3>
+<div class="paragraph">
+<p>Reminds the user regarding the flashcards due for revision today and the flashcards
+overdue for revision. Automatically suggests a new date the flashcard should next be
+viewed at for optimal learning. These increments scale with time i.e. suggested viewing
+dates are closer at the start and spread further after more viewings. The suggested
+date for the next viewing of all flashcards can be viewed under the <code>list</code> command.</p>
+</div>
+<div class="paragraph">
+<p>{Give example}</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: remind</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If no flashcards due for revision today and no overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Well done - No due or overdue flashcards!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are flashcards due for revision today but no overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are no flashcards due for revision today but there are overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Here are your overdue flashcards:
+1. Math Question 1 - What is 2 x 2? (Was due on 2019-10-30)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are both flashcards due for revision today and overdue flashcards:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?
+Here are your overdue flashcards:
+1. Math Question 2 - What is 3 x 2? (Was due on 2019-10-30)</pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="fivenotes"><a class="link" href="#fivenotes">6. FiveNotes</a></h2>
+<h2 id="notes-feature"><a class="link" href="#notes-feature">6. Notes Feature:</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="creating-notes-code-new-code"><a class="link" href="#creating-notes-code-new-code">6.1. Creating notes: <code>new</code></a></h3>
-<div class="paragraph">
-<p>Creates a notes with empty content, unless specified, under &lt;MODULE&gt; section.</p>
+<h3 id="creating-a-note-code-add-code"><a class="link" href="#creating-a-note-code-add-code">6.1. Creating a note: <code>add</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a note from user input title <code>TITLE</code> and content <code>CONTENT</code>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: add t/TITLE c/CONTENT [tag/TAG]...</pre>
+</div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: new m/MODULE [t/NOTE_TITLE] [c/NOTE_CONTENT] [tag/TAG]...</pre>
+<pre>Example usage: add t/Pipelining Definition c/Pipelining is a process where tag/CS2100</pre>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-notes-code-edit-code"><a class="link" href="#editing-notes-code-edit-code">6.2. Editing notes: <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits the specified note&#8217;s title or content or tag(s).</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: edit id/NOTE_ID [t/TITLE] [c/NOTE_CONTENT] [tag/TAG]...</pre>
+<pre>Expected output:
+New note added:
+    Title: Pipelining Definition
+    Content: Pipelining is a process where
+    Tags: [cs2100]</pre>
 </div>
+</div>
+</li>
+<li>
+<p>More advanced usage: Intra-Note tagging of note fragments is also supported. The intra-note tagging is added at the
+same time as the note is created. Intra-note tags are added with content <code>INTRA_CONTENT</code>, at least one tag
+<code>INTRA_TAG</code>, and any number of additional tags <code>ADDITIONAL_INTRA_TAG</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format (within CONTENT): /* C/INTRA_CONTENT TAG/INTRA_TAG [TAG/ADDITIONAL_INTRA_TAG]... */</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The format for Intra-Note content is 'C/', not 'c/', and the format for Intra-Note tags is 'TAG/', not 'tag/'.
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>At least one of the optional fields must be specified.</p>
+<p>In the following example, two intra-note tags are added:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+New note added:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed
+    Tags: [about]</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Multiple intra-note tags are allowed. These do not interfere with the other tags of the Note.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Intra-note tags can be used for filtering notes (see Section 6.6), or filtering globally (see Section 4.3)
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-notes-code-delete-code"><a class="link" href="#deleting-notes-code-delete-code">6.3. Deleting notes: <code>delete</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deletes notes with specified &lt;MODULE&gt; or specified note with &lt;NOTE_ID&gt; or all notes.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: delete [m/MODULE] [id/NOTE_ID] [-a]</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At least one of the optional fields must be specified.</p>
-</li>
-<li>
-<p>If <code>a</code> is flagged, all notes will be deleted.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Deletes specified tag(s) of note with &lt;NOTE_ID&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: delete id/NOTE_ID [tag/TAG]...</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At least one tag must be specified.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-notes-code-view-code"><a class="link" href="#viewing-notes-code-view-code">6.4. Viewing notes: <code>view</code></a></h3>
+<h3 id="deleting-a-note-code-delete-code"><a class="link" href="#deleting-a-note-code-delete-code">6.2. Deleting a note: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Views the note with &lt;NOTE_ID&gt;.</p>
+<p>Deletes the note of index <code>NOTE_INDEX</code>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: view id/NOTE_ID</pre>
+<pre>Format: delete (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: delete 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Deleted note:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed
+    Tags: [about]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-a-note-code-view-code"><a class="link" href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views the note of index <code>NOTE_INDEX</code>. If the note contains any intra-note tags, those tags will be hidden.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To view the note with its intra-note tags, use the <code>viewraw</code> command instead (see Section 6.4).
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: view (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: view 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Viewing note:
+    Title: About
+    Content: Notes can be highlighted if needed
+    Tags: [about]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-a-raw-note-code-viewraw-code"><a class="link" href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></h3>
+<div class="paragraph">
+<p>Views the note of index <code>NOTE_INDEX</code>. The note is shown exactly as written, including all intra-note tags.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: viewraw (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: viewraw 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Viewing raw note:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed
+    Tags: [about]</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="listing-notes-code-list-code"><a class="link" href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Lists all notes found in the user&#8217;s notes.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list [-m] [-t]</pre>
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-m</code> flagged, lists all modules found in notes.</p>
-</li>
-<li>
-<p>If <code>-t</code> flagged, lists all titles found in notes.</p>
+<p>Lists all notes found in StudyBuddyPro.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: a complete list of all notes currently in StudyBuddyPro</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Lists all notes from &lt;MODULE&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list m/MODULE [-t]</pre>
 </div>
-</div>
+<div class="sect2">
+<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-t</code> flagged, lists all titles found in notes.</p>
+<p>Filters the note library by the user specified tag(s).</p>
 </li>
-</ul>
+<li>
+<p>The user must specify at least one tag.</p>
+</li>
+<li>
+<p>The user is able to specify multiple tags.</p>
+</li>
+<li>
+<p>Notes that match at least one of the specified tags will be displayed.</p>
+</li>
+<li>
+<p>Intra-Note tags containing at least one of the specified tags will also be displayed.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: filter tag/TAG [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: filter tag/difficult</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expeted output: Filter notes by tag(s) :
+    [difficult]
+    2. Title: Tough Math
+        Content: 1 + 2 is 3.
+        Tags: [difficult]
+    4. Title: MA1521 Chapter 5
+        Content: dy/dx = 0 is turning point of bellcurve.
+        Tags: [difficult][MA1521]</pre>
+</div>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="fivecheat"><a class="link" href="#fivecheat">7. FiveCheat</a></h2>
+<h2 id="cheatsheet-feature"><a class="link" href="#cheatsheet-feature">7. CheatSheet Feature:</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="creating-cheatsheets-code-new-code"><a class="link" href="#creating-cheatsheets-code-new-code">7.1. Creating cheatsheets: <code>new</code></a></h3>
-<div class="paragraph">
-<p>Creates a new cheatsheet with &lt;TITLE&gt; and &lt;MODULE&gt;.</p>
+<h3 id="creating-a-cheatsheet-code-add-code"><a class="link" href="#creating-a-cheatsheet-code-add-code">7.1. Creating a cheatSheet: <code>add</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a cheatSheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;.</p>
+</li>
+<li>
+<p>Flashcards and notes in StudyBuddyPro that have the specified tag will be pulled over to be used as content in the cheatsheet.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: add t/TITLE [tag/TAG]...</pre>
+</div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: new t/TITLE m/MODULE [tag/TAG]...</pre>
+<pre>Example usage: add t/CS2100 Midterm CheatSheet tag/cs2100midterm</pre>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-cheatsheets-code-edit-code"><a class="link" href="#editing-cheatsheets-code-edit-code">7.2. Editing cheatsheets: <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits cheatsheet&#8217;s content with &lt;CHEATSHEET_ID&gt;, unless optional fields are specified.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: edit id/CHEATSHEET_ID [t/TITLE] [m/MODULE] [tag/TAG]...</pre>
+<pre>Expected output: New cheatsheet added:
+Title: CS2100 Midterm CheatSheet
+Tags: [cs2100midterm]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+    [ 2. 110 in Binary is 6 in Decimal ]</pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-cheatsheets-code-delete-code"><a class="link" href="#deleting-cheatsheets-code-delete-code">7.3. Deleting cheatsheets: <code>delete</code></a></h3>
+<h3 id="editing-a-cheatsheet-code-edit-code"><a class="link" href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits cheatSheet&#8217;s title, tag, content by a specified &lt;CHEATSHEET_INDEX&gt;.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user can specify one of the optional fields to edit.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit (index) [t/TITLE] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: edit 8 t/cs2100 final cheatsheet tag/cs2100finals</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Edited Cheatsheet:
+    Title: cs2100 final cheatsheet
+    Tags: [cs2100finals]
+    Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+        [ 2. 110 in Binary is 6 is Decimal ]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-cheatsheet-code-delete-code"><a class="link" href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deletes cheatsheets with specified &lt;MODULE&gt; or specified cheatsheet with &lt;CHEATSHEET_ID&gt; or all cheatsheets.</p>
+<p>Deletes a cheatSheet by the specified index.</p>
 <div class="literalblock">
 <div class="content">
-<pre>Format: delete [m/MODULE] [id/CHEATSHEET_ID] [-a]</pre>
+<pre>Format: delete (index)</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>At least one of the optional fields must be specified.</p>
-</li>
-<li>
-<p>If <code>-a</code> flagged, all cheatsheets will be deleted.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Deletes specified tag(s) of cheatsheet with &lt;CHEATSHEET_ID&gt;.</p>
 <div class="literalblock">
 <div class="content">
-<pre>Format: delete id/CHEATSHEET_ID [tag/TAG]...</pre>
+<pre>Example usage: delete 8</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>At least one tag must be specified.</p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Deleted Cheatsheet:  Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
+    Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+        [ 2. 110 in Binary is 6 is Decimal ]</pre>
+</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.4. Listing cheatsheets: <code>list</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Lists all cheatsheets found in the user&#8217;s notes.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list [-m] [-t]</pre>
-</div>
-</div>
+<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-m</code> flagged, lists all modules found in the user&#8217;s cheatsheets.</p>
-</li>
-<li>
-<p>If <code>-t</code> flagged, lists all titles found in the user&#8217;s cheatsheets.</p>
+<p>Lists all cheatSheets found in StudyBuddyPro.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: a complete list of all cheatSheets currently in StudyBuddyPro</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Lists all cheatsheets from &lt;MODULE&gt;.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format: list m/MODULE [-t]</pre>
 </div>
-</div>
+<div class="sect2">
+<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>If <code>-t</code> flagged, lists all titles found in the user&#8217;s cheatsheets.</p>
+<p>Filters the cheatSheet library by the user specified tag(s).</p>
+</li>
+<li>
+<p>The user must specify at least one tag.</p>
+</li>
+<li>
+<p>The user is able to specify multiple tags.</p>
+</li>
+<li>
+<p>CheatSheets that match at least one of the specified tags will be displayed.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: filter tag/TAG [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: filter tag/difficult</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expeted output: Filter cheatSheets by tag(s) :
+    [difficult]
+    2. Title: Tough Math
+        Tags: [difficult][math]
+        Content: [ 1. Question: What's 1+1; Answer: 2 ]
+            [ 2. Question: what is 100 + 10; Answer: 110 ]
+    7. Title: MA1521 Chapter 5
+        Tags: [difficult]
+        Content: [ 1. dy/dx is a process where mathematicians..]
+            [ 2. Question: what is dy/dx?; Answer: find gradient]</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">8. FAQ</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
 </div>
@@ -654,8 +1044,9 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">9. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">8. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
@@ -663,7 +1054,7 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="mock-up-user-interface"><a class="link" href="#mock-up-user-interface">10. Mock-up User Interface</a></h2>
+<h2 id="mock-up-user-interface"><a class="link" href="#mock-up-user-interface">9. Mock-up User Interface</a></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -678,7 +1069,7 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="draft-workflow-to-be-removed"><a class="link" href="#draft-workflow-to-be-removed">11. Draft Workflow (To-be-removed)</a></h2>
+<h2 id="draft-workflow-to-be-removed"><a class="link" href="#draft-workflow-to-be-removed">10. Draft Workflow (To-be-removed)</a></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -686,4 +1077,4 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-24 03:15:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 15:56:29 UTC</div></div></div></body></html>
