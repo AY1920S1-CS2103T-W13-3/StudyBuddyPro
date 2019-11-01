@@ -31,7 +31,7 @@
 <li><a href="#logging">4.1. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.2. Configuration</a></li>
 <li><a href="#tagging-feature">4.3. Tagging Feature</a></li>
-<li><a href="#auto-generated-cheatsheet-with-customizable-contents-feature">4.4. Auto-generated cheatsheet with customizable contents feature</a></li>
+<li><a href="#customizable-auto-generated-cheatsheet-feature">4.4. Customizable Auto-generated Cheatsheet Feature</a></li>
 <li><a href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></li>
 <li><a href="#remind-flashcard-feature">4.6. Remind Flashcard Feature</a></li>
 <li><a href="#note-feature">4.7. Note feature</a></li>
@@ -704,12 +704,12 @@ The segment below provides more details of the <code>storage</code> components a
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-generated-cheatsheet-with-customizable-contents-feature"><a class="link" href="#auto-generated-cheatsheet-with-customizable-contents-feature">4.4. Auto-generated cheatsheet with customizable contents feature</a></h3>
-<div class="admonitionblock note">
+<h3 id="customizable-auto-generated-cheatsheet-feature"><a class="link" href="#customizable-auto-generated-cheatsheet-feature">4.4. Customizable Auto-generated Cheatsheet Feature</a></h3>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 All the operations assume the user is in the <em>cheatsheet</em> mode.
@@ -727,7 +727,7 @@ The first step is to auto-generate cheatsheet, and the second step is to enable 
 <h5 id="step-1-auto-generation"><a class="link" href="#step-1-auto-generation">Step 1: Auto-generation</a></h5>
 <div class="paragraph">
 <p>The auto-generation mechanism is used in the <code>AddCheatSheetCommand</code> during creation of the cheatsheet.
-After creation, the cheatsheet is then stored in the <code>studyBuddy</code> storage.</p>
+After creation, the cheatsheet is then stored in the <code>studyBuddyBook</code>.</p>
 </div>
 <div class="paragraph">
 <p>It is involved in the following operations:</p>
@@ -746,12 +746,42 @@ After creation, the cheatsheet is then stored in the <code>studyBuddy</code> sto
 <p>The first operation is exposed in the <code>Model</code> interface as <code>Model#setCheatSheet()</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the auto-generation operation works:</p>
+<p>The following <em>figure 9</em> shows a high-level view of how the auto-generation operation works.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/jasmineDiagrams/AddCheatSheetSequenceDiagram.png" alt="AddCheatSheetSequenceDiagram">
 </div>
+<div class="title">Figure 9. Sequence diagram to illustrate auto-generation operation</div>
+</div>
+<div class="paragraph">
+<p>Through the sequence diagram above, it portrays the relationships between the components to execute the creation mechanism. The <em>figure 10</em> below further explains the details within the sequence diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/AddCheatSheetDetailedSequenceDiagram.png" alt="AddCheatSheetDetailedSequenceDiagram">
+</div>
+<div class="title">Figure 10. Detailed sequence diagram for retrieval of tagged contents</div>
+</div>
+<div class="paragraph">
+<p>The above sequence diagram shows the complete action flow for the execution of methods.
+Here is a brief summary of the steps taken to create the cheatsheet:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A new <em>cheatsheet</em> object is created with the parsed <em>title</em> and <em>tags</em>.</p>
+</li>
+<li>
+<p>Another new <em>cheatsheet</em> object is created with the relevant contents extracted according to the <em>tags</em> specified.</p>
+</li>
+<li>
+<p>The first <em>cheatsheet</em> object is replaced with the second <em>cheatsheet</em> object while retaining its <em>title</em> and <em>tags</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Different <em>cheatsheet</em> objects are created to ensure that the <em>cheatsheet</em> object itself is not modifiable.</p>
 </div>
 </div>
 <div class="sect4">
@@ -760,40 +790,146 @@ After creation, the cheatsheet is then stored in the <code>studyBuddy</code> sto
 <p>The customization is based on the contents that the user wants to remove.</p>
 </div>
 <div class="paragraph">
-<p>The auto-generation mechanism is used in
-the AddCheatSheetCommand during creation of the cheatsheet.
-After creation, the cheatsheet is then stored in the studyBuddy storage</p>
+<p>The customization feature is used in the <code>EditCheatSheetCommand</code> during the editing of the cheatsheet. After the customization, the cheatsheet is then stored in the <code>studyBuddyBook</code>.</p>
+</div>
+<div class="paragraph">
+<p>It is involved in the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EditCheatSheetCommand#execute()</code>&#8201;&#8212;&#8201;Edits the cheatsheet</p>
+</li>
+<li>
+<p><code>EditCheatSheetCommand#updateContents()</code>&#8201;&#8212;&#8201;Retrieves the contents to be retained in the cheatsheet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first operation is exposed in the <code>Model</code> interface as <code>Model#setCheatSheet()</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following <em>figure 11</em> shows the activity flow how the customization feature works using an example command called <code>edit 1 c/1 c/3 c/7</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The index provided after <code>c/</code> indicates the content to be <em>removed</em>, not to be <em>retained</em>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/EditCheatSheetCommandActivityDiagram.png" alt="EditCheatSheetCommandActivityDiagram">
+</div>
+<div class="title">Figure 11. Activity diagram of the <code>edit</code> command for the removal of contents</div>
+</div>
+<div class="paragraph">
+<p>The activity diagram above shows the general flow of customization of cheatsheet feature. The changes for <em>contents</em> have to come first before the changes for <em>tags</em>. This is to ensure that the <em>contents</em> are still relevant to the <em>tags</em> specified. An example is provided below.</p>
+</div>
+<div class="paragraph">
+<p>Example cheatsheet of <em>title</em>, "An Example Title" with corresponding <em>table 2</em> of <em>tags</em> and <em>contents</em>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Example of tags and contents in the cheatsheet</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content3</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>According to the above table, if the order of removal is not followed, the system will be able to remove <em>tag2</em> first before <em>content2</em>. This may result in <strong>potential errors</strong> in the system as <em>content2</em> may not be found or the position of it is being replaced with another content.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect"><a class="link" href="#aspect">Aspect:</a></h5>
+<h5 id="aspect-how-auto-generation-is-implemented"><a class="link" href="#aspect-how-auto-generation-is-implemented">Aspect: How auto-generation is implemented</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong></p>
+<p><strong>Alternative 1 (current choice):</strong> Replacing the newly created cheatsheet with another cheatsheet object containing all the relevant contents</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Retains the object originality and easier to implement.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Invoking the edit method to create a new cheatsheet object may be complicated and messy.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> Reformat the way the <code>add</code> function works and abstract it such that it will be generalized.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Codes may be cleaner and easier to understand.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Harder to implement. More abstraction and modifications have to be done. Might change the format of the system.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-customization-of-contents-is-implemented"><a class="link" href="#aspect-how-customization-of-contents-is-implemented">Aspect: How customization of contents is implemented</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Places all contents that are not within the indexes specified by users into a new cheatsheet object and the targeted cheatsheet object with the respective changes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Retains the object originality and easier to implement.</p>
+</li>
+<li>
+<p>Cons: Large amount of contents may result in longer processing time as it loops to find all contents not removed. It is messier to comprehend.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Reformat the way the <code>edit</code> function works and abstract it such that it will be generalized.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Codes may be cleaner and easier to understand.</p>
+</li>
+<li>
+<p>Cons: Harder to implement. More abstraction and modifications have to be done.</p>
 </li>
 </ul>
 </div>
@@ -804,7 +940,22 @@ After creation, the cheatsheet is then stored in the studyBuddy storage</p>
 </div>
 <div class="sect3">
 <h4 id="proposed-future-improvements-2"><a class="link" href="#proposed-future-improvements-2">4.4.3. [Proposed] Future improvements</a></h4>
-
+<div class="ulist">
+<ul>
+<li>
+<p>Alerts users of possible duplications of contents</p>
+</li>
+<li>
+<p>Allows users to gauge the size of the contents (whether if it fits in single-sided or double-sided A4 paper)</p>
+</li>
+<li>
+<p>Allows users to export the cheatsheets</p>
+</li>
+<li>
+<p>Allows updates of cheatsheet&#8201;&#8212;&#8201;Currently, contents are taken upon creation. Hence, any objects with specified tags will not be added into the cheatsheet after the creation of the cheatsheet.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1007,7 +1158,7 @@ attribute.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-2"><a class="link" href="#aspect-2">Aspect:</a></h5>
+<h5 id="aspect"><a class="link" href="#aspect">Aspect:</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2057,4 +2208,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 15:56:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 08:09:41 UTC</div></div></div></body></html>

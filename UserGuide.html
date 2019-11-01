@@ -10,17 +10,18 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a>
+<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#command-format-rules">3. Command Format / Rules</a>
 <ul class="sectlevel2">
-<li><a href="#running-the-jar-file">2.1. Running the jar file</a></li>
+<li><a href="#how-to-read-the-command-sections">3.1. How to read the Command sections</a></li>
+<li><a href="#general-rules-for-all-commands">3.2. General rules for all commands</a></li>
 </ul>
 </li>
-<li><a href="#command-format-rules">3. Command Format / Rules</a></li>
 <li><a href="#global-commands">4. Global Commands</a>
 <ul class="sectlevel2">
-<li><a href="#entering-the-various-modes-of-studybuddypro">4.1. Entering the various modes of StudyBuddyPro</a></li>
+<li><a href="#entering-the-various-modes-of-studybuddypro-code-switch-code">4.1. Entering the various modes of StudyBuddyPro: <code>switch</code></a></li>
 <li><a href="#viewing-help-code-help-code">4.2. Viewing Help: <code>help</code></a></li>
-<li><a href="#listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall [tag/CS2100]</code></a></li>
+<li><a href="#listing-all-studybuddy-items-by-their-tag-code-filterall-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall</code></a></li>
 <li><a href="#exiting-the-application-code-exit-code">4.4. Exiting the application: <code>exit</code></a></li>
 </ul>
 </li>
@@ -33,8 +34,7 @@
 <li><a href="#listing-flashcards-code-list-code">5.5. Listing flashcards: <code>list</code></a></li>
 <li><a href="#deleting-a-flashcard-code-delete-code">5.6. Deleting a flashcard: <code>delete</code></a></li>
 <li><a href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></li>
-<li><a href="#remind">5.9. Remind</a></li>
+<li><a href="#remind">5.8. Remind</a></li>
 </ul>
 </li>
 <li><a href="#notes-feature">6. Notes Feature:</a>
@@ -44,7 +44,8 @@
 <li><a href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></li>
 <li><a href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></li>
 <li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code">6.6. Listing by tags: <code>filter</code></a></li>
+<li><a href="#editing-a-note-code-edit-code-coming-in-v2-0">6.7. Editing a note: <code>edit</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
 <li><a href="#cheatsheet-feature">7. CheatSheet Feature:</a>
@@ -53,12 +54,18 @@
 <li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></li>
 <li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></li>
 <li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-2">7.5. Listing by tags: <code>filter</code></a></li>
 </ul>
 </li>
-<li><a href="#command-summary">8. Command Summary</a></li>
-<li><a href="#mock-up-user-interface">9. Mock-up User Interface</a></li>
-<li><a href="#draft-workflow-to-be-removed">10. Draft Workflow (To-be-removed)</a></li>
+<li><a href="#faq">8. FAQ</a></li>
+<li><a href="#command-summary">9. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#global-commands-2">9.1. Global Commands</a></li>
+<li><a href="#flashcard-commands">9.2. Flashcard Commands</a></li>
+<li><a href="#note-commands">9.3. Note Commands</a></li>
+<li><a href="#cheatsheet-commands">9.4. CheatSheet Commands</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -66,64 +73,68 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>StudyBuddy Pro specifically caters to students in the School of Computing at NUS
-that prefer to use a desktop app to help their studies.
-StudyBuddy is also optimized for those who prefer to work with
+<p>StudyBuddyPro is a student application that aims to simplify the hassle of revision
+by providing a suite of tools for effective revision.</p>
+</div>
+<div class="paragraph">
+<p>StudyBuddyPro is optimized for students who prefer to work with
 a Command Line Interface (CLI) while still having the benefits of a
-Graphical User Interface (GUI). Being highly familiar working with CLI,
-Computing Students can greatly benefit from the app to
-manage their studies efficiently which also aims to be faster than traditional GUI apps.</p>
+Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Moreover, StudyBuddyPro comes geared with pre-loaded features specially
+catered for computing students. So whether you&#8217;re a computing student getting
+used to a CLI for the first time or if you&#8217;re a CLI expert who wants to reap
+the benefits of a fast typing speed, give StudyBuddyPro a try! {To be implemented!}</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re interested, head over to the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#2-quick-start">Quick Start</a>
+section to get started!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>To begin, download the latest version of <code>StudyBuddy</code> <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/releases">here</a>
-and double-click the downloaded jar file. If double-clicking does not work, please follow the instructions below.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please ensure you have Java 11 or above installed before proceeding!
+</td>
+</tr>
+</table>
 </div>
-<div class="sect2">
-<h3 id="running-the-jar-file"><a class="link" href="#running-the-jar-file">2.1. Running the jar file</a></h3>
-<div class="sect3">
-<h4 id="for-cross-platform-users"><a class="link" href="#for-cross-platform-users">2.1.1. For cross-platform users</a></h4>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Open your PC&#8217;s terminal/command prompt</p>
+<p>Download the latest version of <code>StudyBuddyPro.jar</code> <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Type java -jar StudyBuddyPro.jar</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="for-windows-users"><a class="link" href="#for-windows-users">2.1.2. For Windows users</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Open your PC&#8217;s terminal/command prompt</p>
+<p>Place the file in the folder you want to set as the home directory. All data and
+miscellaneous files associated with StudyBuddyPro will be placed in this folder.</p>
 </li>
 <li>
-<p>Type java -jar StudyBuddyPro-Win.jar</p>
-</li>
-</ul>
+<p>Double-click <code>StudyBuddyPro.jar</code> to launch the application. The GUI should appear in a few seconds. If not, please
+refer to the first question in the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#8-FAQ">FAQ</a>
+for help!</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="700">
 </div>
 </div>
-<div class="sect3">
-<h4 id="for-mac-users"><a class="link" href="#for-mac-users">2.1.3. For Mac users</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Open your PC&#8217;s terminal/command prompt</p>
 </li>
 <li>
-<p>Type java -jar StudyBuddyPro-Mac.jar</p>
+<p>Type a command in the command box execute it by pressing <kbd>Enter</kbd>. Refer to the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#9-command-summary">Command Summary</a>
+section for a quick overview of all the available commands!</p>
 </li>
-</ul>
-</div>
-</div>
+</ol>
 </div>
 </div>
 </div>
@@ -134,63 +145,37 @@ and double-click the downloaded jar file. If double-clicking does not work, plea
 <p>Things noted here are standardization of the User Guide.
 These points are absolute, unless stated otherwise in the specific section(s).</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="sect2">
+<h3 id="how-to-read-the-command-sections"><a class="link" href="#how-to-read-the-command-sections">3.1. How to read the Command sections</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>All commands are written in ENGLISH with only alphanumeric characters.</p>
-</li>
-<li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user.
-E.g. <code>add &lt;t/TITLE&gt;</code> &#8594; <code>TITLE</code> is a parameter which can be used as <code>add t/Midterm notes</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are parameters to be supplied by the user.
+E.g. <code>add t/TITLE</code> &#8594; <code>TITLE</code> is a parameter which can be used as <code>add t/Midterm notes</code>.</p>
 </li>
 <li>
 <p>Items indicated in square brackets are optional.
-E.g <code>t/TITLE [t/TAG]</code> can be used as <code>t/Midterm note t/exam</code> or as <code>t/Midterm</code>.</p>
+E.g <code>t/TITLE [tag/TAG]</code> can be used as <code>t/Midterm note tag/exam</code> or as <code>t/Midterm</code>.</p>
 </li>
 <li>
 <p>Items with <code>&#8230;&#8203;</code>​ after them can be used multiple times including zero times.
-E.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code></p>
-</li>
-<li>
-<p>All flashcards, notes, cheatsheets objects will be given a unique <code>id</code> on creation.</p>
-</li>
-<li>
-<p>All flashcards, notes, cheatsheets objects can have a maximum of 10 <code>TAG</code> each.</p>
-</li>
-<li>
-<p>All <code>MODULE</code> parameters are a <code>TAG</code>.</p>
-</li>
-<li>
-<p>In EDITING (<code>edit</code>):</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All optional fields provided, except <code>t/TAG</code>, will overwrite their relevant fields.</p>
-</li>
-<li>
-<p><code>t/TAG</code> optional field, will be added to the flashcard, if they do not already exist.</p>
+E.g. <code>[tag/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>tag/friend</code>, <code>tag/friend tag/family</code>.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>In DELETING (<code>delete</code>), Confirmation reply of <code>y</code> or <code>n</code> has to be given, else no objects is deleted.</p>
+</div>
+<div class="sect2">
+<h3 id="general-rules-for-all-commands"><a class="link" href="#general-rules-for-all-commands">3.2. General rules for all commands</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><code>y</code> indicates <code>YES</code> and notes will be deleted.</p>
+<p>All commands are written in English with alphanumeric characters.</p>
 </li>
 <li>
-<p><code>n</code> indicates <code>NO</code> and notes will not be deleted.</p>
-</li>
-</ul>
-</div>
+<p>Any indexes provided (denoted by <code>id</code>) must be a positive integer (e.g. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 <li>
-<p>Any indexes (<code>id</code>) must be positive integer (e.g. 1, 2, 3, &#8230;&#8203;).
-The indexes refers to the index number shown in the displayed list of objects (e.g. flashcards, notes, cheatsheets, tags).</p>
+<p>All flashcards, notes, and cheatsheets can have a maximum of 10 tags.</p>
 </li>
 <li>
 <p>Only exact matches of any searches will be returned.
@@ -205,48 +190,53 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="global-commands"><a class="link" href="#global-commands">4. Global Commands</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Global commands in StudyBuddyPro, are commands that can be called regardless of which mode the user is currently in.</p>
+<p>Global commands in StudyBuddyPro are commands that can be called regardless of which mode the user is currently in.</p>
 </div>
 <div class="sect2">
-<h3 id="entering-the-various-modes-of-studybuddypro"><a class="link" href="#entering-the-various-modes-of-studybuddypro">4.1. Entering the various modes of StudyBuddyPro</a></h3>
+<h3 id="entering-the-various-modes-of-studybuddypro-code-switch-code"><a class="link" href="#entering-the-various-modes-of-studybuddypro-code-switch-code">4.1. Entering the various modes of StudyBuddyPro: <code>switch</code></a></h3>
 <div class="paragraph">
 <p>Upon startup, you will be prompted to enter one of the modes before you can proceed.</p>
 </div>
 <div class="sect3">
-<h4 id="getting-into-flashcard-mode-code-fc-code"><a class="link" href="#getting-into-flashcard-mode-code-fc-code">4.1.1. Getting into Flashcard mode: <code>fc</code></a></h4>
+<h4 id="getting-into-flashcard-mode-code-switch-fc-code"><a class="link" href="#getting-into-flashcard-mode-code-switch-fc-code">4.1.1. Getting into Flashcard mode: <code>switch fc</code></a></h4>
 <div class="paragraph">
-<p>Brings the user to the Flashcard section, regardless of where the user is.</p>
+<p>Switches the user to
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#5-flashcard-commands">Flashcard</a>
+mode regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: fc</pre>
+<pre>Format: switch fc</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="getting-into-notes-function-code-notes-code"><a class="link" href="#getting-into-notes-function-code-notes-code">4.1.2. Getting into Notes function: <code>notes</code></a></h4>
+<h4 id="getting-into-notes-function-code-switch-notes-code"><a class="link" href="#getting-into-notes-function-code-switch-notes-code">4.1.2. Getting into Notes function: <code>switch notes</code></a></h4>
 <div class="paragraph">
-<p>Brings the user to the Notes section, regardless of where the user is.</p>
+<p>Brings the user to
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#6-note-commands">Notes</a>
+mode regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: notes</pre>
+<pre>Format: switch notes</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="getting-into-cheatsheet-function-code-cs-code"><a class="link" href="#getting-into-cheatsheet-function-code-cs-code">4.1.3. Getting into CheatSheet function: <code>cs</code></a></h4>
+<h4 id="getting-into-cheatsheet-function-code-switch-cs-code"><a class="link" href="#getting-into-cheatsheet-function-code-switch-cs-code">4.1.3. Getting into CheatSheet function: <code>switch cs</code></a></h4>
 <div class="paragraph">
-<p>Brings the user to the CheatSheet section, regardless of where the user is.</p>
+<p>Brings the user to
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#7-cheatsheet-commands">CheatSheet</a>
+mode regardless of where the user is.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: cs</pre>
+<pre>Format: switch cs</pre>
 </div>
 </div>
 </div>
@@ -254,21 +244,23 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.2. Viewing Help: <code>help</code></a></h3>
 <div class="paragraph">
-<p>Views the help session of all the functionality.</p>
+<p>A pop-up dialog box will display a URL link to a help document.</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: help</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>A pop-up dialog box will display a URL link to a help document.</p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code"><a class="link" href="#listing-all-studybuddy-items-by-their-tag-code-filterall-tag-cs2100-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall [tag/CS2100]</code></a></h3>
+<h3 id="listing-all-studybuddy-items-by-their-tag-code-filterall-code"><a class="link" href="#listing-all-studybuddy-items-by-their-tag-code-filterall-code">4.3. Listing all StudyBuddy items by their tag : <code>filterall</code></a></h3>
 <div class="paragraph">
 <p>Lists all StudyBuddy items with matching tags in the application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: filterall tag/TAG [tag/TAG]...</pre>
+</div>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -278,7 +270,7 @@ E.g. 'cs2103t' will match 'CS2103T'</p>
 <div class="literalblock">
 <div class="content">
 <pre>Expected output:
-    List the whole StudyBuddy by tag(s) :
+    Lists the whole StudyBuddy after filtering by tag(s) :
 CS2100
 Flashcard: 6.
     Question: What is 101 Binary in its Decimal form?
@@ -288,13 +280,13 @@ Flashcard: 6.
 CheatSheet: 7.
     Title: cs2100 stuff
     Tags: [cs2100]
-    Contents: [ 1. Pipelining is a process where.. ]
+    Contents: [ 1. Pipelining is a process where a processor executes multiple processes simultaneously.]
         [ 2. Question: What is 101 Binary in its Decimal form?; Answer: 5 ]
 Note: 5.
     Title: Pipelining Defition
-    Content: Pipelining is a process where..
+    Content: Pipelining is a process where a processor executes multiple processes simultaneously.
     Tags: [cs2100]
-Note Fragment: 3.1.
+Note Fragment: 6-2.
     Title: About
     Content: highlighted
     Tags: [cs2100]</pre>
@@ -311,6 +303,18 @@ For example,</p>
 </div>
 <div class="paragraph">
 <p>will list all items that match at least one of the specified tags.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+'Note Fragments' are described further in the Notes section (see Section 6.1).
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -393,6 +397,7 @@ Type 'exit' again to exit the application!</pre>
 <div class="content">
 <pre>Expected output: New flashcard added:
     Title: Binary Stuff
+    Statictics: This flashcard was last viewed on: 2019-11-01. This flashcard should next be viewed on 2019-11-02 for optimum revision!
     Question: What is 100 Binary in its Decimal form?
     Answer: 4
     Tags: [cs2100]</pre>
@@ -468,6 +473,9 @@ Type 'exit' again to exit the application!</pre>
 <div class="sect2">
 <h3 id="listing-flashcards-code-list-code"><a class="link" href="#listing-flashcards-code-list-code">5.5. Listing flashcards: <code>list</code></a></h3>
 <div class="paragraph">
+<p>{Answer to be removed in v2.0}</p>
+</div>
+<div class="paragraph">
 <p>Lists all flashcards.</p>
 </div>
 <div class="literalblock">
@@ -491,6 +499,9 @@ Tags: [pop]</pre>
 <div class="paragraph">
 <p>Deletes the flashcard by &lt;FLASHCARD_INDEX&gt;.</p>
 </div>
+<div class="paragraph">
+<p>The user will be prompted once to confirm their deletion.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: delete (index)</pre>
@@ -503,10 +514,25 @@ Tags: [pop]</pre>
 </div>
 <div class="literalblock">
 <div class="content">
+<pre>Expected output: Are you sure you would like to delete the following flashcard?
+ Question: What is 101 Binary in its Decimal form?
+ Answer: 5
+ Title: BinaryQn
+ Statistics: This flashcard was last viewed on: 2019-10-31. This flashcard should next be viewed on 2019-11-01 for optimum revision!
+ Tags: [cs2100]
+    Hit enter again to confirm your deletion.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon hitting enter, then the flashcard will be deleted.</p>
+</div>
+<div class="literalblock">
+<div class="content">
 <pre>Expected output: Deleted Flashcard:
     Question: What is 101 Binary in its Decimal form?
     Answer: 5
     Title: BinaryQn
+    Statistics: This flashcard was last viewed on: 2019-10-31. This flashcard should next be viewed on 2019-11-01 for optimum revision!
     Tags: [cs2100]</pre>
 </div>
 </div>
@@ -518,7 +544,7 @@ Tags: [pop]</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: time [time/TIME] [tag/TAG]...</pre>
+<pre>Format: timetrial [tag/TAG]...</pre>
 </div>
 </div>
 <div class="ulist">
@@ -527,21 +553,16 @@ Tags: [pop]</pre>
 <p>At least one tag must be specified.</p>
 </li>
 <li>
-<p>If more than one tag is specified, selects only flashcards which satisfy all specified tags.</p>
+<p>If more than one tag is specified, selects all flashcards that contains any of the specified tags.</p>
 </li>
 <li>
 <p>Default &lt;TIME&gt; will be 5 seconds.</p>
 </li>
 <li>
-<p>Answer will be flashed for 10 seconds.</p>
+<p>Answer will be flashed for 3 seconds.
+ts
+=== Listing by tags: <code>filter</code></p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></h3>
-<div class="ulist">
-<ul>
 <li>
 <p>Filters the flashcard library by the user specified tag(s).</p>
 </li>
@@ -580,7 +601,7 @@ Tags: [pop]</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remind"><a class="link" href="#remind">5.9. Remind</a></h3>
+<h3 id="remind"><a class="link" href="#remind">5.8. Remind</a></h3>
 <div class="paragraph">
 <p>Reminds the user regarding the flashcards due for revision today and the flashcards
 overdue for revision. Automatically suggests a new date the flashcard should next be
@@ -644,7 +665,8 @@ Here are your overdue flashcards:
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a note from user input title <code>TITLE</code> and content <code>CONTENT</code>.</p>
+<p>Adds a note from user input with title <code>TITLE</code> and content <code>CONTENT</code>. The title of the note cannot be a duplicate
+of an existing note title.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: add t/TITLE c/CONTENT [tag/TAG]...</pre>
@@ -652,7 +674,8 @@ Here are your overdue flashcards:
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Example usage: add t/Pipelining Definition c/Pipelining is a process where tag/CS2100</pre>
+<pre>Example usage: add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes
+simultaneously. tag/CS2100</pre>
 </div>
 </div>
 <div class="literalblock">
@@ -660,18 +683,21 @@ Here are your overdue flashcards:
 <pre>Expected output:
 New note added:
     Title: Pipelining Definition
-    Content: Pipelining is a process where
+    Content: Pipelining is a process where a processor executes multiple processes simultaneously.
     Tags: [cs2100]</pre>
 </div>
 </div>
 </li>
 <li>
-<p>More advanced usage: Intra-Note tagging of note fragments is also supported. The intra-note tagging is added at the
-same time as the note is created. Intra-note tags are added with content <code>INTRA_CONTENT</code>, at least one tag
-<code>INTRA_TAG</code>, and any number of additional tags <code>ADDITIONAL_INTRA_TAG</code>:</p>
+<p>More advanced usage: Tagging of note fragments is also supported. The note fragment tagging is added at the
+same time as the note is created.</p>
+</li>
+<li>
+<p>Note fragment tags are added with content <code>FRAGMENT_CONTENT</code>, at least one tag
+<code>FRAGMENT_TAG</code>, and any number of additional tags <code>ADDITIONAL_FRAGMENT_TAG</code>:</p>
 <div class="literalblock">
 <div class="content">
-<pre>Format (within CONTENT): /* C/INTRA_CONTENT TAG/INTRA_TAG [TAG/ADDITIONAL_INTRA_TAG]... */</pre>
+<pre>Format (within CONTENT): /* C/FRAGMENT_CONTENT TAG/FRAGMENT_TAG [TAG/ADDITIONAL_FRAGMENT_TAG]... */</pre>
 </div>
 </div>
 </li>
@@ -684,7 +710,7 @@ same time as the note is created. Intra-note tags are added with content <code>I
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The format for Intra-Note content is 'C/', not 'c/', and the format for Intra-Note tags is 'TAG/', not 'tag/'.
+The format for Note fragment content is 'C/', not 'c/', and the format for Note fragment tags is 'TAG/', not 'tag/'.
 </td>
 </tr>
 </table>
@@ -692,7 +718,7 @@ The format for Intra-Note content is 'C/', not 'c/', and the format for Intra-No
 <div class="ulist">
 <ul>
 <li>
-<p>In the following example, two intra-note tags are added:</p>
+<p>In the following example, two note fragment tags are added to the same note fragment:</p>
 <div class="literalblock">
 <div class="content">
 <pre>Example usage: add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
@@ -709,7 +735,7 @@ New note added:
 </div>
 </li>
 <li>
-<p>Multiple intra-note tags are allowed. These do not interfere with the other tags of the Note.</p>
+<p>Multiple note fragment tags are allowed. These do not interfere with the other tags of the Note.</p>
 </li>
 </ul>
 </div>
@@ -720,7 +746,9 @@ New note added:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Intra-note tags can be used for filtering notes (see Section 6.6), or filtering globally (see Section 4.3)
+Note fragment tags can be used for filtering notes (see Section 6.6), or filtering globally (see Section 4.3).
+For a clearer visualization of note fragments, compare the <code>view</code> (see Section 6.3) and <code>viewraw</code> (see Section 6.4)
+commands.
 </td>
 </tr>
 </table>
@@ -730,6 +758,9 @@ Intra-note tags can be used for filtering notes (see Section 6.6), or filtering 
 <h3 id="deleting-a-note-code-delete-code"><a class="link" href="#deleting-a-note-code-delete-code">6.2. Deleting a note: <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the note of index <code>NOTE_INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>The user will be prompted once to confirm their deletion.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -744,7 +775,19 @@ Intra-note tags can be used for filtering notes (see Section 6.6), or filtering 
 <div class="literalblock">
 <div class="content">
 <pre>Expected output:
-Deleted note:
+    Are you sure you would like to delete the following note?
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
+    Tags: [about]
+    Hit enter again to confirm your deletion.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon hitting enter, then the note will be deleted.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deleted note:
     Title: About
     Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed
     Tags: [about]</pre>
@@ -754,7 +797,7 @@ Deleted note:
 <div class="sect2">
 <h3 id="viewing-a-note-code-view-code"><a class="link" href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></h3>
 <div class="paragraph">
-<p>Views the note of index <code>NOTE_INDEX</code>. If the note contains any intra-note tags, those tags will be hidden.</p>
+<p>Views the note of index <code>NOTE_INDEX</code>. If the note contains any note fragment tags, those tags will be hidden.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -763,7 +806,7 @@ Deleted note:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-To view the note with its intra-note tags, use the <code>viewraw</code> command instead (see Section 6.4).
+To view the note with its note fragment tags, use the <code>viewraw</code> command instead (see Section 6.4).
 </td>
 </tr>
 </table>
@@ -791,7 +834,7 @@ Viewing note:
 <div class="sect2">
 <h3 id="viewing-a-raw-note-code-viewraw-code"><a class="link" href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></h3>
 <div class="paragraph">
-<p>Views the note of index <code>NOTE_INDEX</code>. The note is shown exactly as written, including all intra-note tags.</p>
+<p>Views the note of index <code>NOTE_INDEX</code>. The note is shown exactly as written, including all note fragment tags.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -829,28 +872,53 @@ Viewing raw note:
 <pre>Expected output: a complete list of all notes currently in StudyBuddyPro</pre>
 </div>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>Example output:
+Listing all notes:
+1.
+    Title: Pipelining Definition
+    Content: Pipelining is a process where a /* C/processor TAG/mips */ executes multiple processes simultaneously.
+    Tags: [cs2100]
+2.
+    Title: UML Diagrams
+    Content: UML Diagrams help with visualizing project structure.
+    Tags: [cs2103t]</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notes will be labeled with indices '1', '2' etc. Note fragment tags will not be listed along with the notes. To
+visualize specific note fragment tags, use the <code>filter</code> command (see Section 6.6).
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">6.6. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Filters the note library by the user specified tag(s).</p>
 </li>
 <li>
-<p>The user must specify at least one tag.</p>
-</li>
-<li>
-<p>The user is able to specify multiple tags.</p>
+<p>The user must specify at least one tag, and can specify multiple tags.</p>
 </li>
 <li>
 <p>Notes that match at least one of the specified tags will be displayed.</p>
 </li>
 <li>
-<p>Intra-Note tags containing at least one of the specified tags will also be displayed.</p>
+<p>Note fragment tags containing at least one of the specified tags will also be displayed, even if their parent note is
+not tagged.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: filter tag/TAG [tag/TAG]...</pre>
@@ -870,7 +938,55 @@ Viewing raw note:
         Tags: [difficult]
     4. Title: MA1521 Chapter 5
         Content: dy/dx = 0 is turning point of bellcurve.
-        Tags: [difficult][MA1521]</pre>
+        Tags: [difficult][MA1521]
+    5-1. Title: CS2103T
+          Content: sequence diagram
+          Tags: [difficult][diagram]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notes will be labeled with indices '1', '2' etc. Note fragment tags will be labeled with '1-1', '1-2', '2-1' etc.
+'5-1' means 'the first note fragment tag in the fifth note'.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-note-code-edit-code-coming-in-v2-0"><a class="link" href="#editing-a-note-code-edit-code-coming-in-v2-0">6.7. Editing a note: <code>edit</code> (Coming in v2.0)</a></h3>
+<div class="paragraph">
+<p>Edits a note&#8217;s title, content, or tags. The note will be referred to by their original title <code>ORIGINAL_TITLE</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user can specify one of the optional fields to edit.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit ORIGINAL_TITLE [t/TITLE] [c/CONTENT] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: edit Pipelining Definition t/Pipelined Definition tag/cs2100finals</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Edited Note:
+    Title: Pipelined Definition
+    Content: Pipelining is a process where a processor executes multiple processes simultaneously.
+    Tags: [cs2100finals]</pre>
 </div>
 </div>
 </li>
@@ -890,7 +1006,8 @@ Viewing raw note:
 <p>Adds a cheatSheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;.</p>
 </li>
 <li>
-<p>Flashcards and notes in StudyBuddyPro that have the specified tag will be pulled over to be used as content in the cheatsheet.</p>
+<p>Flashcards and notes in StudyBuddyPro that have the specified tag will be pulled over to be used as content in the
+cheatsheet.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: add t/TITLE [tag/TAG]...</pre>
@@ -916,6 +1033,23 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 <div class="sect2">
 <h3 id="editing-a-cheatsheet-code-edit-code"><a class="link" href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In EDITING (<code>edit</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All optional fields provided, except <code>tag/TAG</code>, will overwrite their relevant fields.</p>
+</li>
+<li>
+<p><code>tag/TAG</code> optional field, will be added to the flashcard, if they do not already exist.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Edits cheatSheet&#8217;s title, tag, content by a specified &lt;CHEATSHEET_INDEX&gt;.</p>
 </div>
@@ -948,10 +1082,12 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 <div class="sect2">
 <h3 id="deleting-a-cheatsheet-code-delete-code"><a class="link" href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
+<div class="paragraph">
 <p>Deletes a cheatSheet by the specified index.</p>
+</div>
+<div class="paragraph">
+<p>The user will be prompted once to confirm their deletion.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: delete (index)</pre>
@@ -964,13 +1100,24 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Expected output: Deleted Cheatsheet:  Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
+<pre>Expected output:
+    Are you sure you would like to delete the following cheatsheet?
+    Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
+    Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+        [ 2. 110 in Binary is 6 is Decimal ]
+    Hit enter again to confirm your deletion.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon hitting enter, then the specified cheatsheet will be deleted.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Deleted Cheatsheet:
+    Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
     Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
         [ 2. 110 in Binary is 6 is Decimal ]</pre>
 </div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect2">
@@ -994,7 +1141,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">7.5. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1035,46 +1182,42 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
-</div>
-<div class="paragraph">
-<p><strong>Q</strong>: Do I need to create a new tag before using the tag?<br>
-<strong>A</strong>: No, you do not need to. Tags, if not exist, are automatically created.</p>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">8. Command Summary</a></h2>
+<h2 id="faq"><a class="link" href="#faq">8. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>&lt;NOT INCLUDED IN DRAFT&gt;</p>
+<p><strong>Q</strong>: Help! Double-clicking <code>StudyBuddyPro.jar</code> does not launch the application - what
+should I do?<br>
+<strong>A</strong>: Trying running the application from the command line using the following command:
+<code>java -jar StudyBuddyPro.jar</code>. Windows users can use the Command Prompt application to
+do this while Mac users can use the Terminal application.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="mock-up-user-interface"><a class="link" href="#mock-up-user-interface">9. Mock-up User Interface</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">9. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/UiMockUp1.png" alt="UiMockUp1" width="790">
+<div class="paragraph">
+<p>{To be added}</p>
+</div>
+<div class="sect2">
+<h3 id="global-commands-2"><a class="link" href="#global-commands-2">9.1. Global Commands</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="flashcard-commands"><a class="link" href="#flashcard-commands">9.2. Flashcard Commands</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="note-commands"><a class="link" href="#note-commands">9.3. Note Commands</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="cheatsheet-commands"><a class="link" href="#cheatsheet-commands">9.4. CheatSheet Commands</a></h3>
+
 </div>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UiMockUp2.png" alt="UiMockUp2" width="790">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="draft-workflow-to-be-removed"><a class="link" href="#draft-workflow-to-be-removed">10. Draft Workflow (To-be-removed)</a></h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/WorkflowDraft.png" alt="WorkflowDraft" width="790">
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 15:56:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 08:09:41 UTC</div></div></div></body></html>
