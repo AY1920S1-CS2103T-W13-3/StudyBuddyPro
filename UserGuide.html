@@ -34,7 +34,8 @@
 <li><a href="#listing-flashcards-code-list-code">5.5. Listing flashcards: <code>list</code></a></li>
 <li><a href="#deleting-a-flashcard-code-delete-code">5.6. Deleting a flashcard: <code>delete</code></a></li>
 <li><a href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></li>
-<li><a href="#remind">5.8. Remind</a></li>
+<li><a href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></li>
+<li><a href="#remind">5.9. Remind</a></li>
 </ul>
 </li>
 <li><a href="#notes-feature">6. Notes Feature:</a>
@@ -44,7 +45,7 @@
 <li><a href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></li>
 <li><a href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></li>
 <li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code">6.6. Listing by tags: <code>filter</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></li>
 <li><a href="#editing-a-note-code-edit-code-coming-in-v2-0">6.7. Editing a note: <code>edit</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
@@ -54,7 +55,7 @@
 <li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></li>
 <li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></li>
 <li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-2">7.5. Listing by tags: <code>filter</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">8. FAQ</a></li>
@@ -283,7 +284,7 @@ CheatSheet: 7.
     Contents: [ 1. Pipelining is a process where a processor executes multiple processes simultaneously.]
         [ 2. Question: What is 101 Binary in its Decimal form?; Answer: 5 ]
 Note: 5.
-    Title: Pipelining Defition
+    Title: Pipelining Definition
     Content: Pipelining is a process where a processor executes multiple processes simultaneously.
     Tags: [cs2100]
 Note Fragment: 6-2.
@@ -302,7 +303,7 @@ For example,</p>
 </div>
 </div>
 <div class="paragraph">
-<p>will list all items that match at least one of the specified tags.</p>
+<p>will list all items that match all of the specified tags.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -553,16 +554,21 @@ Tags: [pop]</pre>
 <p>At least one tag must be specified.</p>
 </li>
 <li>
-<p>If more than one tag is specified, selects all flashcards that contains any of the specified tags.</p>
+<p>If more than one tag is specified, selects all flashcards that contains all of the specified tags.</p>
 </li>
 <li>
 <p>Default &lt;TIME&gt; will be 5 seconds.</p>
 </li>
 <li>
-<p>Answer will be flashed for 3 seconds.
-ts
-=== Listing by tags: <code>filter</code></p>
+<p>Answer will be flashed for 3 seconds.</p>
 </li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></h3>
+<div class="ulist">
+<ul>
 <li>
 <p>Filters the flashcard library by the user specified tag(s).</p>
 </li>
@@ -573,7 +579,7 @@ ts
 <p>The user is able to specify multiple tags.</p>
 </li>
 <li>
-<p>Flashcards that match at least one of the specified tags will be displayed.</p>
+<p>Flashcards that match all of the specified tags will be displayed.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: filter tag/TAG [tag/TAG]...</pre>
@@ -601,7 +607,7 @@ ts
 </div>
 </div>
 <div class="sect2">
-<h3 id="remind"><a class="link" href="#remind">5.8. Remind</a></h3>
+<h3 id="remind"><a class="link" href="#remind">5.9. Remind</a></h3>
 <div class="paragraph">
 <p>Reminds the user regarding the flashcards due for revision today and the flashcards
 overdue for revision. Automatically suggests a new date the flashcard should next be
@@ -904,7 +910,7 @@ visualize specific note fragment tags, use the <code>filter</code> command (see 
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">6.6. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -914,10 +920,10 @@ visualize specific note fragment tags, use the <code>filter</code> command (see 
 <p>The user must specify at least one tag, and can specify multiple tags.</p>
 </li>
 <li>
-<p>Notes that match at least one of the specified tags will be displayed.</p>
+<p>Notes that match all of the specified tags will be displayed.</p>
 </li>
 <li>
-<p>Note fragment tags containing at least one of the specified tags will also be displayed, even if their parent note is
+<p>Note fragment tags containing all of the specified tags will also be displayed, even if their parent note is
 not tagged.</p>
 <div class="literalblock">
 <div class="content">
@@ -1141,7 +1147,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">7.5. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1154,7 +1160,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 <p>The user is able to specify multiple tags.</p>
 </li>
 <li>
-<p>CheatSheets that match at least one of the specified tags will be displayed.</p>
+<p>CheatSheets that match all of the specified tags will be displayed.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: filter tag/TAG [tag/TAG]...</pre>
@@ -1220,4 +1226,4 @@ do this while Mac users can use the Terminal application.</p>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 15:32:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 15:49:05 UTC</div></div></div></body></html>
