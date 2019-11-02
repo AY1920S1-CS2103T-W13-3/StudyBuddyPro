@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>StudyBuddy Pro Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>StudyBuddyPro Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>StudyBuddy Pro Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>StudyBuddyPro Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team AY1920S1-CS2103T-W13-3</code></p>
@@ -34,7 +34,7 @@
 <li><a href="#customizable-auto-generated-cheatsheet-feature">4.4. Customizable Auto-generated Cheatsheet Feature</a></li>
 <li><a href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></li>
 <li><a href="#remind-flashcard-feature">4.6. Remind Flashcard Feature</a></li>
-<li><a href="#note-feature">4.7. Note feature</a></li>
+<li><a href="#add-tags-within-notes-feature">4.7. Add Tags Within Notes feature</a></li>
 <li><a href="#deletion-prompting-feature">4.8. Deletion prompting feature</a></li>
 </ul>
 </li>
@@ -65,19 +65,19 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to StudyBuddy Pro!</p>
+<p>Welcome to StudyBuddyPro!</p>
 </div>
 <div class="paragraph">
-<p>StudyBuddy Pro is a desktop-based application with a Graphical User Interface (GUI). It is intended for students in the School of Computing at National University of Singapore (NUS) who prefer to work with a Command Line Interface (CLI).</p>
+<p>StudyBuddyPro is a desktop-based application with a Graphical User Interface (GUI). It is intended for students in the School of Computing at National University of Singapore (NUS) who prefer to work with a Command Line Interface (CLI).</p>
 </div>
 <div class="paragraph">
-<p>StudyBuddy Pro aims to lessen target users' revision time consumption without compromising the quality of studies. The application provides a centralized platform for them to revise using flashcards, take notes and generate cheatsheets.</p>
+<p>StudyBuddyPro aims to lessen target users' revision time consumption without compromising the quality of studies. The application provides a centralized platform for them to revise using flashcards, take notes and generate cheatsheets.</p>
 </div>
 <div class="paragraph">
-<p>This Developer Guide (DG) is written for anyone who wishes to contribute to our project. In here, you will find StudyBuddy Pro&#8217;s information for set-ups, its architectures and its key features.</p>
+<p>This Developer Guide (DG) is written for anyone who wishes to contribute to our project. In here, you will find StudyBuddyPro&#8217;s information for set-ups, its architectures and its key features.</p>
 </div>
 <div class="paragraph">
-<p>If you wish to know more details about StudyBuddy Pro, please do not hesitate to contact us!</p>
+<p>If you wish to know more details about StudyBuddyPro, please do not hesitate to contact us!</p>
 </div>
 <div class="sect2">
 <h3 id="callouts-signs"><a class="link" href="#callouts-signs">1.1. Callouts Signs</a></h3>
@@ -199,7 +199,7 @@
 <h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Do refer to the guide <a href="SettingUp.html">here</a> to set up our StudyBuddy Pro on your device(s)!</p>
+<p>Do refer to the guide <a href="SettingUp.html">here</a> to set up our StudyBuddyPro on your device(s)!</p>
 </div>
 </div>
 </div>
@@ -207,12 +207,12 @@
 <h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following sections will show how StudyBuddy Pro is being constructed in details.</p>
+<p>The following sections will show how StudyBuddyPro is being constructed in details.</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="paragraph">
-<p>The <em>figure 1</em> below displays the high-level design of our StudyBuddy Pro.</p>
+<p>The <em>figure 1</em> below displays the high-level design of our StudyBuddyPro.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -360,7 +360,7 @@ In each mode, the users will interact with only the modes' commands, unless it i
 <div class="title">Figure 4. Sequence diagram of component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
-<p>The above sequence diagram illustrates the relationships between each components in the StudyBuddy Pro&#8217;s architecture. The sections below will give more details of each of those components.</p>
+<p>The above sequence diagram illustrates the relationships between each components in the StudyBuddyPro&#8217;s architecture. The sections below will give more details of each of those components.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1052,6 +1052,18 @@ Here is a brief summary of the steps taken to create the cheatsheet:</p>
 </div>
 <div class="sect2">
 <h3 id="flashcards-time-trial-feature"><a class="link" href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The following commands assume that the user is in the <em>flashcard</em> mode.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">4.5.1. Implementation</a></h4>
 <div class="olist loweralpha">
@@ -1071,7 +1083,7 @@ Here is a brief summary of the steps taken to create the cheatsheet:</p>
 <p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
 </li>
 <li>
-<p>Upon initialization of the StudyBuddy and switching to the Flashcard window, the StudyBuddyParser’s function enum will be set to parse ‘Flashcard’ commands.</p>
+<p>Upon initialization of the StudyBuddyPro and switching to the Flashcard window, the StudyBuddyParser’s function enum will be set to parse ‘Flashcard’ commands.</p>
 </li>
 <li>
 <p>The user executes (timetrial cs2100), and the StartTimeTrialCommand retrieves a List of flashcards with the associated tag through the Model#getTaggedFlashcards, which is then passed into the FlashcardTabWindowController.</p>
@@ -1195,6 +1207,18 @@ object.</p>
 </div>
 <div class="sect2">
 <h3 id="remind-flashcard-feature"><a class="link" href="#remind-flashcard-feature">4.6. Remind Flashcard Feature</a></h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The following commands assume that the user is in the <em>flashcard</em> mode.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>{To be completed soon}</p>
 </div>
@@ -1310,7 +1334,7 @@ or incorrectly to create a more dynamic reminding schedule.</p>
 application exit.</p>
 </li>
 <li>
-<p>User can either go back into StudyBuddy and view the relevant flashcards or supply an <code>exit</code> command again to
+<p>User can either go back into StudyBuddyPro and view the relevant flashcards or supply an <code>exit</code> command again to
 close the application.</p>
 </li>
 </ul>
@@ -1332,17 +1356,17 @@ deadline.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="note-feature"><a class="link" href="#note-feature">4.7. Note feature</a></h3>
+<h3 id="add-tags-within-notes-feature"><a class="link" href="#add-tags-within-notes-feature">4.7. Add Tags Within Notes feature</a></h3>
 <div class="paragraph">
-<p>Notes are used in the creation of CheatSheet objects as well as in general use of StudyBuddyPro.</p>
+<p><code>Notes</code> are used in the creation of <code>CheatSheet</code> objects as well as in general use of StudyBuddyPro. This Add Tags
+Within Notes feature allows for the addition of tags within the content of the <code>Note</code>, to allow more precise
+highlighting and tagging of information.</p>
 </div>
-<div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">4.7.1. Implementation</a></h4>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 All the operations assume that the user is in the <em>notes</em> mode.
@@ -1350,19 +1374,67 @@ All the operations assume that the user is in the <em>notes</em> mode.
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="design-implementation-of-notes"><a class="link" href="#design-implementation-of-notes">4.7.1. Design Implementation of Notes</a></h4>
 <div class="paragraph">
-<p>Notes contain a Title and some Content, with optional Tags, as shown in the diagram below:</p>
+<p><code>Notes</code> contain a <code>Title</code> and a <code>Content</code>, with optional <code>Tags</code> and <code>NoteFragments</code>, as shown in the diagram below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
 </div>
 </div>
+<div class="paragraph">
+<p><code>Notes</code> are <code>StudyBuddyItems</code>, and can contain any number of <code>NoteFragments</code>. <code>NoteFragment</code> objects are used to
+represent the specific areas within a <code>Note</code> that have been tagged. Each tag within a <code>Note</code> is referred to as a <strong>note
+fragment tag</strong> (which is represented by a <code>NoteFragment</code> object).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note fragment tags should not be confused with <code>Tags</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>NoteFragments</code> contain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>Title</code> that is the same as their parent <code>Note</code></p>
+</li>
+<li>
+<p>A <code>Content</code> that is a substring of their parent <code>Note</code></p>
+</li>
+<li>
+<p>Any indicated <code>Tags</code> that are independent of their parent <code>Note</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>NoteFragments</code> are viewed or used in the following situations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Viewable through the <code>filter</code> and <code>filterall</code> commands</p>
+</li>
+<li>
+<p>Usable through <code>add</code> commands in <em>cheatsheet</em> mode (see Section 4.4)</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">4.7.2. Usages of Notes</a></h4>
 <div class="paragraph">
-<p>Notes can be used to:</p>
+<p><code>Notes</code> can be used to:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1370,89 +1442,371 @@ All the operations assume that the user is in the <em>notes</em> mode.
 <p>Store information under a title</p>
 </li>
 <li>
-<p>Categorize information via the use of Tags</p>
+<p>Categorize information via the use of <code>Tags</code></p>
 </li>
 <li>
-<p>Provide information to CheatSheets for collation</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Notes can currently be:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Added to StudyBuddyBook</p>
-</li>
-<li>
-<p>Deleted from StudyBuddyBook</p>
-</li>
-<li>
-<p>Viewed from StudyBuddyBook</p>
-</li>
-<li>
-<p>Viewed with filter from StudyBuddyBook</p>
+<p>Provide information to <code>CheatSheets</code> for collation</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below describes the calls within the Model component upon the addition of a Note object:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/samDiagrams/AddNoteSequenceDiagram.png" alt="AddNoteSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>The two main steps of the process are:</p>
+<p><code>Notes</code> can currently be:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The parsing of a Command from the input String</p>
+<p>Added to <code>StudyBuddyBook</code></p>
 </li>
 <li>
-<p>The execution of the Command which alters Model</p>
+<p>Deleted from <code>StudyBuddyBook</code></p>
+</li>
+<li>
+<p>Viewed raw or cleaned from <code>StudyBuddyBook</code></p>
+</li>
+<li>
+<p>Viewed using <code>filter</code> from <code>StudyBuddyBook</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-note-content-tagging-feature"><a class="link" href="#proposed-note-content-tagging-feature">4.7.3. [Proposed] Note content tagging feature</a></h4>
+<h4 id="design-implementation-of-the-add-tags-within-notes-feature"><a class="link" href="#design-implementation-of-the-add-tags-within-notes-feature">4.7.3. Design Implementation of the Add Tags Within Notes feature</a></h4>
 <div class="paragraph">
-<p>The proposed feature involves the application of tags within the Note content.</p>
-</div>
-<div class="sect4">
-<h5 id="design-implementation"><a class="link" href="#design-implementation">Design Implementation</a></h5>
-<div class="paragraph">
-<p>This feature can be achieved by:</p>
+<p>The Add Tags Within Notes feature was implemented in the following way:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Including a user-inputted tag within portions of the Note content</p>
+<p>Creation of a <code>NoteFragment</code> class that represents one tag within a <code>Note</code></p>
 </li>
 <li>
-<p>Parsing for this content tag when filtering by tag</p>
+<p>Have each <code>Note</code> contain any number of <code>NoteFragments</code> in a list</p>
 </li>
 <li>
-<p>Listing these content fragments upon filtering by tag</p>
+<p>Upon addition of a <code>Note</code>, parse its <code>Content</code> to check for any note fragment tags within it</p>
+</li>
+<li>
+<p>Create any required <code>NoteFragment</code> objects and add them to the list in their parent <code>Note</code></p>
+</li>
+<li>
+<p>Since <code>NoteFragments</code> are contained within <code>Notes</code>, when a <code>Note</code> is deleted, its <code>NoteFragments</code> will be deleted as well.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are four main methods that involve <code>NoteFragments</code>. They are listed below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>: Used by <code>Note</code> to create <code>NoteFragments</code>.</p>
+</li>
+<li>
+<p><code>ModelManager#collectTaggedItems()</code>: Used in the <code>filterall</code> command.</p>
+</li>
+<li>
+<p><code>ModelManager#collectTaggedNotes()</code>: Used in the <em>notes</em> <code>filter</code> command.</p>
+</li>
+<li>
+<p><code>AddCheatSheetCommand#getRelevantContents()</code>: Used to generate <code>CheatSheets</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Out of these four methods, only <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code> is aware of the <code>NoteFragment</code> class.
+The other three methods are only aware of the <code>Note</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of these four methods is shown below:</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code"><a class="link" href="#implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code">Implementation of <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>:</a></h5>
+<div class="paragraph">
+<p>The method of parsing <code>Content</code> in <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code> relies on the use of <code>Prefixes</code>
+around each note fragment tag. Each note fragment tag is specified with a start ("/*") and end ("*/") marker, and
+its <code>Content</code> and <code>Tags</code> are also represented with the <code>Prefixes</code> 'C/' and 'TAG/'.</p>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+'C/' and 'TAG/' have to be used instead of the default 'c/' and 'tag/' because otherwise the note fragment tag would
+raise an error (since only one 'c/' tag is allowed per command).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New note added:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>Note</code> has been added with the <code>Content</code> of "Notes can be highlighted if needed.", and a note fragment tag with
+<code>Content</code> "highlighted" and two <code>Tags</code> "cs2100" and "important". Despite this, the <code>Note</code> itself is instead tagged
+with the <code>Tag</code> "about".</p>
+</div>
+<div class="paragraph">
+<p>When an <code>add</code> command is made:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only the <code>Prefixes</code> 't/', 'c/', and 'tag/' are identified and parsed.</p>
+</li>
+<li>
+<p>A <code>Note</code> is then created with the desired <code>Title</code>, <code>Content</code>, and <code>Tags</code>.</p>
+</li>
+<li>
+<p>After creation, the <code>Content</code> of the <code>Note</code> is parsed immediately for the <code>Prefixes</code> '/*', '*/', 'C/', and 'TAG/'
+.</p>
+</li>
+<li>
+<p>All four <code>Prefixes</code> must be present for the note fragment tag to be considered valid. Otherwise, an exception is
+thrown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below describes the process of adding a new note that contains a note fragment tag:</p>
+</div>
+<div class="paragraph">
+<p>&lt;INSERT SEQUENCE DIAGRAM HERE, and refer to it below&gt;</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-list-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-list-code-command">Implementation of <code>NoteFragments</code> in <code>list</code> command:</a></h5>
+<div class="paragraph">
+<p>When <code>Notes</code> are listed, <code>NoteFragments</code> do not appear in the list of resulting <code>Notes</code>. This is because the
+<code>ListCommand#execute()</code> method uses <code>ModelManager#updatedFilteredNoteList()</code>, which does not check for any
+<code>NoteFragments</code> within <code>Notes</code>. This is illustrated in the &lt;WHAT KIND OF&gt; diagram below:</p>
+</div>
+<div class="paragraph">
+<p>&lt;SOME DIAGRAM SHOWING CALLING OF LISTCOMMAND FOR NOTE - but is this necessary? Would need to refer to it after the text&gt;</p>
+</div>
+<div class="paragraph">
+<p>This decision is made because the <code>list</code> command already lists all <code>Notes</code>, and therefore it would be unnecessary to
+also list all <code>NoteFragments</code>, as <code>NoteFragments</code> form a subset of <code>Notes</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-filter-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filter-code-command">Implementation of <code>NoteFragments</code> in <code>filter</code> command:</a></h5>
+<div class="paragraph">
+<p>When <code>Notes</code> are filtered, the method <code>ModelManager#collectTaggedNotes()</code> is used, which checks for any valid tags in
+<code>NoteFragments</code> within the <code>Note</code> as it checks each <code>Note</code>.</p>
+</div>
+<div class="paragraph">
+<p>However, <code>ModelManager</code> uses the method <code>Note#getFilteredNoteFragments()</code> to achieve this, and therefore is not
+aware of the existence of <code>NoteFragments</code>. This is illustrated in the &lt;WHAT KIND OF&gt; diagram below:</p>
+</div>
+<div class="paragraph">
+<p>&lt;SOME DIAGRAM SHOWING CALLING OF FILTERCOMMAND FOR NOTE - but is this necessary? Would need to refer to it after the
+text&gt;</p>
+</div>
+<div class="paragraph">
+<p>This diagram can be contrasted with the &lt;WHICH NUMBER?&gt; diagram above, which uses a different method &lt;DESCRIBE&gt; that
+does not account for <code>NoteFragments</code>.</p>
+</div>
+<div class="paragraph">
+<p>The separation between <code>Notes</code> and <code>NoteFragments</code> in the <code>filter</code> command allows for more finely-tuned viewing of
+specific tagged details. For instance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A small portion of a long <code>Note</code> can be tagged out as 'important'.</p>
+</li>
+<li>
+<p>Different parts of the same <code>Note</code> can be given different <code>Tags</code> like 'CS2103T' or 'CS2100', even as the entire
+<code>Note</code> is tagged under a larger category like 'CS'.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="usages-of-feature"><a class="link" href="#usages-of-feature">Usages of feature</a></h5>
+<h5 id="implementation-of-code-notefragments-code-in-code-filterall-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filterall-code-command">Implementation of <code>NoteFragments</code> in <code>filterall</code> command:</a></h5>
+<div class="paragraph">
+<p>When all <code>StudyBuddyItems</code> are filtered, the method <code>ModeManager#collectTaggedItems()</code> is used, which performs a
+similar task to <code>ModelManager#collectTaggedNotes()</code>, but also collects <code>Flashcard</code> and <code>CheatSheet</code> objects as well.
+The reasoning for this decision is similar to that in the <code>filter</code> command.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code"><a class="link" href="#implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code">Implementation of <code>NoteFragments</code> in <code>add</code> command in <code>CheatSheets</code>:</a></h5>
+<div class="paragraph">
+<p>When a <code>CheatSheet</code> is created, the method <code>AddCheatSheetCommand#getRelevantContent()</code> is used to filter out all
+<code>Notes</code> and <code>NoteFragments</code> that contain the specified <code>Tags</code>. Again, <code>AddCheatSheetCommand</code> uses the method
+<code>Note#getFilteredNoteFragments()</code> to obtain the filtered list of <code>NoteFragments</code>, and is therefore unaware of the
+existence of <code>NoteFragment</code>.</p>
+</div>
+<div class="paragraph">
+<p>Since the <code>Tags</code> stored in <code>Notes</code> and <code>NoteFragments</code> are independent of each other, they are filtered in the same
+way as in the <code>filter</code> command. As a result, it is possible for a <code>NoteFragment</code> to be included in a <code>CheatSheet</code>
+even when its parent <code>Note</code> is not.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-of-the-add-tags-within-notes-feature"><a class="link" href="#design-considerations-of-the-add-tags-within-notes-feature">4.7.4. Design Considerations of the Add Tags Within Notes feature</a></h4>
+<div class="sect4">
+<h5 id="aspect-container-location-for-code-notefragment-code"><a class="link" href="#aspect-container-location-for-code-notefragment-code">Aspect: Container location for <code>NoteFragment</code></a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>More precise inclusion of tags when creating CheatSheet objects</p>
+<p>Alternative 1 (current choice): Each <code>Note</code> contains a <code>List&lt;NoteFragment&gt;</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Much easier maintenance, since <code>NoteFragments</code> are automatically deleted with the deletion of their parent
+<code>Note</code>.</p>
 </li>
 <li>
-<p>Ability to nest tags inside each other</p>
+<p>Cons: O(n<sup>2</sup>) search time for <code>filter</code> commands, as all <code>NoteFragments</code> in each <code>Note</code> in the <code>UniqueNoteList</code>
+must be searched through to filter them out.</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Separate <code>UniqueNoteFragmentList</code> from <code>UniqueNoteList</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: O(n) search time for <code>filter</code> commands, as the <code>UniqueNoteFragmentList</code> exists separately from the
+<code>UniqueNoteList</code>.</p>
+</li>
+<li>
+<p>Cons: Difficult to maintain; deletion of a parent Note requires searching the <code>UniqueNoteFragmentList</code> for any
+child <code>NoteFragments</code> to delete as well.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usages-of-the-add-tags-within-notes-feature"><a class="link" href="#usages-of-the-add-tags-within-notes-feature">4.7.5. Usages of the Add Tags Within Notes feature</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Use in <code>filter</code> and <code>filterall</code> to make the GUI less cluttered</p>
+</li>
+<li>
+<p>Use in <code>filter</code> to highlight specific sections of <code>Notes</code></p>
+</li>
+<li>
+<p>Use in <code>add</code> for <code>CheatSheets</code> for more parsimonious usage of space</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements-for-v2-0"><a class="link" href="#proposed-future-improvements-for-v2-0">4.7.6. (Proposed) Future Improvements for v2.0</a></h4>
+<div class="sect4">
+<h5 id="code-edit-code-command-for-code-notes-code"><a class="link" href="#code-edit-code-command-for-code-notes-code"><code>edit</code> command for <code>Notes</code></a></h5>
+<div class="paragraph">
+<p>This feature will allow for users to edit their <code>Notes</code>, by specifying a new <code>Title</code>, <code>Content</code>, or <code>Tags</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="proposed-implementation"><a class="link" href="#proposed-implementation">(Proposed) Implementation</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Expected inputs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The original <code>Title</code> of the <code>Note</code> to be edited</p>
+</li>
+<li>
+<p>One or more fields that the user wants to edit</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create an <code>EditCommandParser</code> to parse the input command using <code>ArgumentTokenizer</code></p>
+</li>
+<li>
+<p>Create an <code>EditCommand</code> which contains <code>EditCommand#execute()</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This method creates a new <code>Note</code> which contains all old fields, then replaces any old field with a new field, if
+it is made available</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>edit Old Title t/New Title</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This would result in the <code>Note</code> which was originally called 'Old Title' having its <code>Title</code> changed to 'New Title'.
+Since no two <code>Notes</code> are allowed to have the same <code>Title</code>, it is a unique identifier of the <code>Note</code> to be edited.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-method-of-editing"><a class="link" href="#aspect-method-of-editing">Aspect: Method of editing</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1: Create a new <code>Note</code> object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Is more defensive, since only a shallow copy of the <code>Note</code> object is returned.</p>
+</li>
+<li>
+<p>Cons: Longer command run time, as a new <code>Note</code> object needs to be created first, and then edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Edit the exiting <code>Note</code> object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Command will run faster, since no new <code>Note</code> object needs to be created.</p>
+</li>
+<li>
+<p>Cons: Is not defensively programmed, as <code>Notes</code> should be immutable.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1464,7 +1818,7 @@ All the operations assume that the user is in the <em>notes</em> mode.
 successfully delete the specified item.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">4.8.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">4.8.1. Implementation</a></h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1510,7 +1864,7 @@ The deletion prompting applies to all three modes in StudyBuddyPro.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.8.3. Design considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.8.3. Design considerations</a></h4>
 <div class="paragraph">
 <p>Aspect : Deletion prompts versus Undo feature.</p>
 </div>
@@ -1847,7 +2201,7 @@ The following is an example of an appendix heading.</p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>StudyBuddy</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>StudyBuddyPro</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="strong-user-story-1-strong" class="discrete"><strong>User story 1:</strong></h3>
 <div class="paragraph">
@@ -1908,7 +2262,7 @@ generation feature will help me save time on creating cheatsheets and let me spe
 <p>User chooses to list all cheatsheet.</p>
 </li>
 <li>
-<p>StudyBuddy displays all cheatsheets.</p>
+<p>StudyBuddyPro displays all cheatsheets.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1917,7 +2271,7 @@ generation feature will help me save time on creating cheatsheets and let me spe
 </div>
 <h3 id="use-case-uc03-edit-a-cheatsheet" class="discrete">Use case: UC03 – Edit a cheatsheet</h3>
 <div class="paragraph">
-<p>Preconditions: StudyBuddy application is opened, User knows cheatsheet ID</p>
+<p>Preconditions: StudyBuddyPro application is opened, User knows cheatsheet ID</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1925,25 +2279,25 @@ generation feature will help me save time on creating cheatsheets and let me spe
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User navigates to cheetsheat section.</p>
+<p>User navigates to cheetsheet section.</p>
 </li>
 <li>
 <p>User chooses to edit cheatsheet.</p>
 </li>
 <li>
-<p>StudyBuddy asks for cheatsheet ID for cheatsheet to be edited.</p>
+<p>StudyBuddyPro asks for cheatsheet ID for cheatsheet to be edited.</p>
 </li>
 <li>
 <p>User inputs cheatsheet ID.</p>
 </li>
 <li>
-<p>StudyBuddy asks for parameters to be edited.</p>
+<p>StudyBuddyPro asks for parameters to be edited.</p>
 </li>
 <li>
 <p>User inputs perimeters to be edited.</p>
 </li>
 <li>
-<p>StudyBuddy displays edited cheatsheet.</p>
+<p>StudyBuddyPro displays edited cheatsheet.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1952,7 +2306,7 @@ generation feature will help me save time on creating cheatsheets and let me spe
 </div>
 <h3 id="use-case-uc04-view-a-cheatsheet" class="discrete">Use case: UC04 – View a cheatsheet</h3>
 <div class="paragraph">
-<p>Preconditions: StudyBuddy application is opened, User knows cheatsheet ID</p>
+<p>Preconditions: StudyBuddyPro application is opened, User knows cheatsheet ID</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1966,13 +2320,13 @@ generation feature will help me save time on creating cheatsheets and let me spe
 <p>User chooses to view cheatsheet.</p>
 </li>
 <li>
-<p>StudyBuddy asks for cheatsheet ID for cheatsheet to be viewed.</p>
+<p>StudyBuddyPro asks for cheatsheet ID for cheatsheet to be viewed.</p>
 </li>
 <li>
 <p>User inputs cheatsheet ID.</p>
 </li>
 <li>
-<p>StudyBuddy displays cheatsheet.</p>
+<p>StudyBuddyPro displays cheatsheet.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2023,10 +2377,10 @@ Use case ends.</p>
 </div>
 <h3 id="use-case-uc05-create-a-flashcard-from-image" class="discrete">Use case: UC05 – Create a flashcard from image</h3>
 <div class="paragraph">
-<p>Software system: StudyBuddy, OS</p>
+<p>Software system: StudyBuddyPro, OS</p>
 </div>
 <div class="paragraph">
-<p>Preconditions: StudyBuddy application is opened</p>
+<p>Preconditions: StudyBuddyPro application is opened</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2043,10 +2397,10 @@ Use case ends.</p>
 <p>OS asks user where screenshot should be saved.</p>
 </li>
 <li>
-<p>User saves screenshot in designated StudyBuddy image folder with custom name.</p>
+<p>User saves screenshot in designated StudyBuddyPro image folder with custom name.</p>
 </li>
 <li>
-<p>User opens StudyBuddy application.</p>
+<p>User opens StudyBuddyPro application.</p>
 </li>
 <li>
 <p>User navigates to flashcard section.</p>
@@ -2055,31 +2409,31 @@ Use case ends.</p>
 <p>User chooses to create new flashcard from image source.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for file name.</p>
+<p>StudyBuddyPro asks user for file name.</p>
 </li>
 <li>
 <p>User inputs file name.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for flashcard’s answer.</p>
+<p>StudyBuddyPro asks user for flashcard’s answer.</p>
 </li>
 <li>
 <p>User inputs flashcard’s answer.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for flashcard’s title.</p>
+<p>StudyBuddyPro asks user for flashcard’s title.</p>
 </li>
 <li>
 <p>User inputs flashcard’s title.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for flashcard’s module.</p>
+<p>StudyBuddyPro asks user for flashcard’s module.</p>
 </li>
 <li>
 <p>User inputs flashcard’s module.</p>
 </li>
 <li>
-<p>StudyBuddy displays created flashcard.</p>
+<p>StudyBuddyPro displays created flashcard.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2156,19 +2510,19 @@ Use case resumes from step 16.</p>
 <p>User chooses to start time trial.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for time per flashcard.</p>
+<p>StudyBuddyPro asks user for time per flashcard.</p>
 </li>
 <li>
 <p>User inputs time per flashcard.</p>
 </li>
 <li>
-<p>StudyBuddy asks user for tags to select flashcards for inclusion.</p>
+<p>StudyBuddyPro asks user for tags to select flashcards for inclusion.</p>
 </li>
 <li>
 <p>User inputs tags.</p>
 </li>
 <li>
-<p>StudyBuddy starts time trial with specified parameters.</p>
+<p>StudyBuddyPro starts time trial with specified parameters.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2393,4 +2747,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 20:12:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 20:22:19 UTC</div></div></div></body></html>
