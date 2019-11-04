@@ -9,7 +9,11 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#callouts-signs">1.1. Callouts Signs</a></li>
+</ul>
+</li>
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#command-format-rules">3. Command Format / Rules</a>
 <ul class="sectlevel2">
@@ -52,11 +56,14 @@
 </li>
 <li><a href="#cheatsheet-feature">7. CheatSheet Feature:</a>
 <ul class="sectlevel2">
-<li><a href="#creating-a-cheatsheet-code-add-code">7.1. Creating a cheatSheet: <code>add</code></a></li>
-<li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></li>
-<li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></li>
-<li><a href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></li>
+<li><a href="#creating-a-cheatsheet-code-add-code">7.1. Creating a Cheatsheet: <code>add</code></a></li>
+<li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a Cheatsheet: <code>edit</code></a></li>
+<li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a Cheatsheet: <code>delete</code></a></li>
+<li><a href="#viewing-cheatsheets-code-view-code">7.4. Viewing Cheatsheets: <code>view</code></a></li>
+<li><a href="#viewing-cheatsheets-of-specific-tag-code-show-code">7.5. Viewing Cheatsheets of Specific Tag: <code>show</code></a></li>
+<li><a href="#listing-cheatsheets-code-list-code">7.6. Listing Cheatsheets: <code>list</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-3">7.7. Listing by tags: <code>filter</code></a></li>
+<li><a href="#updating-a-cheatsheet-code-update-code-coming-in-v2-0">7.8. Updating a Cheatsheet: <code>update</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
 <li><a href="#faq">8. FAQ</a></li>
@@ -93,6 +100,68 @@ the benefits of a fast typing speed, give StudyBuddyPro a try! {To be implemente
 <p>If you&#8217;re interested, head over to the
 <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#2-quick-start">Quick Start</a>
 section to get started!</p>
+</div>
+<div class="sect2">
+<h3 id="callouts-signs"><a class="link" href="#callouts-signs">1.1. Callouts Signs</a></h3>
+<div class="paragraph">
+<p>Do refer to the signs below that will be used across the documents for references. These will prove to be useful when you are reading this document.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are to be adhere as potential problems may be encountered if you are not careful.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are crucial to understand so that you will be able to follow the flow of the document. Confusion may arise if you do not grasp the information here.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are note-worthy. Do read them for more information and better understandings.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates additional information that are helpful. Fret not, tips can be good to know but are not vital.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -1055,92 +1124,157 @@ Edited Note:
 <div class="sect1">
 <h2 id="cheatsheet-feature"><a class="link" href="#cheatsheet-feature">7. CheatSheet Feature:</a></h2>
 <div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All the operations in this section assume that the user is in the <em>cheatsheet</em> mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>tag::cheatsheetAdd[]</p>
+</div>
 <div class="sect2">
-<h3 id="creating-a-cheatsheet-code-add-code"><a class="link" href="#creating-a-cheatsheet-code-add-code">7.1. Creating a cheatSheet: <code>add</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds a cheatSheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;.</p>
-</li>
-<li>
-<p>Flashcards and notes in StudyBuddyPro that have the specified tag will be pulled over to be used as content in the
-cheatsheet.</p>
+<h3 id="creating-a-cheatsheet-code-add-code"><a class="link" href="#creating-a-cheatsheet-code-add-code">7.1. Creating a Cheatsheet: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a cheatsheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;. Flashcards and notes in StudyBuddyPro that have the specified tag will be used as contents in the cheatsheet.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: add t/TITLE [tag/TAG]...</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Example usage: add t/CS2100 Midterm CheatSheet tag/cs2100midterm</pre>
-</div>
+<div class="paragraph">
+<p>Example usage:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Expected output: New cheatsheet added:
+<pre>add t/CS2100 Midterm CheatSheet tag/cs2100midterm</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Assuming that there is a flashcard object with the tag "cs2100midterm"</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New cheatsheet added:
 Title: CS2100 Midterm CheatSheet
 Tags: [cs2100midterm]
-Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
-    [ 2. 110 in Binary is 6 in Decimal ]</pre>
+1 content(s) have been successfully generated from the other modes.</pre>
 </div>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>end::cheatsheetAdd[]
+tag::cheatsheetEdit[]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-cheatsheet-code-edit-code"><a class="link" href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a cheatSheet: <code>edit</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>In EDITING (<code>edit</code>):</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All optional fields provided, except <code>tag/TAG</code>, will overwrite their relevant fields.</p>
-</li>
-<li>
-<p><code>tag/TAG</code> optional field, will be added to the flashcard, if they do not already exist.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<h3 id="editing-a-cheatsheet-code-edit-code"><a class="link" href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a Cheatsheet: <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits cheatSheet&#8217;s title, tag, content by a specified &lt;CHEATSHEET_INDEX&gt;.</p>
+<p>Edits cheatsheet&#8217;s title, tag, content by a specified &lt;CHEATSHEET_INDEX&gt;. At least one of the optional fields must be specified to edit.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The user can specify one of the optional fields to edit.</p>
 <div class="literalblock">
 <div class="content">
 <pre>Format: edit (index) [t/TITLE] [tag/TAG]...</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Example usage: edit 8 t/cs2100 final cheatsheet tag/cs2100finals</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Expected output: Edited Cheatsheet:
-    Title: cs2100 final cheatsheet
-    Tags: [cs2100finals]
-    Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
-        [ 2. 110 in Binary is 6 is Decimal ]</pre>
-</div>
-</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Only <code>t/TITLE</code> optional field will overwrite its field.</p>
+</li>
+<li>
+<p>All other optional fields will remove itsn existing content(s).</p>
+</li>
+<li>
+<p>Any invalid <code>c/CONTENT_INDEX</code> or <code>tag/TAG</code> will be <strong>ignored</strong>.</p>
 </li>
 </ul>
 </div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example CheatSheet of index 8:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Title: cs2100 cheatsheet
+Tags: [cs2100finals][formula]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+          [ 2. 10 + 10 = 20]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>edit 8 t/cs2100 final cheatsheet tag/formula</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The actual implementation does not show the contents in the feedback box. Please do use <code>view</code> command to view them!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Edited Cheatsheet:
+Title: cs2100 final cheatsheet
+Tags: [cs2100finals]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>end::cheatsheetEdit[]</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-cheatsheet-code-delete-code"><a class="link" href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a cheatSheet: <code>delete</code></a></h3>
+<h3 id="deleting-a-cheatsheet-code-delete-code"><a class="link" href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a Cheatsheet: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes a cheatSheet by the specified index.</p>
+<p>Deletes a cheatsheet by the specified index.</p>
 </div>
 <div class="paragraph">
 <p>The user will be prompted once to confirm their deletion.</p>
@@ -1176,33 +1310,143 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
         [ 2. 110 in Binary is 6 is Decimal ]</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>tag::cheatsheetView[]</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.4. Listing cheatSheets: <code>list</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Lists all cheatSheets found in StudyBuddyPro.</p>
+<h3 id="viewing-cheatsheets-code-view-code"><a class="link" href="#viewing-cheatsheets-code-view-code">7.4. Viewing Cheatsheets: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views a cheatsheet by the specified index.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: view (index)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example CheatSheet of index 1:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Title: cs2100 cheatsheet
+Tags: [cs2100finals][important]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+          [ 2. 10 + 10 = 20]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>view 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/ssForViewUG.png" alt="ssForViewUG">
+</div>
+<div class="title">Figure 1. Screenshot for <code>view 1</code> expected output</div>
+</div>
+<div class="paragraph">
+<p>The above screenshot shows the cheatsheet with index 1 in the GUI of StudyBuddyPro.</p>
+</div>
+<div class="paragraph">
+<p>end::cheatsheetView[]</p>
+</div>
+<div class="paragraph">
+<p>tag::cheatsheetViewSpecific[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-cheatsheets-of-specific-tag-code-show-code"><a class="link" href="#viewing-cheatsheets-of-specific-tag-code-show-code">7.5. Viewing Cheatsheets of Specific Tag: <code>show</code></a></h3>
+<div class="paragraph">
+<p>Views a cheatsheet&#8217;s content for a specified tag. User must be in a <code>view</code> command before using <code>show</code> command.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: show (index)</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Assuming user is in the <code>view 1</code> command from above example in <code>view</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>show 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Currently, cheatsheets only allow contents that match all the specified tags. Hence, <code>show</code> command will only show color toggling at the tags segment at the moment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/jasmineDiagrams/ssForViewSpecificUG.png" alt="ssForViewSpecificUG">
+</div>
+<div class="title">Figure 2. Screenshot for <code>show 1</code> expected output</div>
+</div>
+<div class="paragraph">
+<p>The above screenshot shows the cheatsheet&#8217;s content with tag index 1 in the GUI of StudyBuddyPro.</p>
+</div>
+<div class="paragraph">
+<p>end::cheatsheetViewSpecific[]</p>
+</div>
+<div class="paragraph">
+<p>tag::cheatsheetList[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.6. Listing Cheatsheets: <code>list</code></a></h3>
+<div class="paragraph">
+<p>Lists all cheatsheets found in StudyBuddyPro.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: list</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Expected output: a complete list of all cheatSheets currently in StudyBuddyPro</pre>
-</div>
-</div>
-</li>
-</ul>
+<div class="paragraph">
+<p>end::cheatsheetList[]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.5. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.7. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Filters the cheatSheet library by the user specified tag(s).</p>
+<p>Filters the cheatsheet library by the user specified tag(s).</p>
 </li>
 <li>
 <p>The user must specify at least one tag.</p>
@@ -1224,7 +1468,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Expeted output: Filter cheatSheets by tag(s) :
+<pre>Expeted output: Filter cheatsheet by tag(s) :
     [difficult]
     2. Title: Tough Math
         Tags: [difficult][math]
@@ -1238,6 +1482,115 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>tag::cheatsheetUpdate[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-cheatsheet-code-update-code-coming-in-v2-0"><a class="link" href="#updating-a-cheatsheet-code-update-code-coming-in-v2-0">7.8. Updating a Cheatsheet: <code>update</code> (Coming in v2.0)</a></h3>
+<div class="paragraph">
+<p>Updates cheatsheet&#8217;s contents by a specified &lt;CHEATSHEET_INDEX&gt;. Tags specified are added into the list of tags for the cheatsheet if it not already exist.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This command may overwrite any customization of contents done prior to it as the cheatsheet&#8217;s contents will be regenerated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: update (index) [tag/TAG]...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example CheatSheet of index 8:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Title: cs2100 cheatsheet
+Tags: [cs2100finals]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage 1:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>update 8</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The actual implementation does not show the contents in the feedback box. Please do use <code>view</code> command to view them!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Updated Cheatsheet:
+Title: cs2100 final cheatsheet
+Tags: [cs2100finals]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+          [ 2. Binary is in bits of 1 and 0.]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage 2:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>update 8 tag/formula</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The actual implementation does not show the contents in the feedback box. Please do use <code>view</code> command to view them!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Updated Cheatsheet:
+Title: cs2100 final cheatsheet
+Tags: [cs2100finals][formula]
+Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
+          [ 2. 10 + 10 = 20]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>end::cheatsheetUpdate[]</p>
 </div>
 </div>
 </div>
@@ -1277,4 +1630,4 @@ do this while Mac users can use the Terminal application.</p>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 13:14:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 04:13:32 UTC</div></div></div></body></html>
