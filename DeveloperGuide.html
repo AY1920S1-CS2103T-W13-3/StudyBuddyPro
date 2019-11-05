@@ -33,30 +33,6 @@
 <li><a href="#tagging-feature">4.3. Tagging Feature</a></li>
 <li><a href="#customizable-auto-generated-cheatsheet-feature">4.4. Customizable Auto-generated Cheatsheet Feature</a></li>
 <li><a href="#flashcards-time-trial-feature">4.5. Flashcards Time Trial Feature</a></li>
-<li><a href="#remind-feature">4.6. Remind Feature</a></li>
-<li><a href="#add-tags-within-notes-feature">4.7. Add Tags Within Notes feature</a></li>
-<li><a href="#deletion-prompting-feature">4.8. Deletion prompting feature</a></li>
-</ul>
-</li>
-<li><a href="#documentation">5. Documentation</a></li>
-<li><a href="#testing">6. Testing</a></li>
-<li><a href="#dev-ops">7. Dev Ops</a></li>
-<li><a href="#appendixes">8. Appendixes</a></li>
-<li><a href="#product-scope">Appendix A: Product Scope</a></li>
-<li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a>
-<ul class="sectlevel2">
-<li><a href="#use-case-user-story-1">C.1. Use case: User story 1</a></li>
-</ul>
-</li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
-<li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
-<ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#saving-data">G.2. Saving data</a></li>
-<li><a href="#remind-feature-2">G.3. Remind feature</a></li>
 </ul>
 </li>
 </ul>
@@ -1082,8 +1058,37 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 </div>
 </li>
 <li>
-<p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 </li>
+<li>
+<p>Upon initialization of the StudyBuddy and switching to the Flashcard window, the <code>StudyBuddyParser</code>’s function enum will be set to parse <code>Flashcard</code> commands.</p>
+</li>
+<li>
+<p>The user executes (timetrial cs2100), and the <code>StartTimeTrialCommand</code> retrieves a List of flashcards with the associated <code>Tag</code> through the <code>Model#getTaggedFlashcards</code>, which is then passed into the <code>FlashcardTabWindowController</code>.</p>
+</li>
+<li>
+<p>The <code>FlashcardTabWindowController</code> then calls the <code>FlashcardTabWindowController#startTimeTrial</code>, which in turns construct a <code>Timeline</code> with the following added for 3 flashcards:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <code>KeyFrame</code> to call the <code>FlashcardTabWindowController#loadTimeTrial</code> method, which displays the question of the flashcard on the window, with a <code>KeyValue</code> that starts the timer on the screen.</p>
+</li>
+<li>
+<p>A <code>KeyFrame</code> to call the <code>FlashcardTabWindowController#showFlashcardAns</code> method, which hides the Timer and flashes the answer of the flashcard for a set period of time.</p>
+</li>
+<li>
+<p>A <code>KeyFrame</code> is then added to the timeline to call the <code>FlashcardTabWindowController#resetViews</code> method, which in turn empties the qnsTextArea and ansTextArea. [TO BE REFORMATTED]</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Upon initialization of the StudyBuddyPro and switching to the Flashcard window, the StudyBuddyParser’s function enum will be set to parse ‘Flashcard’ commands.</p>
 </li>
@@ -1101,18 +1106,18 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <p>A KeyFrame to call the FlashcardTabWindowController#showFlashcardAns method, which hides the Timer and flashes the answer of the flashcard for a set period of time.</p>
 </li>
 <li>
-<p>A KeyFrame is then added to the timeline to call the FlashcardTabWindowController#resetViews method, which in turn empties the qnsTextArea and ansTextArea. [TO BE REFORMATTED]</p>
+<p>A KeyFrame is then added to the timeline to call the FlashcardTabWindowController#resetViews method, which in turn empties the qnsTextArea and ansTextArea. [TO BE REFORMATTED]
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 2f14b0f5e65dd517771fb347a728b47747a2b690</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>==== Design Considerations
+===== Aspect: How the timetrial is implemented</p>
 </div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.5.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-the-timetrial-is-implemented"><a class="link" href="#aspect-how-the-timetrial-is-implemented">Aspect: How the timetrial is implemented</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1130,7 +1135,7 @@ object.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Looping Thread.sleep() to set the timer</p>
+<p><strong>Alternative 2:</strong> Looping <code>Thread.sleep()</code> to set the timer</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1144,9 +1149,9 @@ object.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>===== Aspect: How to continue the time trial</p>
 </div>
-<div class="sect4">
-<h5 id="aspect-how-to-continue-the-time-trial"><a class="link" href="#aspect-how-to-continue-the-time-trial">Aspect: How to continue the time trial</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1177,38 +1182,16 @@ object.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== [Proposed] Future improvements
+<strong> Allowing users to set their own time limit for each flashcard in the time trial mode
+</strong>* Command will be inputted to set the duration of the timer for each flashcard
+<strong> Allowing users to decide when to move on to the next flashcard
+</strong>* Question will still be shown for a fixed period of time, but a command will be required to move on to the next flashcard instead of just flashing the answer for a set amount of time</p>
 </div>
+<div class="paragraph">
+<p>=== Remind Feature</p>
 </div>
-<div class="sect3">
-<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future improvements</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Allowing users to set their own time limit for each flashcard in the time trial mode</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Command will be inputted to set the duration of the timer for each flashcard</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Allowing users to decide when to move on to the next flashcard</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Question will still be shown for a fixed period of time, but a command will be required to move on to the next flashcard instead of just flashing the answer for a set amount of time</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="remind-feature"><a class="link" href="#remind-feature">4.6. Remind Feature</a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1246,8 +1229,9 @@ An activity diagram summarizing how the remind feature works can be found below.
 </dd>
 </dl>
 </div>
-<div class="sect3">
-<h4 id="implementation-of-code-remind-code-command"><a class="link" href="#implementation-of-code-remind-code-command">4.6.1. Implementation of <code>remind</code> command</a></h4>
+<div class="paragraph">
+<p>==== Implementation of <code>remind</code> command</p>
+</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1268,13 +1252,10 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <img src="images/remindDiagrams/RemindFeatureRelevantClassDiagram.png" alt="RemindFeatureRelevantClassDiagram">
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.6.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was"><a class="link" href="#aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was">Aspect: Implementation of utility attributes or classes to keep track of number of times a <code>Flashcard</code> object was</a></h5>
 <div class="paragraph">
-<p>viewed.</p>
+<p>==== Design Considerations
+===== Aspect: Implementation of utility attributes or classes to keep track of number of times a <code>Flashcard</code> object was
+viewed.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1308,9 +1289,9 @@ attribute.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>===== Aspect:</p>
 </div>
-<div class="sect4">
-<h5 id="aspect"><a class="link" href="#aspect">Aspect:</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1341,23 +1322,14 @@ attribute.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.3. [Proposed] Future improvements</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Improved formula for reminding</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Take into account other factors such as user confidence level or number of times flashcard was answered correctly
+<div class="paragraph">
+<p>==== [Proposed] Future improvements
+<strong> Improved formula for reminding
+</strong>* Take into account other factors such as user confidence level or number of times flashcard was answered correctly
 or incorrectly to create a more dynamic reminding schedule.</p>
-</li>
-</ul>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Link to <code>exit</code> command</p>
 <div class="ulist">
@@ -1389,14 +1361,12 @@ deadline.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Implementation of <code>exit</code> command</p>
 </div>
-<div class="sect3">
-<h4 id="implementation-of-code-exit-code-command"><a class="link" href="#implementation-of-code-exit-code-command">4.6.4. Implementation of <code>exit</code> command</a></h4>
-
+<div class="paragraph">
+<p>=== Add Tags Within Notes feature</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="add-tags-within-notes-feature"><a class="link" href="#add-tags-within-notes-feature">4.7. Add Tags Within Notes feature</a></h3>
 <div class="paragraph">
 <p><code>Notes</code> are used in the creation of <code>CheatSheet</code> objects as well as in general use of StudyBuddyPro. This Add Tags
 Within Notes feature allows for the addition of tags within the content of the <code>Note</code>, to allow more precise
@@ -1414,8 +1384,9 @@ All the operations assume that the user is in the <em>notes</em> mode.
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="design-implementation-of-notes"><a class="link" href="#design-implementation-of-notes">4.7.1. Design Implementation of Notes</a></h4>
+<div class="paragraph">
+<p>==== Design Implementation of Notes</p>
+</div>
 <div class="paragraph">
 <p><code>Notes</code> contain a <code>Title</code> and a <code>Content</code>, with optional <code>Tags</code> and <code>NoteFragments</code>, as shown in the diagram below:</p>
 </div>
@@ -1470,9 +1441,9 @@ Note fragment tags should not be confused with <code>Tags</code>.
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Usages of Notes</p>
 </div>
-<div class="sect3">
-<h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">4.7.2. Usages of Notes</a></h4>
 <div class="paragraph">
 <p><code>Notes</code> can be used to:</p>
 </div>
@@ -1508,9 +1479,9 @@ Note fragment tags should not be confused with <code>Tags</code>.
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Design Implementation of the Add Tags Within Notes feature</p>
 </div>
-<div class="sect3">
-<h4 id="design-implementation-of-the-add-tags-within-notes-feature"><a class="link" href="#design-implementation-of-the-add-tags-within-notes-feature">4.7.3. Design Implementation of the Add Tags Within Notes feature</a></h4>
 <div class="paragraph">
 <p>The Add Tags Within Notes feature was implemented in the following way:</p>
 </div>
@@ -1559,8 +1530,9 @@ The other three methods are only aware of the <code>Note</code> class.</p>
 <div class="paragraph">
 <p>The implementation of these four methods is shown below:</p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code"><a class="link" href="#implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code">Implementation of <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>:</a></h5>
+<div class="paragraph">
+<p>===== Implementation of <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>:</p>
+</div>
 <div class="paragraph">
 <p>The method of parsing <code>Content</code> in <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code> relies on the use of <code>Prefixes</code>
 around each note fragment tag. Each note fragment tag is specified with a start ("/*") and end ("*/") marker, and
@@ -1630,9 +1602,9 @@ thrown.</p>
 <div class="paragraph">
 <p>&lt;INSERT SEQUENCE DIAGRAM HERE, and refer to it below&gt;</p>
 </div>
+<div class="paragraph">
+<p>===== Implementation of <code>NoteFragments</code> in <code>list</code> command:</p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-notefragments-code-in-code-list-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-list-code-command">Implementation of <code>NoteFragments</code> in <code>list</code> command:</a></h5>
 <div class="paragraph">
 <p>When <code>Notes</code> are listed, <code>NoteFragments</code> do not appear in the list of resulting <code>Notes</code>. This is because the
 <code>ListCommand#execute()</code> method uses <code>ModelManager#updatedFilteredNoteList()</code>, which does not check for any
@@ -1645,9 +1617,9 @@ thrown.</p>
 <p>This decision is made because the <code>list</code> command already lists all <code>Notes</code>, and therefore it would be unnecessary to
 also list all <code>NoteFragments</code>, as <code>NoteFragments</code> form a subset of <code>Notes</code>.</p>
 </div>
+<div class="paragraph">
+<p>===== Implementation of <code>NoteFragments</code> in <code>filter</code> command:</p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-notefragments-code-in-code-filter-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filter-code-command">Implementation of <code>NoteFragments</code> in <code>filter</code> command:</a></h5>
 <div class="paragraph">
 <p>When <code>Notes</code> are filtered, the method <code>ModelManager#collectTaggedNotes()</code> is used, which checks for any valid tags in
 <code>NoteFragments</code> within the <code>Note</code> as it checks each <code>Note</code>.</p>
@@ -1679,17 +1651,17 @@ specific tagged details. For instance:</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>===== Implementation of <code>NoteFragments</code> in <code>filterall</code> command:</p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-notefragments-code-in-code-filterall-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filterall-code-command">Implementation of <code>NoteFragments</code> in <code>filterall</code> command:</a></h5>
 <div class="paragraph">
 <p>When all <code>StudyBuddyItems</code> are filtered, the method <code>ModeManager#collectTaggedItems()</code> is used, which performs a
 similar task to <code>ModelManager#collectTaggedNotes()</code>, but also collects <code>Flashcard</code> and <code>CheatSheet</code> objects as well.
 The reasoning for this decision is similar to that in the <code>filter</code> command.</p>
 </div>
+<div class="paragraph">
+<p>===== Implementation of <code>NoteFragments</code> in <code>add</code> command in <code>CheatSheets</code>:</p>
 </div>
-<div class="sect4">
-<h5 id="implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code"><a class="link" href="#implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code">Implementation of <code>NoteFragments</code> in <code>add</code> command in <code>CheatSheets</code>:</a></h5>
 <div class="paragraph">
 <p>When a <code>CheatSheet</code> is created, the method <code>AddCheatSheetCommand#getRelevantContent()</code> is used to filter out all
 <code>Notes</code> and <code>NoteFragments</code> that contain the specified <code>Tags</code>. Again, <code>AddCheatSheetCommand</code> uses the method
@@ -1701,12 +1673,12 @@ existence of <code>NoteFragment</code>.</p>
 way as in the <code>filter</code> command. As a result, it is possible for a <code>NoteFragment</code> to be included in a <code>CheatSheet</code>
 even when its parent <code>Note</code> is not.</p>
 </div>
+<div class="paragraph">
+<p>==== Design Considerations of the Add Tags Within Notes feature</p>
 </div>
+<div class="paragraph">
+<p>===== Aspect: Container location for <code>NoteFragment</code></p>
 </div>
-<div class="sect3">
-<h4 id="design-considerations-of-the-add-tags-within-notes-feature"><a class="link" href="#design-considerations-of-the-add-tags-within-notes-feature">4.7.4. Design Considerations of the Add Tags Within Notes feature</a></h4>
-<div class="sect4">
-<h5 id="aspect-container-location-for-code-notefragment-code"><a class="link" href="#aspect-container-location-for-code-notefragment-code">Aspect: Container location for <code>NoteFragment</code></a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1741,10 +1713,9 @@ child <code>NoteFragments</code> to delete as well.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== Usages of the Add Tags Within Notes feature</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="usages-of-the-add-tags-within-notes-feature"><a class="link" href="#usages-of-the-add-tags-within-notes-feature">4.7.5. Usages of the Add Tags Within Notes feature</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1758,17 +1729,18 @@ child <code>NoteFragments</code> to delete as well.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>==== (Proposed) Future Improvements for v2.0</p>
 </div>
-<div class="sect3">
-<h4 id="proposed-future-improvements-for-v2-0"><a class="link" href="#proposed-future-improvements-for-v2-0">4.7.6. (Proposed) Future Improvements for v2.0</a></h4>
-<div class="sect4">
-<h5 id="code-edit-code-command-for-code-notes-code"><a class="link" href="#code-edit-code-command-for-code-notes-code"><code>edit</code> command for <code>Notes</code></a></h5>
+<div class="paragraph">
+<p>===== <code>edit</code> command for <code>Notes</code></p>
+</div>
 <div class="paragraph">
 <p>This feature will allow for users to edit their <code>Notes</code>, by specifying a new <code>Title</code>, <code>Content</code>, or <code>Tags</code>.</p>
 </div>
+<div class="paragraph">
+<p>===== (Proposed) Implementation</p>
 </div>
-<div class="sect4">
-<h5 id="proposed-implementation"><a class="link" href="#proposed-implementation">(Proposed) Implementation</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1812,11 +1784,12 @@ it is made available</p>
 <p>This would result in the <code>Note</code> which was originally called 'Old Title' having its <code>Title</code> changed to 'New Title'.
 Since no two <code>Notes</code> are allowed to have the same <code>Title</code>, it is a unique identifier of the <code>Note</code> to be edited.</p>
 </div>
+<div class="paragraph">
+<p>===== Design Considerations</p>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-method-of-editing"><a class="link" href="#aspect-method-of-editing">Aspect: Method of editing</a></h6>
+<div class="paragraph">
+<p>====== Aspect: Method of editing</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1847,18 +1820,14 @@ Since no two <code>Notes</code> are allowed to have the same <code>Title</code>,
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deletion-prompting-feature"><a class="link" href="#deletion-prompting-feature">4.8. Deletion prompting feature</a></h3>
 <div class="paragraph">
-<p>Upon deletion of any StudyBuddyItem, the user will be prompted once before they can
+<p>=== Deletion prompting feature
+Upon deletion of any StudyBuddyItem, the user will be prompted once before they can
 successfully delete the specified item.</p>
 </div>
-<div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.8.1. Implementation</a></h4>
+<div class="paragraph">
+<p>==== Implementation</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1889,24 +1858,14 @@ The deletion prompting applies to all three modes in StudyBuddyPro.
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="usage-of-deletion-prompts"><a class="link" href="#usage-of-deletion-prompts">4.8.2. Usage of deletion prompts</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Upon entering a delete command, e.g. <code>delete 6</code>, the item that is to be deleted will be displayed to the user, and they will be required to confirm their deletion.</p>
-</li>
-<li>
-<p>The user only needs to hit enter once more to successfully delete the item.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.8.3. Design considerations</a></h4>
 <div class="paragraph">
-<p>Aspect : Deletion prompts versus Undo feature.</p>
+<p>==== Usage of deletion prompts
+* Upon entering a delete command, e.g. <code>delete 6</code>, the item that is to be deleted will be displayed to the user, and they will be required to confirm their deletion.
+* The user only needs to hit enter once more to successfully delete the item.</p>
+</div>
+<div class="paragraph">
+<p>==== Design considerations
+Aspect : Deletion prompts versus Undo feature.</p>
 </div>
 <div class="paragraph">
 <p>Current Implementation (prompting user before delete)</p>
@@ -1942,37 +1901,27 @@ compared to perhaps asking the user to input a 'yes' or 'no' to confirm their de
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Documentation</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Please do refer to the guide <a href="Documentation.html">here</a> for more information about this section!</p>
 </div>
+<div class="paragraph">
+<p>== Testing</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Please do refer to the guide <a href="Testing.html">here</a> for more information about this section!</p>
 </div>
+<div class="paragraph">
+<p>== Dev Ops</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Please do refer to the guide <a href="DevOps.html">here</a> for more information about this section!</p>
 </div>
+<div class="paragraph">
+<p>== Appendixes</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="appendixes"><a class="link" href="#appendixes">8. Appendixes</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The following sections will be titled as '<em>Appendix</em>' followed by an alphabet in alphabetical order to denote the different appendixes.
 The following is an example of an appendix heading.</p>
@@ -1990,11 +1939,9 @@ The following is an example of an appendix heading.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Product Scope</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Target user profile</strong>:</p>
 </div>
@@ -2026,11 +1973,9 @@ The following is an example of an appendix heading.</p>
 <div class="paragraph">
 <p><strong>Value proposition</strong>: integrate flashcards and note compilers for CS students better than a typical mouse/GUI driven app</p>
 </div>
+<div class="paragraph">
+<p>== User Stories</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
@@ -2235,11 +2180,9 @@ The following is an example of an appendix heading.</p>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
+<div class="paragraph">
+<p>== Use Cases</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>StudyBuddyPro</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
@@ -2373,8 +2316,9 @@ generation feature will help me save time on creating cheatsheets and let me spe
 </li>
 </ol>
 </div>
-<div class="sect2">
-<h3 id="use-case-user-story-1"><a class="link" href="#use-case-user-story-1">C.1. Use case: User story 1</a></h3>
+<div class="paragraph">
+<p>=== Use case: User story 1</p>
+</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2618,12 +2562,9 @@ Use case resumes from step 16.</p>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
+<div class="paragraph">
+<p>== Non Functional Requirements</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
-<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2646,11 +2587,9 @@ Use case resumes from step 16.</p>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
+<div class="paragraph">
+<p>== Glossary</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
-<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
@@ -2671,11 +2610,9 @@ Use case resumes from step 16.</p>
 </dd>
 </dl>
 </div>
+<div class="paragraph">
+<p>== Product Survey</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
 </div>
@@ -2708,11 +2645,9 @@ Use case resumes from step 16.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Instructions for Manual Testing</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
 </div>
@@ -2728,8 +2663,9 @@ These instructions only provide a starting point for testers to work on; testers
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<div class="paragraph">
+<p>=== Launch and Shutdown</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2770,9 +2706,9 @@ Expected: The most recent window size and location is retained.</p>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+<div class="paragraph">
+<p>=== Saving data</p>
 </div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.2. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2787,9 +2723,9 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>=== Remind feature</p>
 </div>
-<div class="sect2">
-<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">G.3. Remind feature</a></h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -3231,4 +3167,7 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 06:31:22 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 08:21:44 UTC</div></div></div></body></html>
