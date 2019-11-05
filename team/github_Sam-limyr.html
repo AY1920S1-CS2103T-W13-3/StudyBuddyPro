@@ -1,0 +1,953 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Samuel Lim - Project Portfolio for StudyBuddyPro</title><link rel="stylesheet" href="./gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Samuel Lim - Project Portfolio for StudyBuddyPro</h1></div><div id="content"><div class="sect1">
+<h2 id="about-the-project"><a class="link" href="#about-the-project">About the Project</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Me and my team of four other software engineering coursemates were tasked with morphing a given codebase for a
+Command-Line Interface (CLI) desktop app originally designed to store contact information. We decided to morph the app
+into an all-in-one study aid application, targeted specifically at NUS Computer Science students. Our app supports
+the use of flashcards and notes, provides a timetrial feature for flashcards, and includes automatic
+cheatsheet-generation tool.</p>
+</div>
+<div class="paragraph">
+<p>My role in this project was to write the code for Notes, implement their basic functions, and implement the ability
+to add tags within the content of notes. Additionally, I was tasked with completing both the user guide and developer
+guide portions for the entire Notes feature, and any other relevant documentation. This Project Portfolio thus
+details my contributions to this project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major contribution</strong>: Added <strong>Notes</strong>, and implemented the ability to <strong>add tags within Notes</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What Notes are: Notes are pieces of information with titles, content, and optional tags. The operations that they
+support are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Creation</p>
+</li>
+<li>
+<p>Deletion</p>
+</li>
+<li>
+<p>Viewing (in both raw form and simplified form)</p>
+</li>
+<li>
+<p>Filtering</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>What the Add Tags Within Notes feature is:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Using a pre-defined syntax, allows the user to tag specific portions of a note with tags.</p>
+</li>
+<li>
+<p>These tags are independent of the note&#8217;s original tags.</p>
+</li>
+<li>
+<p>They can be filtered just like normal notes can be, but cannot be directly viewed or listed.</p>
+</li>
+<li>
+<p>They can be used to isolate specific pieces of information for cheatsheet-making.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Uses of Notes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows the user to store information in an accessible format</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Uses of the Add Tags Within Notes feature:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows fine-tuned addition of information to cheatsheets</p>
+</li>
+<li>
+<p>Allows for specific highlighting of information in notes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project issue management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. group issue reminders for DG, UG, testing, along with todos for each</p>
+</li>
+<li>
+<p>Managed release v1.3 (out of v1.0 to v1.4)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote test code for all Note-related code</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>&lt;I guess I need to pore through all my PRs and look for other documentation and code refactoring stuff&gt;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-user-guide"><a class="link" href="#contributions-to-user-guide">Contributions to User Guide</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="creating-a-note-code-add-code"><a class="link" href="#creating-a-note-code-add-code">Creating a note: <code>add</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a note from user input with title <code>TITLE</code> and content <code>CONTENT</code>. The title of the note cannot be a duplicate
+of an existing note title.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: add t/TITLE c/CONTENT [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes
+simultaneously. tag/CS2100</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+New note added:
+    Title: Pipelining Definition
+    Content: Pipelining is a process where a processor executes multiple processes simultaneously.
+    Tags: [cs2100]</pre>
+</div>
+</div>
+</li>
+<li>
+<p>More advanced usage: Tagging of note fragments is also supported. The note fragment tagging is added at the
+same time as the note is created.</p>
+</li>
+<li>
+<p>Note fragment tags are added with content <code>FRAGMENT_CONTENT</code>, at least one tag
+<code>FRAGMENT_TAG</code>, and any number of additional tags <code>ADDITIONAL_FRAGMENT_TAG</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format (within CONTENT): /* C/FRAGMENT_CONTENT TAG/FRAGMENT_TAG [TAG/ADDITIONAL_FRAGMENT_TAG]... */</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The format for Note fragment content is 'C/', not 'c/', and the format for Note fragment tags is 'TAG/', not
+'tag/'.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the following example, two note fragment tags are added to the same note fragment:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New note added:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This adds a note with content "Notes can be highlighted if needed.", and a note fragment tag with content
+"highlighted" and two tags "cs2100" and "important".</p>
+</li>
+<li>
+<p>Multiple note fragment tags are allowed. These do not interfere with the other tags of the Note.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Overlapping note fragment tags are not allowed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note fragment tags can be used for filtering notes (see Section 6.6), or filtering globally (see Section 4.3).
+For a clearer visualization of note fragments, compare the <code>view</code> (see Section 6.3) and <code>viewraw</code> (see Section 6.4)
+commands.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-note-code-delete-code"><a class="link" href="#deleting-a-note-code-delete-code">Deleting a note: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the note of index <code>NOTE_INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>The user will be prompted once to confirm their deletion.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: delete 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+    Are you sure you would like to delete the following note?
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
+    Tags: [about]
+    Hit enter again to confirm your deletion.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon hitting enter, the note will be deleted.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Deleted note:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-a-note-code-view-code"><a class="link" href="#viewing-a-note-code-view-code">Viewing a note: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views the note of index <code>NOTE_INDEX</code>. If the note contains any note fragment tags, those tags will be hidden.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To view the note with its note fragment tags, use the <code>viewraw</code> command instead (see Section 6.4).
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: view (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: view 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Viewing note:
+    Title: About
+    Content: Notes can be highlighted if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-a-raw-note-code-viewraw-code"><a class="link" href="#viewing-a-raw-note-code-viewraw-code">Viewing a raw note: <code>viewraw</code></a></h3>
+<div class="paragraph">
+<p>Views the note of index <code>NOTE_INDEX</code>. The note is shown exactly as written, including all note fragment tags.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: viewraw (index)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: viewraw 3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Viewing raw note:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-notes-code-list-code"><a class="link" href="#listing-notes-code-list-code">Listing notes: <code>list</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all notes found in StudyBuddyPro.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: a complete list of all notes currently in StudyBuddyPro</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example output:
+Listing all notes:
+1.
+    Title: Pipelining Definition
+    Content: Pipelining is a process where a /* C/processor TAG/mips */ executes multiple processes simultaneously.
+    Tags: [cs2100]
+2.
+    Title: UML Diagrams
+    Content: UML Diagrams help with visualizing project structure.
+    Tags: [cs2103t]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notes will be labeled with indices '1', '2' etc. Note fragment tags will not be listed along with the notes. To
+visualize specific note fragment tags, use the <code>filter</code> command (see Section 6.6).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">Listing by tags: <code>filter</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Filters the note library by the user specified tag(s).</p>
+</li>
+<li>
+<p>The user must specify at least one tag, and can specify multiple tags.</p>
+</li>
+<li>
+<p>Notes that match all of the specified tags will be displayed.</p>
+</li>
+<li>
+<p>Note fragment tags containing all of the specified tags will also be displayed, even if their parent note is
+not tagged.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: filter tag/TAG [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: filter tag/difficult</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expeted output: Filter notes by tag(s) :
+    [difficult]
+    2. Title: Tough Math
+        Content: 1 + 2 is 3.
+        Tags: [difficult]
+    4. Title: MA1521 Chapter 5
+        Content: dy/dx = 0 is turning point of bellcurve.
+        Tags: [difficult][MA1521]
+    5-1. Title: CS2103T
+          Content: sequence diagram
+          Tags: [difficult][diagram]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notes will be labeled with indices '1', '2' etc. Note fragment tags will be labeled with '1-1', '1-2', '2-1' etc.
+'5-1' means 'the first note fragment tag in the fifth note'.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-note-code-edit-code-coming-in-v2-0"><a class="link" href="#editing-a-note-code-edit-code-coming-in-v2-0">Editing a note: <code>edit</code> (Coming in v2.0)</a></h3>
+<div class="paragraph">
+<p>Edits a note&#8217;s title, content, or tags. The note will be referred to by their original title <code>ORIGINAL_TITLE</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user can specify one of the optional fields to edit.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit ORIGINAL_TITLE [t/TITLE] [c/CONTENT] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: edit Pipelining Definition t/Pipelined Definition tag/cs2100finals</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output:
+Edited Note:
+    Title: Pipelined Definition
+    Content: Pipelining is a process where a processor executes multiple processes simultaneously.
+    Tags: [cs2100finals]</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-developer-guide"><a class="link" href="#contributions-to-developer-guide">Contributions to Developer Guide</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="add-tags-within-notes-feature"><a class="link" href="#add-tags-within-notes-feature">Add Tags Within Notes feature</a></h3>
+<div class="paragraph">
+<p><code>Notes</code> are used in the creation of <code>CheatSheet</code> objects as well as in general use of StudyBuddyPro. This Add Tags
+Within Notes feature allows for the addition of tags within the content of the <code>Note</code>, to allow more precise
+highlighting and tagging of information.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+All the operations assume that the user is in the <em>notes</em> mode.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="design-implementation-of-notes"><a class="link" href="#design-implementation-of-notes">Design Implementation of Notes</a></h4>
+<div class="paragraph">
+<p><code>Notes</code> contain a <code>Title</code> and a <code>Content</code>, with optional <code>Tags</code> and <code>NoteFragments</code>, as shown in the diagram below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><code>Notes</code> are <code>StudyBuddyItems</code>, and can contain any number of <code>NoteFragments</code>. <code>NoteFragment</code> objects are used to
+represent the specific areas within a <code>Note</code> that have been tagged. Each tag within a <code>Note</code> is referred to as a <strong>note
+fragment tag</strong> (which is represented by a <code>NoteFragment</code> object).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note fragment tags should not be confused with <code>Tags</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>NoteFragments</code> contain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <code>Title</code> that is the same as their parent <code>Note</code></p>
+</li>
+<li>
+<p>A <code>Content</code> that is a substring of their parent <code>Note</code></p>
+</li>
+<li>
+<p>Any indicated <code>Tags</code> that are independent of their parent <code>Note</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>NoteFragments</code> are viewed or used in the following situations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Viewable through the <code>filter</code> and <code>filterall</code> commands</p>
+</li>
+<li>
+<p>Usable through <code>add</code> commands in <em>cheatsheet</em> mode (see Section 4.4)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usages-of-notes"><a class="link" href="#usages-of-notes">Usages of Notes</a></h4>
+<div class="paragraph">
+<p><code>Notes</code> can be used to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Store information under a title</p>
+</li>
+<li>
+<p>Categorize information via the use of <code>Tags</code></p>
+</li>
+<li>
+<p>Provide information to <code>CheatSheets</code> for collation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Notes</code> can currently be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added to <code>StudyBuddyBook</code></p>
+</li>
+<li>
+<p>Deleted from <code>StudyBuddyBook</code></p>
+</li>
+<li>
+<p>Viewed raw or cleaned from <code>StudyBuddyBook</code></p>
+</li>
+<li>
+<p>Viewed using <code>filter</code> from <code>StudyBuddyBook</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-implementation-of-the-add-tags-within-notes-feature"><a class="link" href="#design-implementation-of-the-add-tags-within-notes-feature">Design Implementation of the Add Tags Within Notes feature</a></h4>
+<div class="paragraph">
+<p>The Add Tags Within Notes feature was implemented in the following way:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creation of a <code>NoteFragment</code> class that represents one tag within a <code>Note</code></p>
+</li>
+<li>
+<p>Have each <code>Note</code> contain any number of <code>NoteFragments</code> in a list</p>
+</li>
+<li>
+<p>Upon addition of a <code>Note</code>, parse its <code>Content</code> to check for any note fragment tags within it</p>
+</li>
+<li>
+<p>Create any required <code>NoteFragment</code> objects and add them to the list in their parent <code>Note</code></p>
+</li>
+<li>
+<p>Since <code>NoteFragments</code> are contained within <code>Notes</code>, when a <code>Note</code> is deleted, its <code>NoteFragments</code> will be deleted as well.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are four main methods that involve <code>NoteFragments</code>. They are listed below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>: Used by <code>Note</code> to create <code>NoteFragments</code>.</p>
+</li>
+<li>
+<p><code>ModelManager#collectTaggedItems()</code>: Used in the <code>filterall</code> command.</p>
+</li>
+<li>
+<p><code>ModelManager#collectTaggedNotes()</code>: Used in the <em>notes</em> <code>filter</code> command.</p>
+</li>
+<li>
+<p><code>AddCheatSheetCommand#getRelevantContents()</code>: Used to generate <code>CheatSheets</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Out of these four methods, only <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code> is aware of the <code>NoteFragment</code> class.
+The other three methods are only aware of the <code>Note</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of these four methods is shown below:</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code"><a class="link" href="#implementation-of-code-notefeatureutil-parsenotefragmentsfromnote-code">Implementation of <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code>:</a></h5>
+<div class="paragraph">
+<p>The method of parsing <code>Content</code> in <code>NoteFeatureUtil#parseNoteFragmentsFromNote()</code> relies on the use of <code>Prefixes</code>
+around each note fragment tag. Each note fragment tag is specified with a start ("/*") and end ("*/") marker, and
+its <code>Content</code> and <code>Tags</code> are also represented with the <code>Prefixes</code> 'C/' and 'TAG/'.</p>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+'C/' and 'TAG/' have to be used instead of the default 'c/' and 'tag/' because otherwise the note fragment tag would
+raise an error (since only one 'c/' tag is allowed per command).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>New note added:
+    Title: About
+    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
+    Tags: [about]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>Note</code> has been added with the <code>Content</code> of "Notes can be highlighted if needed.", and a note fragment tag with
+<code>Content</code> "highlighted" and two <code>Tags</code> "cs2100" and "important". Despite this, the <code>Note</code> itself is instead tagged
+with the <code>Tag</code> "about".</p>
+</div>
+<div class="paragraph">
+<p>When an <code>add</code> command is made:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only the <code>Prefixes</code> 't/', 'c/', and 'tag/' are identified and parsed.</p>
+</li>
+<li>
+<p>A <code>Note</code> is then created with the desired <code>Title</code>, <code>Content</code>, and <code>Tags</code>.</p>
+</li>
+<li>
+<p>After creation, the <code>Content</code> of the <code>Note</code> is parsed immediately for the <code>Prefixes</code> '/*', '*/', 'C/', and 'TAG/'
+.</p>
+</li>
+<li>
+<p>All four <code>Prefixes</code> must be present for the note fragment tag to be considered valid. Otherwise, an exception is
+thrown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below describes the process of adding a new note that contains a note fragment tag:</p>
+</div>
+<div class="paragraph">
+<p>&lt;INSERT SEQUENCE DIAGRAM HERE, and refer to it below&gt;</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-list-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-list-code-command">Implementation of <code>NoteFragments</code> in <code>list</code> command:</a></h5>
+<div class="paragraph">
+<p>When <code>Notes</code> are listed, <code>NoteFragments</code> do not appear in the list of resulting <code>Notes</code>. This is because the
+<code>ListCommand#execute()</code> method uses <code>ModelManager#updatedFilteredNoteList()</code>, which does not check for any
+<code>NoteFragments</code> within <code>Notes</code>. This is illustrated in the &lt;WHAT KIND OF&gt; diagram below:</p>
+</div>
+<div class="paragraph">
+<p>&lt;SOME DIAGRAM SHOWING CALLING OF LISTCOMMAND FOR NOTE - but is this necessary? Would need to refer to it after the text&gt;</p>
+</div>
+<div class="paragraph">
+<p>This decision is made because the <code>list</code> command already lists all <code>Notes</code>, and therefore it would be unnecessary to
+also list all <code>NoteFragments</code>, as <code>NoteFragments</code> form a subset of <code>Notes</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-filter-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filter-code-command">Implementation of <code>NoteFragments</code> in <code>filter</code> command:</a></h5>
+<div class="paragraph">
+<p>When <code>Notes</code> are filtered, the method <code>ModelManager#collectTaggedNotes()</code> is used, which checks for any valid tags in
+<code>NoteFragments</code> within the <code>Note</code> as it checks each <code>Note</code>.</p>
+</div>
+<div class="paragraph">
+<p>However, <code>ModelManager</code> uses the method <code>Note#getFilteredNoteFragments()</code> to achieve this, and therefore is not
+aware of the existence of <code>NoteFragments</code>. This is illustrated in the &lt;WHAT KIND OF&gt; diagram below:</p>
+</div>
+<div class="paragraph">
+<p>&lt;SOME DIAGRAM SHOWING CALLING OF FILTERCOMMAND FOR NOTE - but is this necessary? Would need to refer to it after the
+text&gt;</p>
+</div>
+<div class="paragraph">
+<p>This diagram can be contrasted with the &lt;WHICH NUMBER?&gt; diagram above, which uses a different method &lt;DESCRIBE&gt; that
+does not account for <code>NoteFragments</code>.</p>
+</div>
+<div class="paragraph">
+<p>The separation between <code>Notes</code> and <code>NoteFragments</code> in the <code>filter</code> command allows for more finely-tuned viewing of
+specific tagged details. For instance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A small portion of a long <code>Note</code> can be tagged out as 'important'.</p>
+</li>
+<li>
+<p>Different parts of the same <code>Note</code> can be given different <code>Tags</code> like 'CS2103T' or 'CS2100', even as the entire
+<code>Note</code> is tagged under a larger category like 'CS'.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-filterall-code-command"><a class="link" href="#implementation-of-code-notefragments-code-in-code-filterall-code-command">Implementation of <code>NoteFragments</code> in <code>filterall</code> command:</a></h5>
+<div class="paragraph">
+<p>When all <code>StudyBuddyItems</code> are filtered, the method <code>ModeManager#collectTaggedItems()</code> is used, which performs a
+similar task to <code>ModelManager#collectTaggedNotes()</code>, but also collects <code>Flashcard</code> and <code>CheatSheet</code> objects as well.
+The reasoning for this decision is similar to that in the <code>filter</code> command.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code"><a class="link" href="#implementation-of-code-notefragments-code-in-code-add-code-command-in-code-cheatsheets-code">Implementation of <code>NoteFragments</code> in <code>add</code> command in <code>CheatSheets</code>:</a></h5>
+<div class="paragraph">
+<p>When a <code>CheatSheet</code> is created, the method <code>AddCheatSheetCommand#getRelevantContent()</code> is used to filter out all
+<code>Notes</code> and <code>NoteFragments</code> that contain the specified <code>Tags</code>. Again, <code>AddCheatSheetCommand</code> uses the method
+<code>Note#getFilteredNoteFragments()</code> to obtain the filtered list of <code>NoteFragments</code>, and is therefore unaware of the
+existence of <code>NoteFragment</code>.</p>
+</div>
+<div class="paragraph">
+<p>Since the <code>Tags</code> stored in <code>Notes</code> and <code>NoteFragments</code> are independent of each other, they are filtered in the same
+way as in the <code>filter</code> command. As a result, it is possible for a <code>NoteFragment</code> to be included in a <code>CheatSheet</code>
+even when its parent <code>Note</code> is not.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-of-the-add-tags-within-notes-feature"><a class="link" href="#design-considerations-of-the-add-tags-within-notes-feature">Design Considerations of the Add Tags Within Notes feature</a></h4>
+<div class="sect4">
+<h5 id="aspect-container-location-for-code-notefragment-code"><a class="link" href="#aspect-container-location-for-code-notefragment-code">Aspect: Container location for <code>NoteFragment</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Each <code>Note</code> contains a <code>List&lt;NoteFragment&gt;</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Much easier maintenance, since <code>NoteFragments</code> are automatically deleted with the deletion of their parent
+<code>Note</code>.</p>
+</li>
+<li>
+<p>Cons: O(n<sup>2</sup>) search time for <code>filter</code> commands, as all <code>NoteFragments</code> in each <code>Note</code> in the <code>UniqueNoteList</code>
+must be searched through to filter them out.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Separate <code>UniqueNoteFragmentList</code> from <code>UniqueNoteList</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: O(n) search time for <code>filter</code> commands, as the <code>UniqueNoteFragmentList</code> exists separately from the
+<code>UniqueNoteList</code>.</p>
+</li>
+<li>
+<p>Cons: Difficult to maintain; deletion of a parent Note requires searching the <code>UniqueNoteFragmentList</code> for any
+child <code>NoteFragments</code> to delete as well.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="usages-of-the-add-tags-within-notes-feature"><a class="link" href="#usages-of-the-add-tags-within-notes-feature">Usages of the Add Tags Within Notes feature</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Use in <code>filter</code> and <code>filterall</code> to make the GUI less cluttered</p>
+</li>
+<li>
+<p>Use in <code>filter</code> to highlight specific sections of <code>Notes</code></p>
+</li>
+<li>
+<p>Use in <code>add</code> for <code>CheatSheets</code> for more parsimonious usage of space</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements-for-v2-0"><a class="link" href="#proposed-future-improvements-for-v2-0">(Proposed) Future Improvements for v2.0</a></h4>
+<div class="sect4">
+<h5 id="code-edit-code-command-for-code-notes-code"><a class="link" href="#code-edit-code-command-for-code-notes-code"><code>edit</code> command for <code>Notes</code></a></h5>
+<div class="paragraph">
+<p>This feature will allow for users to edit their <code>Notes</code>, by specifying a new <code>Title</code>, <code>Content</code>, or <code>Tags</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="proposed-implementation"><a class="link" href="#proposed-implementation">(Proposed) Implementation</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Expected inputs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The original <code>Title</code> of the <code>Note</code> to be edited</p>
+</li>
+<li>
+<p>One or more fields that the user wants to edit</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create an <code>EditCommandParser</code> to parse the input command using <code>ArgumentTokenizer</code></p>
+</li>
+<li>
+<p>Create an <code>EditCommand</code> which contains <code>EditCommand#execute()</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This method creates a new <code>Note</code> which contains all old fields, then replaces any old field with a new field, if
+it is made available</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>edit Old Title t/New Title</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This would result in the <code>Note</code> which was originally called 'Old Title' having its <code>Title</code> changed to 'New Title'.
+Since no two <code>Notes</code> are allowed to have the same <code>Title</code>, it is a unique identifier of the <code>Note</code> to be edited.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-method-of-editing"><a class="link" href="#aspect-method-of-editing">Aspect: Method of editing</a></h6>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1: Create a new <code>Note</code> object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Is more defensive, since only a shallow copy of the <code>Note</code> object is returned.</p>
+</li>
+<li>
+<p>Cons: Longer command run time, as a new <code>Note</code> object needs to be created first, and then edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Edit the exiting <code>Note</code> object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Command will run faster, since no new <code>Note</code> object needs to be created.</p>
+</li>
+<li>
+<p>Cons: Is not defensively programmed, as <code>Notes</code> should be immutable.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 14:45:48 UTC</div></div></div></body></html>
