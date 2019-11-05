@@ -88,7 +88,7 @@ which has a special auto-generation functionality.</p>
 <p>Mainly managed milestone v1.3.</p>
 </li>
 <li>
-<p>Designed the mockup for the application’s Ui (#49).</p>
+<p>Designed the mockup for the application’s Ui (<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/49">#49</a>).</p>
 </li>
 </ul>
 </div>
@@ -98,10 +98,10 @@ which has a special auto-generation functionality.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Added barebones for the cheatsheet functionality, which was later on finished up by my groupmate (#124).</p>
+<p>Added barebones for the cheatsheet functionality, which was later on finished up by my groupmate (<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/124">#124</a>).</p>
 </li>
 <li>
-<p>Helped with the linking of the Storage component to our new features (#124).</p>
+<p>Helped with the linking of the Storage component to our new features (<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/124">#124</a>).</p>
 </li>
 </ul>
 </div>
@@ -111,16 +111,16 @@ which has a special auto-generation functionality.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Upgraded the auto-generation cheatsheet feature of the application to pull intra-content tags from the content feature of the application (#244).</p>
+<p>Upgraded the auto-generation cheatsheet feature of the application to pull intra-content tags from the content feature of the application (<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/244">#244</a>).</p>
 </li>
 <li>
-<p>Enhanced delete commands to prompt the user once to confirm his/her deletion.</p>
+<p>Enhanced delete commands to prompt the user once to confirm his/her deletion(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/244">#244</a>).</p>
 </li>
 <li>
-<p>Updated the appIcons for the application, and created the logo for the application using an online software, logomakr.</p>
+<p>Updated the appIcons for the application, and created the logo for the application using an online software, logomakr (<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/254">#254</a>).</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase the test coverage.</p>
+<p>Wrote additional tests for existing features to increase the test coverage(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/316">#316</a>).</p>
 </li>
 </ul>
 </div>
@@ -130,7 +130,7 @@ which has a special auto-generation functionality.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Added NFRs for the application. (#77)</p>
+<p>Added NFRs for the application(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/77">#77</a>).</p>
 </li>
 </ul>
 </div>
@@ -177,11 +177,11 @@ for the filter features.</p>
 <pre>Expected output:
 Here are all the tags in StudyBuddyPro.
 Listing all tags :
-[cs2100]
-[cs2101]
-[cs2104]
-[math]
-[pipelining]</pre>
+[cs2100] |  flashcards : 0 notes : 3 cheatsheets : 1
+[cs2101] |  flashcards : 6 notes : 2 cheatsheets : 1
+[cs2104] |  flashcards : 20 notes : 8 cheatsheets : 3
+[math] |  flashcards : 10 notes : 2 cheatsheets : 1
+[pipelining] |  flashcards : 1 notes : 5 cheatsheets : 2</pre>
 </div>
 </div>
 <div class="ulist">
@@ -372,7 +372,7 @@ All items and contents in StudyBuddy tagged ‘midterm’ is replaced with tag �
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/kaibindiagrams/TaggingFeatureClassDiagram.png" alt="TaggingFeatureClassDiagram">
+<img src="../images/kaibindiagrams/studyBuddyItemClassDiagram.png" alt="studyBuddyItemClassDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -403,11 +403,29 @@ All items and contents in StudyBuddy tagged ‘midterm’ is replaced with tag �
 <h4 id="aspect-how-tag-predicates-are-implemented"><a class="link" href="#aspect-how-tag-predicates-are-implemented">Aspect: How tag predicates are implemented</a></h4>
 <div class="imageblock">
 <div class="content">
+<img src="../images/kaibindiagrams/tagPredicateClassDiagram.png" alt="tagPredicateClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 3 : Class Diagram of how StudyBuddyItemContainsTagPredicate is implemented</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The above class diagram shows how tag predicates are being implemented.</p>
+</li>
+<li>
+<p>The set of tags that is stored in <code>StudyBuddyItemContainsTagPredicate</code> refers to the tags specified by the user.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
 <img src="../images/kaibindiagrams/tagPredicateCodeSnippet.png" alt="tagPredicateCodeSnippet">
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 3 : Code Snippet of StudyBuddyItemContainsTagPredicate#test()</em></p>
+<p><em>Figure 4 : Code Snippet of StudyBuddyItemContainsTagPredicate#test()</em></p>
 </div>
 <div class="paragraph">
 <p>The current implementation is that test() only returns true if all tags specified by the user matches the current Item.</p>
@@ -457,7 +475,7 @@ If multiple tags are specified, only items that match all the specified tags wil
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4. Sequence diagram of listing items by a specified tag</em></p>
+<p><em>Figure 5. Sequence diagram of listing items by a specified tag</em></p>
 </div>
 <div class="paragraph">
 <p>[Proposed] Future improvements (Coming in v2.0)</p>
@@ -576,4 +594,4 @@ compared to perhaps asking the user to input a 'yes' or 'no' to confirm their de
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 12:47:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 14:44:13 UTC</div></div></div></body></html>
