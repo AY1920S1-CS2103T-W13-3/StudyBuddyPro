@@ -51,7 +51,7 @@
 <li><a href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></li>
 <li><a href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></li>
 <li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></li>
+<li><a href="#filtering-by-tags-code-filter-code">6.6. Filtering by tags: <code>filter</code></a></li>
 <li><a href="#editing-a-note-code-edit-code-coming-in-v2-0">6.7. Editing a note: <code>edit</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
@@ -63,7 +63,7 @@
 <li><a href="#viewing-cheatsheets-code-view-code">7.4. Viewing Cheatsheets: <code>view</code></a></li>
 <li><a href="#viewing-cheatsheets-of-specific-tag-code-show-code">7.5. Viewing Cheatsheets of Specific Tag: <code>show</code></a></li>
 <li><a href="#listing-cheatsheets-code-list-code">7.6. Listing Cheatsheets: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-3">7.7. Listing by tags: <code>filter</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code-2">7.7. Listing by tags: <code>filter</code></a></li>
 <li><a href="#updating-a-cheatsheet-code-update-code-coming-in-v2-0">7.8. Updating a Cheatsheet: <code>update</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
@@ -244,7 +244,7 @@ E.g. <code>[tag/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.
 <p>All commands are written in English with alphanumeric characters.</p>
 </li>
 <li>
-<p>Any indexes provided (denoted by <code>id</code>) must be a positive integer (e.g. 1, 2, 3, &#8230;&#8203;).</p>
+<p>Any indexes provided (denoted by '(index)' ) must be a positive integer (e.g. 1, 2, 3, &#8230;&#8203;).</p>
 </li>
 <li>
 <p>All flashcards, notes, and cheatsheets can have a maximum of 10 tags.</p>
@@ -398,7 +398,7 @@ Note: 5.
     Content: Pipelining is a process where a processor executes multiple processes simultaneously.
     Tags: [cs2100]
 Note Fragment: 6-2.
-    Title: About
+    Title: About Notes
     Content: highlighted
     Tags: [cs2100]</pre>
 </div>
@@ -810,27 +810,33 @@ Here are your overdue flashcards:
 <li>
 <p>Adds a note from user input with title <code>TITLE</code> and content <code>CONTENT</code>. The title of the note cannot be a duplicate
 of an existing note title.</p>
-<div class="literalblock">
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>Format: add t/TITLE c/CONTENT [tag/TAG]...</pre>
+<pre class="CodeRay highlight"><code>Format: add t/TITLE c/CONTENT [tag/TAG]...</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes
-simultaneously. tag/CS2100</pre>
+<pre class="CodeRay highlight"><code>Example usage: add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes simultaneously. tag/cs2100</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output:
+<pre class="CodeRay highlight"><code>Expected output:
+
 New note added:
     Title: Pipelining Definition
     Content: Pipelining is a process where a processor executes multiple processes simultaneously.
-    Tags: [cs2100]</pre>
+    Tags: [cs2100]
+
+The added Note has no detected note fragment tags!</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>More advanced usage: Tagging of note fragments is also supported. The note fragment tagging is added at the
 same time as the note is created.</p>
@@ -838,13 +844,13 @@ same time as the note is created.</p>
 <li>
 <p>Note fragment tags are added with content <code>FRAGMENT_CONTENT</code>, at least one tag
 <code>FRAGMENT_TAG</code>, and any number of additional tags <code>ADDITIONAL_FRAGMENT_TAG</code>:</p>
-<div class="literalblock">
-<div class="content">
-<pre>Format (within CONTENT): /* C/FRAGMENT_CONTENT TAG/FRAGMENT_TAG [TAG/ADDITIONAL_FRAGMENT_TAG]... */</pre>
-</div>
-</div>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Format (within CONTENT): /* C/FRAGMENT_CONTENT TAG/FRAGMENT_TAG [TAG/ADDITIONAL_FRAGMENT_TAG]... */</code></pre>
+</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -853,8 +859,21 @@ same time as the note is created.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The format for Note fragment content is 'C/', not 'c/', and the format for Note fragment tags is 'TAG/', not
+The format for note fragment content is 'C/', not 'c/', and the format for note fragment tags is 'TAG/', not
 'tag/'.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the format is not followed correctly, the note fragment tag will simply not be added (but the note will
+still be added). StudyBuddyPro will assume that the user typed the tags correctly.
 </td>
 </tr>
 </table>
@@ -863,23 +882,27 @@ The format for Note fragment content is 'C/', not 'c/', and the format for Note 
 <ul>
 <li>
 <p>In the following example, two note fragment tags are added to the same note fragment:</p>
-<div class="literalblock">
-<div class="content">
-<pre>Example usage: add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Expected output:</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>New note added:
-    Title: About
-    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
-    Tags: [about]</pre>
+<pre class="CodeRay highlight"><code>Example usage: add t/About Notes c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Expected output:
+
+New note added:
+	Title: About Notes
+	Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
+	Tags: [about]
+
+Note fragment tags detected:
+	Title: About Notes
+	Content: highlighted
+	Tags: [important][highlight]</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -928,35 +951,37 @@ commands.
 <div class="paragraph">
 <p>The user will be prompted once to confirm their deletion.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Format: delete (index)</pre>
+<pre class="CodeRay highlight"><code>Format: delete (index)</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: delete 3</pre>
+<pre class="CodeRay highlight"><code>Example usage: delete 3</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output:
-    Are you sure you would like to delete the following note?
-    Title: About
+<pre class="CodeRay highlight"><code>Expected output:
+
+Are you sure you would like to delete the following note?
+
+    Title: About Notes
     Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
     Tags: [about]
-    Hit enter again to confirm your deletion.</pre>
+Hit enter again to confirm your deletion.</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Upon hitting enter, the note will be deleted.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Deleted note:
-    Title: About
+<pre class="CodeRay highlight"><code>Deleted note:
+    Title: About Notes
     Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
-    Tags: [about]</pre>
+    Tags: [about]</code></pre>
 </div>
 </div>
 </div>
@@ -977,23 +1002,24 @@ To view the note with its note fragment tags, use the <code>viewraw</code> comma
 </tr>
 </table>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Format: view (index)</pre>
+<pre class="CodeRay highlight"><code>Format: view (index)</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: view 3</pre>
+<pre class="CodeRay highlight"><code>Example usage: view 3</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output:
+<pre class="CodeRay highlight"><code>Expected output:
+
 Viewing note:
-    Title: About
+    Title: About Notes
     Content: Notes can be highlighted if needed.
-    Tags: [about]</pre>
+    Tags: [about]</code></pre>
 </div>
 </div>
 </div>
@@ -1002,23 +1028,24 @@ Viewing note:
 <div class="paragraph">
 <p>Views the note of index <code>NOTE_INDEX</code>. The note is shown exactly as written, including all note fragment tags.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Format: viewraw (index)</pre>
+<pre class="CodeRay highlight"><code>Format: viewraw (index)</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: viewraw 3</pre>
+<pre class="CodeRay highlight"><code>Example usage: viewraw 3</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output:
+<pre class="CodeRay highlight"><code>Expected output:
+
 Viewing raw note:
-    Title: About
+    Title: About Notes
     Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
-    Tags: [about]</pre>
+    Tags: [about]</code></pre>
 </div>
 </div>
 </div>
@@ -1028,19 +1055,24 @@ Viewing raw note:
 <ul>
 <li>
 <p>Lists all notes found in StudyBuddyPro.</p>
-<div class="literalblock">
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>Format: list</pre>
+<pre class="CodeRay highlight"><code>Format: list</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output: a complete list of all notes currently in StudyBuddyPro</pre>
+<pre class="CodeRay highlight"><code>Expected output:
+
+a complete list of all notes currently in StudyBuddyPro</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example output:
+<pre class="CodeRay highlight"><code>Example output:
 Listing all notes:
 1.
     Title: Pipelining Definition
@@ -1049,11 +1081,8 @@ Listing all notes:
 2.
     Title: UML Diagrams
     Content: UML Diagrams help with visualizing project structure.
-    Tags: [cs2103t]</pre>
+    Tags: [cs2103t]</code></pre>
 </div>
-</div>
-</li>
-</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1070,7 +1099,7 @@ visualize specific note fragment tags, use the <code>filter</code> command (see 
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">6.6. Listing by tags: <code>filter</code></a></h3>
+<h3 id="filtering-by-tags-code-filter-code"><a class="link" href="#filtering-by-tags-code-filter-code">6.6. Filtering by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1085,19 +1114,22 @@ visualize specific note fragment tags, use the <code>filter</code> command (see 
 <li>
 <p>Note fragment tags containing all of the specified tags will also be displayed, even if their parent note is
 not tagged.</p>
-<div class="literalblock">
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>Format: filter tag/TAG [tag/TAG]...</pre>
+<pre class="CodeRay highlight"><code>Format: filter tag/TAG [tag/TAG]...</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: filter tag/difficult</pre>
+<pre class="CodeRay highlight"><code>Example usage: filter tag/difficult</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expeted output: Filter notes by tag(s) :
+<pre class="CodeRay highlight"><code>Expeted output: Filter notes by tag(s) :
     [difficult]
     2. Title: Tough Math
         Content: 1 + 2 is 3.
@@ -1107,11 +1139,8 @@ not tagged.</p>
         Tags: [difficult][MA1521]
     5-1. Title: CS2103T
           Content: sequence diagram
-          Tags: [difficult][diagram]</pre>
+          Tags: [difficult][diagram]</code></pre>
 </div>
-</div>
-</li>
-</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1136,27 +1165,28 @@ Notes will be labeled with indices '1', '2' etc. Note fragment tags will be labe
 <ul>
 <li>
 <p>The user can specify one of the optional fields to edit.</p>
-<div class="literalblock">
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>Format: edit ORIGINAL_TITLE [t/TITLE] [c/CONTENT] [tag/TAG]...</pre>
+<pre class="CodeRay highlight"><code>Format: edit ORIGINAL_TITLE [t/TITLE] [c/CONTENT] [tag/TAG]...</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Example usage: edit Pipelining Definition t/Pipelined Definition tag/cs2100finals</pre>
+<pre class="CodeRay highlight"><code>Example usage: edit Pipelining Definition t/Pipelined Definition tag/cs2100finals</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Expected output:
+<pre class="CodeRay highlight"><code>Expected output:
+
 Edited Note:
     Title: Pipelined Definition
     Content: Pipelining is a process where a processor executes multiple processes simultaneously.
-    Tags: [cs2100finals]</pre>
+    Tags: [cs2100finals]</code></pre>
 </div>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1482,7 +1512,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-3"><a class="link" href="#listing-by-tags-code-filter-code-3">7.7. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">7.7. Listing by tags: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1663,11 +1693,34 @@ do this while Mac users can use the Terminal application.</p>
 </div>
 <div class="sect2">
 <h3 id="note-commands"><a class="link" href="#note-commands">9.3. Note Commands</a></h3>
+<div class="sect3">
+<h4 id="code-add-code-adds-a-note"><a class="link" href="#code-add-code-adds-a-note">9.3.1. <code>add</code>: Adds a Note.</a></h4>
 
+</div>
+<div class="sect3">
+<h4 id="code-delete-code-deletes-a-note"><a class="link" href="#code-delete-code-deletes-a-note">9.3.2. <code>delete</code>: Deletes a Note.</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="code-view-code-views-a-note-without-note-fragment-tags"><a class="link" href="#code-view-code-views-a-note-without-note-fragment-tags">9.3.3. <code>view</code>: Views a Note without note fragment tags.</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="code-viewraw-code-view-a-note-with-note-fragment-tags"><a class="link" href="#code-viewraw-code-view-a-note-with-note-fragment-tags">9.3.4. <code>viewraw</code>: View a Note with note fragment tags.</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="code-list-code-views-all-note-titles"><a class="link" href="#code-list-code-views-all-note-titles">9.3.5. <code>list</code>: Views all Note titles.</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="code-filter-code-filters-the-list-of-notes-to-view"><a class="link" href="#code-filter-code-filters-the-list-of-notes-to-view">9.3.6. <code>filter</code>: Filters the list of Notes to view.</a></h4>
+
+</div>
 </div>
 <div class="sect2">
 <h3 id="cheatsheet-commands"><a class="link" href="#cheatsheet-commands">9.4. CheatSheet Commands</a></h3>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 16:08:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 04:48:08 UTC</div></div></div></body></html>

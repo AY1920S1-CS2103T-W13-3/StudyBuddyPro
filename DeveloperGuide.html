@@ -1597,9 +1597,9 @@ its <code>Content</code> and <code>Tags</code> are also represented with the <co
 <div class="paragraph">
 <p>Example usage:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>add t/About c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</pre>
+<pre class="CodeRay highlight"><code>add t/About Notes c/Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed. tag/about</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1618,12 +1618,17 @@ raise an error (since only one 'c/' tag is allowed per command).
 <div class="paragraph">
 <p>Expected output:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>New note added:
-    Title: About
-    Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
-    Tags: [about]</pre>
+<pre class="CodeRay highlight"><code>New note added:
+    Title: About Notes
+    Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
+    Tags: [about]
+
+Note fragment tags detected:
+    Title: About Notes
+    Content: highlighted
+    Tags: [important][highlight]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3259,4 +3264,4 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 16:08:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 04:48:08 UTC</div></div></div></body></html>
