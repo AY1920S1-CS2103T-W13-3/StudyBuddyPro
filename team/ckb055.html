@@ -76,6 +76,17 @@ which has a special auto-generation functionality.</p>
 <p>This enhancement is highly straightforward and works well with the current application.</p>
 </div>
 <div class="paragraph">
+<p><strong>Code contribution</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Please refer <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=ckb055&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=ckb055&amp;tabRepo=AY1920S1-CS2103T-W13-3%2Fmain%5Bmaster%5D">here</a>
+to view my code contributions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Other contributions</strong>:</p>
 </div>
 <div class="ulist">
@@ -164,6 +175,18 @@ for the filter features.</p>
 </div>
 <div class="sect2">
 <h3 id="listing-all-current-tags-in-studybuddypro-code-taglist-code"><a class="link" href="#listing-all-current-tags-in-studybuddypro-code-taglist-code">Listing all current Tags in StudyBuddyPro : <code>taglist</code></a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>taglist</code> and <code>filterall</code> are global commands that can be used in any mode in StudyBuddyPro.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Displays a full list of all tags currently in StudyBuddyPro.</p>
 </div>
@@ -316,11 +339,11 @@ Are you sure you would like to delete the following cheatsheet?
 Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
 Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
     [ 2. 110 in Binary is 6 is Decimal ]
-Hit enter again to confirm your deletion.</pre>
+Please use `delete 8` again to confirm your deletion.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Upon deleting any StudyBuddyItem (Flashcard, Note, NoteFragment, CheatSheet), the user will be prompted once to confirm his deletion. The user would only need to hit enter once more to confirm his/her deletion.</p>
+<p>Upon deleting any StudyBuddyItem (Flashcard, Note, NoteFragment, CheatSheet), the user will be prompted once to confirm his deletion. The user would need to key in the delete command once more to confirm his/her deletion.</p>
 </div>
 <div class="paragraph">
 <p>This will prevent any accidental deletion of wrong items.</p>
@@ -350,6 +373,21 @@ All items and contents in StudyBuddy tagged ‘midterm’ is replaced with tag �
 </div>
 <div class="paragraph">
 <p>This allows the user to easily modify the tags of all the items with a single command.</p>
+</div>
+<div class="paragraph">
+<p>For instance, if the user has items that are tagged [cs2100] and [midterm], and the user wishes to make
+use of such items to include in a cheatsheet for CS2100 finals, the user can input</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>edit tag/midterm tag/finals</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to conveniently change, for instance, all notes tagged with [midterm] to be tagged with [finals].</p>
+</div>
+<div class="paragraph">
+<p>This then allows the user to more conveniently generate a cheatsheet for his/her final exams.</p>
 </div>
 </div>
 </div>
@@ -500,98 +538,59 @@ If multiple tags are specified, only items that match all the specified tags wil
 </ul>
 </div>
 <div class="paragraph">
-<p>b) <strong>For Auto-generation of CheatSheets  (truncated)</strong></p>
+<p>b) For Auto-generation of CheatSheets</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upon adding a cheatsheet, the cheatsheet will make use of tags to automatically pull contents from other features of StudyBuddyPro.</p>
+</li>
+<li>
+<p>StudyBuddyItems with tags that match the user&#8217;s input will be pulled over.</p>
+</li>
+<li>
+<p>This feature will be further elaborated in the next section, Section 4.4.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>c) <strong>For TimeTrial Mode (truncated)</strong></p>
+<p>c) For TimeTrial Mode</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>The TimeTrial Mode of the flashcard feature, will make use of the tagging feature.</p>
+</li>
+<li>
+<p>It will do so by filtering out flashcards with tags that match the user&#8217;s input.</p>
+</li>
+<li>
+<p>For instance, if a user wishes to revise only important flashcards, he/she could enter the following command, <code>timetrial important</code>.</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deletion-prompt-feature"><a class="link" href="#deletion-prompt-feature">Deletion prompt feature</a></h3>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The deletion prompting applies to all three modes in StudyBuddyPro.
+<div class="paragraph">
+<p>The syntax used here is slightly different. The user need not specify the <code>tag/</code> keyword to indicate that the item is a tag.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The activity diagram below shows how the user is prompted upon calling a delete command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/kaibindiagrams/activitydiagramdeleteprompt.png" alt="activitydiagramdeleteprompt">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Diagram 5 : Activity Diagram for prompting user upon deletion.</em></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The marked index has to be constantly tracked, to prevent the user from successfully deleting a different indexed item without any prompts.</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="usage-of-deletion-prompts"><a class="link" href="#usage-of-deletion-prompts">Usage of deletion prompts</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Upon entering a delete command, e.g. <code>delete 6</code>, the item that is to be deleted will be displayed to the user, and they will be required to confirm their deletion.</p>
-</li>
-<li>
-<p>The user only needs to hit enter once more to successfully delete the item.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
-<div class="paragraph">
-<p>Aspect : Deletion prompts versus Undo feature.</p>
-</div>
-<div class="paragraph">
-<p>Current Implementation (prompting user before delete)</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Much easier to implement as compared to undo feature.</p>
-</li>
-<li>
-<p>Hitting enter once more to delete is highly convenient for the user, as
-compared to perhaps asking the user to input a 'yes' or 'no' to confirm their deletion.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Cons</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Less versatile than the undo feature.</p>
-</li>
-<li>
-<p>User might still accidentally delete the wrong item.</p>
-</li>
-</ul>
-</div>
+<p>The TimeTrial feature will be further elaborated in Section 4.5.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 11:15:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 14:32:32 UTC</div></div></div></body></html>
