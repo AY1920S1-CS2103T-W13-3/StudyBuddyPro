@@ -14,7 +14,7 @@ notes that can be later used to generate a reference to create a cheat sheet.</p
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/kaibindiagrams/AppDisplay.png" alt="AppDisplay">
+<img src="../images/jrImages/appPreview.png" alt="appPreview">
 </div>
 </div>
 <div class="paragraph">
@@ -160,6 +160,181 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="flashcards-time-trial-feature"><a class="link" href="#flashcards-time-trial-feature">Flashcards Time Trial Feature</a></h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The following commands assume that the user is in the <em>flashcard</em> mode.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The time trial mechanism is facilitated by the <code>FlashcardTabWindowController</code>, and mainly uses the <code>Timeline</code>, <code>KeyFrame</code> and <code>KeyValue</code> class from the JavaFX package to support its functionality.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following <em>figure</em> shows a class diagram of the relevant classes of the time trial feature.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/jrImages/TimeTrialClassDiagram.png" alt="TimeTrialClassDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The following <em>figure</em> is an activity diagram of the flow of events when a user attempts to start a time trial.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/jrImages/TimeTrialActivityDiagram.png" alt="TimeTrialActivityDiagram">
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
+</li>
+<li>
+<p>Upon initialization of the StudyBuddy and switching to the Flashcard window, the <code>StudyBuddyParser</code>’s function enum will be set to parse <code>Flashcard</code> commands.</p>
+</li>
+<li>
+<p>The user executes (timetrial cs2100), and the <code>StartTimeTrialCommand</code> retrieves a List of flashcards with the associated <code>Tag</code> through the <code>Model#getTaggedFlashcards</code>, which is then passed into the <code>FlashcardTabWindowController</code>.</p>
+</li>
+<li>
+<p>The <code>FlashcardTabWindowController</code> then calls the <code>FlashcardTabWindowController#startTimeTrial</code>, which in turns construct a <code>Timeline</code> with the following added for 3 flashcards:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <code>KeyFrame</code> to call the <code>FlashcardTabWindowController#loadTimeTrial</code> method, which displays the question of the flashcard on the window, with a <code>KeyValue</code> that starts the timer on the screen.</p>
+</li>
+<li>
+<p>A <code>KeyFrame</code> to call the <code>FlashcardTabWindowController#showFlashcardAns</code> method, which hides the Timer and flashes the answer of the flashcard for a set period of time.</p>
+</li>
+<li>
+<p>A <code>KeyFrame</code> is then added to the timeline to call the <code>FlashcardTabWindowController#resetViews</code> method, which in turn empties the qnsTextArea and ansTextArea. [TO BE REFORMATTED]</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following <em>figure</em> shows the sequence diagram of when the command <code>timetrial cs2103t</code> is executed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/jrImages/TimeTrialSequenceDiagram.png" alt="TimeTrialSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-the-timetrial-is-implemented"><a class="link" href="#aspect-how-the-timetrial-is-implemented">Aspect: How the timetrial is implemented</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> 1.	Using the <code>TimeLine</code> class to set the timer
+object.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Tidier and easier to understand.</p>
+</li>
+<li>
+<p>Cons: Have to read up on the API and learn about the relevant classes such as <code>KeyFrame</code> and <code>KeyValue</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Looping <code>Thread.sleep()</code> to set the timer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement</p>
+</li>
+<li>
+<p>Cons: Code will be messier and harder to read</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-continue-the-time-trial"><a class="link" href="#aspect-how-to-continue-the-time-trial">Aspect: How to continue the time trial</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice): Each flashcard and its’ respective answer is displayed for a set period of time before the next flashcard</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement</p>
+</li>
+<li>
+<p>Cons: Inflexible as user can only view the answer for a set amount of time</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Allowing users to input commands to display the flashcard answer / move on to the next flashcard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Better flow of time trial feature and improved user experience</p>
+</li>
+<li>
+<p>Cons: Hard to implement</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-future-improvements"><a class="link" href="#proposed-future-improvements">[Proposed] Future improvements</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowing users to set their own time limit for each flashcard in the time trial mode</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Command will be inputted to set the duration of the timer for each flashcard</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Allowing users to decide when to move on to the next flashcard</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Question will still be shown for a fixed period of time, but a command will be required to move on to the next flashcard instead of just flashing the answer for a set amount of time</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -170,4 +345,4 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 08:49:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 13:40:49 UTC</div></div></div></body></html>

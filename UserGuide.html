@@ -70,7 +70,7 @@
 <li><a href="#faq">8. FAQ</a></li>
 <li><a href="#command-summary">9. Command Summary</a>
 <ul class="sectlevel2">
-<li><a href="#global-commands-2">9.1. Global Commands</a></li>
+<li><a href="#global-commands-can-be-executed-in-any-mode">9.1. Global Commands (Can be executed in any mode)</a></li>
 <li><a href="#flashcard-commands">9.2. Flashcard Commands</a></li>
 <li><a href="#note-commands">9.3. Note Commands</a></li>
 <li><a href="#cheatsheet-commands">9.4. CheatSheet Commands</a></li>
@@ -1706,43 +1706,127 @@ do this while Mac users can use the Terminal application.</p>
 <p>{To be added}</p>
 </div>
 <div class="sect2">
-<h3 id="global-commands-2"><a class="link" href="#global-commands-2">9.1. Global Commands</a></h3>
-
+<h3 id="global-commands-can-be-executed-in-any-mode"><a class="link" href="#global-commands-can-be-executed-in-any-mode">9.1. Global Commands (Can be executed in any mode)</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Switch</strong> : <code>switch MODE</code><br>
+e.g <code>switch fc</code></p>
+</li>
+<li>
+<p><strong>Filter All</strong> : <code>filterall tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filterall tag/cs2103tuml tag/difficult</code></p>
+</li>
+<li>
+<p><strong>List tags</strong> : <code>taglist</code></p>
+</li>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="flashcard-commands"><a class="link" href="#flashcard-commands">9.2. Flashcard Commands</a></h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add q/QUESTION a/ANSWER t/TITLE [tag/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add q/What is 100 Binary in its Decimal form? a/4 t/Binary Stuff tag/CS2100</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter cs2103tuml</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Show</strong> : <code>show</code></p>
+</li>
+<li>
+<p><strong>Remind</strong> : <code>remind</code></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="note-commands"><a class="link" href="#note-commands">9.3. Note Commands</a></h3>
-<div class="sect3">
-<h4 id="code-add-code-adds-a-note"><a class="link" href="#code-add-code-adds-a-note">9.3.1. <code>add</code>: Adds a Note.</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="code-delete-code-deletes-a-note"><a class="link" href="#code-delete-code-deletes-a-note">9.3.2. <code>delete</code>: Deletes a Note.</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="code-view-code-views-a-note-without-note-fragment-tags"><a class="link" href="#code-view-code-views-a-note-without-note-fragment-tags">9.3.3. <code>view</code>: Views a Note without note fragment tags.</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="code-viewraw-code-view-a-note-with-note-fragment-tags"><a class="link" href="#code-viewraw-code-view-a-note-with-note-fragment-tags">9.3.4. <code>viewraw</code>: View a Note with note fragment tags.</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="code-list-code-views-all-note-titles"><a class="link" href="#code-list-code-views-all-note-titles">9.3.5. <code>list</code>: Views all Note titles.</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="code-filter-code-filters-the-list-of-notes-to-view"><a class="link" href="#code-filter-code-filters-the-list-of-notes-to-view">9.3.6. <code>filter</code>: Filters the list of Notes to view.</a></h4>
-
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add t/TITLE c/CONTENT tag/TAG&#8230;&#8203;</code><br>
+e.g. <code>add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes simultaneously. tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>Viewing a raw note</strong> : <code>viewraw INDEX</code><br>
+e.g <code>viewraw 3</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter tag/hard tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="cheatsheet-commands"><a class="link" href="#cheatsheet-commands">9.4. CheatSheet Commands</a></h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add t/TITLE [tag/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add t/CS2100 Midterm CheatSheet tag/cs2100midterm</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>Edit</strong> :  <code>edit INDEX t/TITLE tag/TAG&#8230;&#8203;</code><br>
+e.g <code>edit 8 t/cs2100 final cheatsheet tag/formula</code></p>
+</li>
+<li>
+<p><strong>Show</strong> : <code>show INDEX</code><br>
+e.g <code>show 4</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter tag/hard tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 08:49:23 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 13:40:49 UTC</div></div></div></body></html>
