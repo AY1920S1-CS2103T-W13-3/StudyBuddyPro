@@ -241,7 +241,11 @@ E.g. <code>[tag/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.
 <div class="ulist">
 <ul>
 <li>
-<p>All commands are written in English with alphanumeric characters.</p>
+<p>All commands are written in English.</p>
+</li>
+<li>
+<p>Some command parameters are restricted to purely alphanumeric characters, while others are just required to not be
+blank.</p>
 </li>
 <li>
 <p>Any indexes provided (denoted by '(index)' ) must be a positive integer (e.g. 1, 2, 3, &#8230;&#8203;).</p>
@@ -873,7 +877,7 @@ The format for note fragment content is 'C/', not 'c/', and the format for note 
 </td>
 <td class="content">
 If the format is not followed correctly, the note fragment tag will simply not be added (but the note will
-still be added). StudyBuddyPro will assume that the user typed the tags correctly.
+still be added). StudyBuddyPro will assume that the user has typed the tags correctly.
 </td>
 </tr>
 </table>
@@ -911,6 +915,24 @@ Note fragment tags detected:
 <p>This adds a note with content "Notes can be highlighted if needed.", and a note fragment tag with content
 "highlighted" and two tags "cs2100" and "important".</p>
 </li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The spaces around the syntax elements of '/*', 'C/' etc are part of the syntax. For example, if a note
+fragment tag looks like this: '/* C/highlighted TAG/important */if needed', then the resultant Note will look like
+this: 'highlightedif needed'.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Multiple note fragment tags are allowed. These do not interfere with the other tags of the Note.</p>
 </li>
@@ -1723,4 +1745,4 @@ do this while Mac users can use the Terminal application.</p>
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 07:35:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 08:49:23 UTC</div></div></div></body></html>
