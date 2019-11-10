@@ -20,6 +20,54 @@ notes that can be later used to generate a reference to create a cheat sheet.</p
 <div class="paragraph">
 <p><em>Figure 1. The graphical user interface for <strong>StudyBuddyPro</strong>.</em></p>
 </div>
+<div class="sect2">
+<h3 id="callouts-signs"><a class="link" href="#callouts-signs">Callouts Signs</a></h3>
+<div class="paragraph">
+<p>Please do refer to the signs below as they are used throughout the document.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are to be adhere as potential problems may be encountered if you are not careful.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are crucial to understand so that you will be able to follow the flow of the document.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Indicates information that are note-worthy. Do read them for more information and better understandings.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -42,7 +90,7 @@ notes that can be later used to generate a reference to create a cheat sheet.</p
 alternatives was necessary to implement the feature in a way that doesn’t disrupt other features. The implementation was also challenging because there was a need to read up on an existing API that I did not have prior experience in.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Credits: Usage of the timeline api and linking the timer to a label was inspired by: <a href="https://asgteach.com/2011/10/javafx-animation-and-binding-simple-countdown-timer-2/" class="bare">https://asgteach.com/2011/10/javafx-animation-and-binding-simple-countdown-timer-2/</a></p>
 </li>
 </ul>
 </div>
@@ -55,14 +103,29 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p>Project management:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Facilitated discussion of the overall direction of the application in v1.1.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Developing existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implemented the switching of modes and hooking up the activity window to the respective modes(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/162">#162</a>).</p>
+</li>
+<li>
+<p>Implemented the viewing and showing of flashcards(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/133">#133</a>)(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/200">#200</a>).</p>
+</li>
+<li>
+<p>Implemented the time trial feature of the Flashcard(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/198">#198</a>).</p>
 </li>
 </ul>
 </div>
@@ -72,10 +135,13 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Designed the overall GUI of the StudyBuddyPro(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/123/commits/2964fbad0c7a09397ea1aea0d76867204e3395f1">#123</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Enhanced delete commands to prompt the user once to confirm his/her deletion(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/244">#244</a>).</p>
+</li>
+<li>
+<p>Wrote additional tests for existing features to increase the test coverage.</p>
 </li>
 </ul>
 </div>
@@ -85,7 +151,7 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Added the command summary for the team(<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/pull/338">#338</a>).</p>
 </li>
 </ul>
 </div>
@@ -95,40 +161,12 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reported bugs and offered suggestions for the other team during the Practical Exam dry run.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -145,6 +183,178 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="time-trial-code-timetrial-code"><a class="link" href="#time-trial-code-timetrial-code">Time Trial: <code>timetrial</code></a></h3>
+<div class="paragraph">
+<p>Starts a time trial for flashcards with tag &lt;TAG&gt; for &lt;TIME&gt; seconds per flashcard.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: timetrial tag/TAG...</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Example usage: timetrial cs2103tuml hard</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Expected output: Time trial started</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one tag must be specified.</p>
+</li>
+<li>
+<p>If more than one tag is specified, selects all flashcards that contains all of the specified tags.</p>
+</li>
+<li>
+<p>Default &lt;TIME&gt; will be 5 seconds.</p>
+</li>
+<li>
+<p>Answer will be flashed for 3 seconds.</p>
+</li>
+<li>
+<p>If a flashcard command (other than <code>show</code>) is inputted during the time trial, the time trial will be terminated and the inputted
+command will be executed.</p>
+</li>
+<li>
+<p>Executing <code>show</code> will reveal the answer of the flashcard in advance, but will not terminate the time trial.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="global-commands-can-be-executed-in-any-mode"><a class="link" href="#global-commands-can-be-executed-in-any-mode">Global Commands (Can be executed in any mode)</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Switch</strong> : <code>switch MODE</code><br>
+e.g <code>switch fc</code></p>
+</li>
+<li>
+<p><strong>Filter All</strong> : <code>filterall tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filterall tag/cs2103tuml tag/difficult</code></p>
+</li>
+<li>
+<p><strong>List tags</strong> : <code>taglist</code></p>
+</li>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flashcard-commands"><a class="link" href="#flashcard-commands">Flashcard Commands</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add q/QUESTION a/ANSWER t/TITLE [tag/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add q/What is 100 Binary in its Decimal form? a/4 t/Binary Stuff tag/CS2100</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter cs2103tuml</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Show</strong> : <code>show</code></p>
+</li>
+<li>
+<p><strong>Remind</strong> : <code>remind</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="note-commands"><a class="link" href="#note-commands">Note Commands</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add t/TITLE c/CONTENT tag/TAG&#8230;&#8203;</code><br>
+e.g. <code>add t/Pipelining Definition c/Pipelining is a process where a processor executes multiple processes simultaneously. tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>Viewing a raw note</strong> : <code>viewraw INDEX</code><br>
+e.g <code>viewraw 3</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter tag/hard tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cheatsheet-commands"><a class="link" href="#cheatsheet-commands">CheatSheet Commands</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add</strong> : <code>add t/TITLE [tag/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add t/CS2100 Midterm CheatSheet tag/cs2100midterm</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code>
+e.g <code>delete 1</code></p>
+</li>
+<li>
+<p><strong>Edit</strong> :  <code>edit INDEX t/TITLE tag/TAG&#8230;&#8203;</code><br>
+e.g <code>edit 8 t/cs2100 final cheatsheet tag/formula</code></p>
+</li>
+<li>
+<p><strong>Show</strong> : <code>show INDEX</code><br>
+e.g <code>show 4</code></p>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code><br>
+e.g <code>view 1</code></p>
+</li>
+<li>
+<p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
+e.g <code>filter tag/hard tag/cs2100</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -338,11 +548,8 @@ object.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="project-studybuddypro"><a class="link" href="#project-studybuddypro">PROJECT: StudyBuddyPro</a></h2>
 <div class="sectionbody">
 <hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 17:45:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 13:13:12 UTC</div></div></div></body></html>
