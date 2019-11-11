@@ -261,7 +261,7 @@ E.g. "noted" will return "noted" but not "note" or "notes"</p>
 </li>
 <li>
 <p>All searches, like <code>filter</code>, are case insensitive.
-E.g. 'tag/cs2103t' will match 'tag/CS2103T' and <code>filter important</code> will match <code>filter IMPORTANT</code></p>
+E.g. 'tag/cs2103t' will match 'tag/CS2103T' and <code>filter tag/important</code> will match <code>filter tag/IMPORTANT</code></p>
 </li>
 <li>
 <p>If multiple inputs are given for a particular field, only the last valid input for the field is taken, unless the field allows multiple inputs.
@@ -380,10 +380,37 @@ Listing all tags :
 <div class="paragraph">
 <p>Lists all StudyBuddyPro items with matching tags in the application.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The user must specify at least one tag.</p>
+</li>
+<li>
+<p>The user is able to specify multiple tags.</p>
+</li>
+<li>
+<p>CheatSheets that match all of the specified tags will be displayed.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>Format: filterall tag/TAG [tag/TAG]...</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Let’s say the user wishes to view the definition of pipelining. Pipelining is taught in CS2100, a Computer Organization module taught in the School of Computing at NUS. Hence, the user can make use of filterall to find all flashcards, cheatsheets and notes that are tagged “CS2100”. Note that for simplicity, all tags will be converted to lowercase upon input. Hence, ‘CS2100’ will be read as ‘cs2100’ by our application.</p>
 </div>
 <div class="paragraph">
 <p>Example usage:</p>
@@ -447,6 +474,18 @@ For example,</p>
 </div>
 <div class="sect2">
 <h3 id="clearing-specific-feature-s-data-code-clear-code"><a class="link" href="#clearing-specific-feature-s-data-code-clear-code">4.5. Clearing specific feature&#8217;s data: <code>clear</code></a></h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Proceed with care when using this function!! Using the clear function will IMMEDIATELY clear ALL of the data depending on the mode you are in!
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Clears the data in specific feature. Depending on the <em>mode</em> that the user is in, the <code>clear</code> command will only clear the specific feature&#8217;s data.</p>
 </div>
@@ -458,9 +497,29 @@ For example,</p>
 <pre>clear</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Cleared all flashcards/notes/cheatsheets!</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="clearing-entire-application-s-data-code-clear-all-code"><a class="link" href="#clearing-entire-application-s-data-code-clear-all-code">4.6. Clearing entire application&#8217;s data: <code>clear all</code></a></h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Proceed with care when using this function!! Using the clear function will IMMEDIATELY clear ALL of the data in StudyBuddyPro!
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Clears all the data in the application.</p>
 </div>
@@ -477,7 +536,7 @@ For example,</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Cleared the entire StudyBuddy book!</pre>
+<pre>Cleared the entire StudyBuddyPro!</pre>
 </div>
 </div>
 </div>
@@ -574,9 +633,6 @@ the relevant content for the day - StudyBuddyPro will always double-check for yo
 <div class="content">
 <pre>edit tag/midterm tag/finals</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Expected output:</p>
 </div>
 <div class="paragraph">
 <p>Expected output:</p>
@@ -684,6 +740,9 @@ screen should now look like the one found in the screenshot below.</p>
 <div class="content">
 <pre>view 6</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>will view the Flashcard at Index 6.</p>
 </div>
 <div class="paragraph">
 <p>Expected output:</p>
@@ -795,6 +854,19 @@ screen should now look like the one found in the screenshot below.</p>
     Please use `delete 6` again to confirm your deletion..</code></pre>
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Inputting invalid commands will <strong>NOT</strong> offer another prompt to the user.
+For example, calling <code>delete 3</code>, then an <code>invalid command</code> and then <code>delete 3</code> again will immediately delete the 3rd item without a prompt.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Upon keying in <code>delete 6</code> again, then the flashcard will be deleted.</p>
 </div>
@@ -825,9 +897,6 @@ screen should now look like the one found in the screenshot below.</p>
 <div class="content">
 <pre>timetrial cs2103tuml hard</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Expected output:</p>
 </div>
 <div class="paragraph">
 <p>Expected output:</p>
@@ -916,11 +985,20 @@ overdue for revision. Automatically suggests a new date the flashcard should nex
 viewed at for optimal learning. These increments scale with time i.e. suggested viewing
 dates are closer at the start and spread further after more viewings.</p>
 </div>
-<div class="paragraph">
-<p>[NOTE] StudyBuddyPro only marks a flashcard as revised and removes it from the due and
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+StudyBuddyPro only marks a flashcard as revised and removes it from the due and
 overdue flashcard list when you see the flashcard&#8217;s <em>answer</em> not just its question! For
 example, simply using the <code>view</code> command without the <code>show</code> command to reveal the flashcard&#8217;s
-answer will not trick the system. Sorry, it&#8217;s for your own good!</p>
+answer will not trick the system. Sorry, it&#8217;s for your own good!
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example usage:</p>
@@ -993,11 +1071,18 @@ Here are your overdue flashcards:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>All the operations in this section assume that the user is in the <em>notes</em> mode.</p>
+<p>All the operations in this section assume that the user is in the <em>notes</em> mode. To be sure
+you are <em>notes</em> mode, please ensure you used the <code>switch notes</code> command before this. Your
+screen should now look like the one found in the screenshot below.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NotesSuccess.PNG" alt="NotesSuccess" width="700">
+</div>
 </div>
 <div class="sect2">
 <h3 id="creating-a-note-code-add-code"><a class="link" href="#creating-a-note-code-add-code">6.1. Creating a note: <code>add</code></a></h3>
@@ -1180,7 +1265,7 @@ commands.
 </div>
 </div>
 <div class="paragraph">
-<p>Upon hitting enter, the note will be deleted.</p>
+<p>Upon using <code>delete 3</code> again, then the note will be deleted.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1189,6 +1274,19 @@ commands.
     Content: Notes can be /* C/highlighted TAG/cs2100 TAG/important */ if needed.
     Tags: [about]</code></pre>
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Inputting invalid commands will <strong>NOT</strong> offer another prompt to the user.
+For example, calling <code>delete 3</code>, then an <code>invalid command</code> and then <code>delete 3</code> again will immediately delete the 3rd item without a prompt.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1417,6 +1515,13 @@ Notes will be labeled with indices '1', '2' etc. Note fragment tags will be labe
 <div class="sect1">
 <h2 id="cheatsheet-feature"><a class="link" href="#cheatsheet-feature">7. CheatSheet Feature:</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Ever spent countless of hours rummaging through your notes just to dig up
+important information to add to your cheatsheet for your exams? Ever feared that you
+ might accidentally miss out on important information to add to your cheatsheet? Fret not! Our
+very own cheatsheet feature of StudyBuddyPro is here to help you auto-generate your important
+information, and to simply, save the day.</p>
+</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1425,11 +1530,18 @@ Notes will be labeled with indices '1', '2' etc. Note fragment tags will be labe
 </td>
 <td class="content">
 <div class="paragraph">
-<p>All the operations in this section assume that the user is in the <em>cheatsheet</em> mode.</p>
+<p>All the operations in this section assume that the user is in the <em>cheatsheet</em> mode. To be sure
+you are <em>cheatsheet</em> mode, please ensure you used the <code>switch cs</code> command before this. Your
+screen should now look like the one found in the screenshot below.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CheatSheetSuccess.PNG" alt="CheatSheetSuccess" width="700">
+</div>
 </div>
 <div class="sect2">
 <h3 id="creating-a-cheatsheet-code-add-code"><a class="link" href="#creating-a-cheatsheet-code-add-code">7.1. Creating a Cheatsheet: <code>add</code></a></h3>
@@ -1535,8 +1647,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 <div class="content">
 <pre class="CodeRay highlight"><code>Edited Cheatsheet:
 Title: cs2100 final cheatsheet
-Tags: [cs2100finals]
-Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]</code></pre>
+Tags: [cs2100finals]</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1581,14 +1692,13 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]</c
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>Are you sure you would like to delete the following cheatsheet?
-Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
-Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
-    [ 2. 110 in Binary is 6 is Decimal ]
+Title: CS2100 Finals CheatSheet
+Tags: [finalcheatsheet]
 Please use `delete 8` again to confirm your deletion.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Upon hitting enter, the specified cheatsheet will be deleted.</p>
+<p>Upon hitting enter, then the specified cheatsheet will be deleted.</p>
 </div>
 <div class="paragraph">
 <p>Expected output:</p>
@@ -1600,6 +1710,19 @@ Please use `delete 8` again to confirm your deletion.</code></pre>
     Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
         [ 2. 110 in Binary is 6 is Decimal ]</code></pre>
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Inputting invalid commands will <strong>NOT</strong> offer another prompt to the user.
+For example, calling <code>delete 3</code>, then an <code>invalid command</code> and then <code>delete 3</code> again will immediately delete the 3rd item without a prompt.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2037,4 +2160,4 @@ e.g <code>filter tag/hard tag/cs2100</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:24:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:25:56 UTC</div></div></div></body></html>

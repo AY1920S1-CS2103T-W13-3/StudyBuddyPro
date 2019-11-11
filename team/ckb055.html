@@ -226,6 +226,30 @@ Listing all tags :
 <div class="paragraph">
 <p>Each StudyBuddyItem has a set of tags tied to them. <code>filterall</code> allows the user to list all StudyBuddy items with matching tags in the application. The user is able to use this command regardless of which mode they are currently in.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The user must specify at least one tag.</p>
+</li>
+<li>
+<p>The user is able to specify multiple tags.</p>
+</li>
+<li>
+<p>CheatSheets that match all of the specified tags will be displayed.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Let’s say the user wishes to view the definition of pipelining. Pipelining is taught in CS2100, a Computer Organization module taught in the School of Computing at NUS. Hence, the user can make use of filterall to find all flashcards, cheatsheets and notes that are tagged “CS2100”. Note that for simplicity, all tags will be converted to lowercase upon input. Hence, ‘CS2100’ will be read as ‘cs2100’ by our application.</p>
 </div>
@@ -251,8 +275,6 @@ Tags: [cs2100]
 CheatSheet: 7.
 Title: cs2100 stuff
 Tags: [cs2100]
-Contents: [ 1. Pipelining is a process where.. ]
-    [ 2. Question: What is 101 Binary in its Decimal form?; Answer: 5 ]
 Note: 5.
 Title: Pipelining Definition
 Content: Pipelining is a process where..
@@ -337,8 +359,6 @@ Tags: [cs2100]</pre>
 <pre>Expected output:
 Are you sure you would like to delete the following cheatsheet?
 Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
-Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
-    [ 2. 110 in Binary is 6 is Decimal ]
 Please use `delete 8` again to confirm your deletion.</pre>
 </div>
 </div>
@@ -347,6 +367,19 @@ Please use `delete 8` again to confirm your deletion.</pre>
 </div>
 <div class="paragraph">
 <p>This will prevent any accidental deletion of wrong items.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Inputting invalid commands will <strong>NOT</strong> offer another prompt to the user.
+For example, calling <code>delete 3</code>, then an <code>invalid command</code> and then <code>delete 3</code> again will immediately delete the 3rd item without a prompt.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -625,4 +658,4 @@ If multiple tags are specified, only items that match all the specified tags wil
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:24:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:25:55 UTC</div></div></div></body></html>
