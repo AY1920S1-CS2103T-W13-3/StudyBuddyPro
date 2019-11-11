@@ -53,7 +53,8 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#remind-feature-2">F.2. Remind feature</a></li>
+<li><a href="#remind-feature-2">F.2. Remind Feature</a></li>
+<li><a href="#auto-generation-feature-of-cheatsheet">F.3. Auto-generation Feature of Cheatsheet</a></li>
 </ul>
 </li>
 </ul>
@@ -3016,7 +3017,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">F.2. Remind feature</a></h3>
+<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">F.2. Remind Feature</a></h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -3457,5 +3458,66 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="auto-generation-feature-of-cheatsheet"><a class="link" href="#auto-generation-feature-of-cheatsheet">F.3. Auto-generation Feature of Cheatsheet</a></h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do take a look at the section on automation of cheatsheet above for more information of how the feature works!</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:23:18 UTC</div></div></div></body></html>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Testing <code>add</code> command</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>In Flashcard and Notes features, there exist 2 objects in total that is tagged <code>manualtesting</code>.</p>
+</li>
+<li>
+<p>Currently in cheatsheet mode with Cheatsheet icon highlighted.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test command: <code>add</code> with <code>title</code> as <code>Manual Testing</code> and <code>tag</code> as <code>manualtesting</code>.</p>
+</li>
+<li>
+<p>Expected: Feedback box outputs message:</p>
+<div class="literalblock">
+<div class="content">
+<pre>New cheatsheet added:  Title: Manual Testing
+Tags: [manualtesting]
+2 content(s) have been successfully generated from the other modes.</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:24:59 UTC</div></div></div></body></html>
