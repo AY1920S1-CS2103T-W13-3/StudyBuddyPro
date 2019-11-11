@@ -337,10 +337,420 @@ requests with issues and closing issues when completed. (Pull request <a href="h
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write clear and concise
+documentation that helps the non-technical end user use the application. I also took active effort to ensure my writing
+was as friendly and inviting as possible. Note that some sections have been omitted which may affect coherence while
+reading.</em></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction-2"><a class="link" href="#introduction-2">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>StudyBuddyPro is a student application that aims to simplify the hassle of revision
+by providing a suite of tools for effective revision.</p>
+</div>
+<div class="paragraph">
+<p>StudyBuddyPro is optimized for students who prefer to work with
+a Command Line Interface (CLI) while still having the benefits of a
+Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>Moreover, StudyBuddyPro comes geared with pre-loaded features specially
+catered for computing students. So whether you&#8217;re a computing student getting
+used to a CLI for the first time or if you&#8217;re a CLI expert who wants to reap
+the benefits of a fast typing speed, give StudyBuddyPro a try!</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re interested, head over to the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#2-quick-start">Quick Start</a>
+section to get started!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please ensure you have Java 11 or above installed before proceeding!
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the latest version of <code>StudyBuddyPro.jar</code> <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Place the file in the folder you want to set as the home directory. All data and
+miscellaneous files associated with StudyBuddyPro will be placed in this folder.</p>
+</li>
+<li>
+<p>Double-click <code>StudyBuddyPro.jar</code> to launch the application. The GUI should appear in a few seconds, and
+should look like the screen shown below. If not,
+please
+refer to the first question in the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#8-FAQ">FAQ</a>
+for help!</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.PNG" alt="Ui" width="700">
+</div>
+<div class="title">Figure 1. GUI of StudyBuddyPro application displayed on startup</div>
+</div>
+</li>
+<li>
+<p>Type a command in the command box execute it by pressing <kbd>Enter</kbd>. Typed commands
+will appear in the CLI highlighted in the purple box in the diagram above. Refer to the
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#9-command-summary">Command Summary</a>
+section for a quick overview of all the available commands!</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The blue box in the diagram above with the "Flashcards", "Notes" and "Cheatsheets" logo
+can be used to quickly check which mode you are in! Switching into a mode will highlight
+the relevant mode&#8217;s logo in an orange circle, as shown in this
+<a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#5-flashcard-feature">figure</a>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Output from the command will be shown in the boxes highlighted in orange and green in
+the diagram above. The green box is used to display a flashcard, note or cheatsheet
+while the orange box outputs feedback from commands.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="flashcard-feature"><a class="link" href="#flashcard-feature">Flashcard Feature</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Good news - StudyBuddyPro comes with some preloaded flashcards, specially catered for you as a
+computing student! Be sure to take a look! Psst - here&#8217;s a hint for our more tech-savvy
+users: You can delete your <em>flashcards.json</em> file in the StudyBuddyPro data folder to restore
+these default flashcards at any time. Of course, your current flashcards will be deleted as well!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sick and tired of cramming all your revision at the last minute? Why not give our
+Flashcards feature a try! This feature can help you create your very own flashcards to
+help you consistently revise. With our built-in reminder features and timetrial modes to
+test yourself, use this feature and be on track to better revising habits today!</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All the operations in this section assume that the user is in the <em>flashcard</em> mode. To be sure
+you are <em>flashcard</em> mode, please ensure you used the <code>switch fc</code> command before this. Your
+screen should now look like the one found in the screenshot below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FlashcardSuccess.PNG" alt="FlashcardSuccess" width="700">
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-create-a-flashcard-code-add-code"><a class="link" href="#how-to-create-a-flashcard-code-add-code">How to create a flashcard: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a flashcard from user input question &lt;QUESTION&gt; and answer &lt;ANSWER&gt;.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: add q/QUESTION a/ANSWER t/TITLE [tag/TAG]...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>add q/What is 100 Binary in its Decimal form? a/4 t/Binary Stuff tag/CS2100</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>New flashcard added:
+    New flashcard added: Title: Binary Stuff
+    Tags: [cs2100]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-flashcard-code-edit-code-coming-in-v2-0"><a class="link" href="#editing-a-flashcard-code-edit-code-coming-in-v2-0">Editing a flashcard: <code>edit</code> (Coming in v2.0)</a></h3>
+<div class="paragraph">
+<p>Edits a flashcard&#8217;s question, answer, title, or tags. The flashcard will be referred to by their original title
+<code>ORIGINAL_TITLE</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: edit ORIGINAL_TITLE [q/NEW_QUESTION] [a/ANSWER] [t/TITLE] [tag/TAG]...</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>edit IntelliJ Question 1 q/What is the meaning of SLAP? a/Single Layer of Abstraction Principle t/SE Question 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Edited flashcard:
+    Title: SE Question 1
+    Question: What is the meaning of SLAP?
+    Tags: [cs2100]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Notice how the fields that are not edited retain their original information. For example,
+the <em>tag</em> field was not changed and so the original <em>cs2100</em> tag was retained.</p>
+</li>
+<li>
+<p>Multiple fields can be edited at the same time. In the example, the <em>question</em>, <em>answer</em>
+and <em>title</em> fields were all edited at once.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-view-a-list-of-all-available-flashcards-code-list-code"><a class="link" href="#how-to-view-a-list-of-all-available-flashcards-code-list-code">How to view a list of all available flashcards: <code>list</code></a></h3>
+<div class="paragraph">
+<p>Lists all flashcards.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Listed all flashcards:
+    Title: Pipelineing Question 1
+    Tags: [CS2100]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-delete-a-flashcard-code-delete-code"><a class="link" href="#how-to-delete-a-flashcard-code-delete-code">How to delete a flashcard: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the flashcard by &lt;FLASHCARD_INDEX&gt;.</p>
+</div>
+<div class="paragraph">
+<p>The user will be prompted again to confirm their deletion.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Format: delete (index)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>delete 6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Are you sure you would like to delete the following flashcard?
+    Title: Binary Question 1
+    Tags: [cs2100]
+    Please use `delete 6` again to confirm your deletion..</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon keying in <code>delete 6</code> again, then the flashcard will be deleted.</p>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Flashcard:  Title: Binary Question 1
+    Tags: [cs2100]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-out-what-flashcards-to-revise-today-or-ones-you-may-have-missed-code-remind-code"><a class="link" href="#find-out-what-flashcards-to-revise-today-or-ones-you-may-have-missed-code-remind-code">Find out what flashcards to revise today, or ones you may have missed: <code>remind</code></a></h3>
+<div class="paragraph">
+<p>This feature helps the user check which flashcards are due for revision today and which flashcards
+overdue for revision. Don&#8217;t worry, StudyBuddyPro automatically sets the date the flashcard should next be
+viewed at for optimal learning. These increments also scale with time i.e. newer flashcards will
+have to be viewed more often.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Be sure to check in everyday to see which flashcards you have due!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+StudyBuddyPro only marks a flashcard as revised and removes it from the due and
+overdue flashcard list when you see the flashcard&#8217;s <em>answer</em> not just its question! For
+example, simply using the <code>view</code> command without the <code>show</code> command to reveal the flashcard&#8217;s
+answer will not trick the system. Sorry, it&#8217;s for your own good!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>remind</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If no flashcards due for revision today and no overdue flashcards:</p>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Well done - No due or overdue flashcards!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are flashcards due for revision today but no overdue flashcards:</p>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are no flashcards due for revision today but there are overdue flashcards:</p>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Here are your overdue flashcards:
+1. Math Question 1 - What is 2 x 2? (Was due on 2019-10-30)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are both flashcards due for revision today and overdue flashcards:</p>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Here are the flashcards due today:
+1. Math Question 1 - What is 2 x 2?
+Here are your overdue flashcards:
+1. Math Question 2 - What is 3 x 2? (Was due on 2019-10-30)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: Help! Double-clicking <code>StudyBuddyPro.jar</code> does not launch the application - what
+should I do?<br>
+<strong>A</strong>: Trying running the application from the command line using the following command:
+<code>java -jar StudyBuddyPro.jar</code>. Windows users can use the Command Prompt application to
+do this while Mac users can use the Terminal application.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: The preloaded deck of flashcards is overdue for revision and StudyBuddyPro says the last viewed date for
+those preloaded flashcards was when I first opened StudyBuddyPro, even though I never even
+viewed those flashcards! How is this possible?<br>
+<strong>A</strong>: StudyBuddyPro assumes all the default flashcards will be viewed when the application
+was first opened. Aren&#8217;t you curious to see what we collated for you?</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -352,12 +762,12 @@ requests with issues and closing issues when completed. (Pull request <a href="h
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my advanced
+technical knowledge through the depth of my contributions. They also showcase my ability
+to explain complicated technical information in an easy-to-read, digestible manner. This was achieved
+in a variety of ways, such as the use of examples and industry standard technical diagrams.</em></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{Include summary}</em></p>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:25:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:26:26 UTC</div></div></div></body></html>
