@@ -50,11 +50,10 @@
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#remind-feature-2">G.2. Remind feature</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#remind-feature-2">F.2. Remind feature</a></li>
 </ul>
 </li>
 </ul>
@@ -657,9 +656,7 @@ The segment below provides more details of the <code>storage</code> components a
 <div class="content">
 <img src="images/kaibindiagrams/tagPredicateCodeSnippet.png" alt="tagPredicateCodeSnippet">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Diagram 7 : Code Snippet of `StudyBuddyItemContainsTagPredicate#test()`</em></p>
+<div class="title">Figure 11. Code Snippet of <code>StudyBuddyItemContainsTagPredicate#test()</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -711,7 +708,7 @@ that might have tags containing [difficult].</p>
 <p>The user is also able to indicate a tag name get a list view of all the StudyBuddyItems across all 3 modes in StudyBuddyPro (e.g. <code>filterall tag/ma1521</code>).</p>
 </li>
 <li>
-<p>The user can also call the global command, <code>taglist</code> to get a listview of all tags in StudyBuddyPRo.</p>
+<p>The user can also call the global command, <code>taglist</code> to get a listview of all tags in StudyBuddyPro.</p>
 </li>
 </ul>
 </div>
@@ -731,7 +728,7 @@ that might have tags containing [difficult].</p>
 <div class="content">
 <img src="images/kaibindiagrams/ListAllByTagSequenceDiagram.png" alt="ListAllByTagSequenceDiagram">
 </div>
-<div class="title">Figure 11. Sequence diagram of filtering all StudyBuddyItems by a tag.</div>
+<div class="title">Figure 12. Sequence diagram of filtering all StudyBuddyItems by a tag.</div>
 </div>
 </div>
 <div class="sect4">
@@ -864,7 +861,7 @@ After creation, the cheatsheet is then stored in the <code>studyBuddyBook</code>
 <div class="content">
 <img src="images/jasmineDiagrams/AddCheatSheetSequenceDiagram.png" alt="AddCheatSheetSequenceDiagram">
 </div>
-<div class="title">Figure 12. Sequence diagram to illustrate auto-generation operation</div>
+<div class="title">Figure 13. Sequence diagram to illustrate auto-generation operation</div>
 </div>
 <div class="paragraph">
 <p>From the sequence diagram above, it portrays the relationships between the components to execute the creation mechanism. The <em>figure</em> below explains the details within the sequence diagram.</p>
@@ -873,7 +870,7 @@ After creation, the cheatsheet is then stored in the <code>studyBuddyBook</code>
 <div class="content">
 <img src="images/jasmineDiagrams/AddCheatSheetDetailedSequenceDiagram.png" alt="AddCheatSheetDetailedSequenceDiagram">
 </div>
-<div class="title">Figure 13. Detailed sequence diagram for retrieval of tagged contents</div>
+<div class="title">Figure 14. Detailed sequence diagram for retrieval of tagged contents</div>
 </div>
 <div class="paragraph">
 <p>The above sequence diagram shows the complete action flow for the execution of methods.
@@ -938,7 +935,7 @@ Here is a brief summary of the steps taken to create the cheatsheet:</p>
 <div class="content">
 <img src="images/jasmineDiagrams/EditCheatSheetCommandActivityDiagram.png" alt="EditCheatSheetCommandActivityDiagram">
 </div>
-<div class="title">Figure 14. Activity diagram of the <code>edit</code> command for the removal of contents</div>
+<div class="title">Figure 15. Activity diagram of the <code>edit</code> command for the removal of contents</div>
 </div>
 <div class="paragraph">
 <p>The activity diagram above shows the general flow of customization of cheatsheet feature. The changes for <em>contents</em> have to come first before the changes for <em>tags</em>. This is to ensure that the <em>contents</em> are still relevant to the <em>tags</em> specified. An example is provided below.</p>
@@ -1291,7 +1288,7 @@ to exit StudyBuddyPro anyway.</p>
 <div class="content">
 <img src="images/remindDiagrams/ExitCommandActivityDiagram.png" alt="ExitCommandActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity diagram of user trying to exit StudyBuddyPro through the <code>exit</code> command</div>
+<div class="title">Figure 16. Activity diagram of user trying to exit StudyBuddyPro through the <code>exit</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1308,7 +1305,7 @@ of when the flashcard should be next viewed for optimum spaced repetition learni
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandModelsClassDiagram.png" alt="RemindCommandModelsClassDiagram">
 </div>
-<div class="title">Figure 16. Class diagram of <code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes</div>
+<div class="title">Figure 17. Class diagram of <code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1350,7 +1347,7 @@ used to update the <code>toViewNext</code> attribute.</p>
 <div class="content">
 <img src="images/remindDiagrams/OnView.PNG" alt="OnView">
 </div>
-<div class="title">Figure 17. Code snippet of <code>Statistics#onView()</code></div>
+<div class="title">Figure 18. Code snippet of <code>Statistics#onView()</code></div>
 </div>
 <div class="paragraph">
 <p><strong>Step 4</strong>. In this case, the "if" clause of the code snippet above is triggered since
@@ -1384,7 +1381,7 @@ also provides a summary of the <code>Logic</code> components of the <code>remind
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandLogicClassDiagram.png" alt="RemindCommandLogicClassDiagram">
 </div>
-<div class="title">Figure 18. Class diagram of <code>RemindCommand</code></div>
+<div class="title">Figure 19. Class diagram of <code>RemindCommand</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>remind</code> command also interacts with the <code>Model</code> component, specifically through indirect
@@ -1435,7 +1432,7 @@ the <code>Logic</code> package, and green classes are part of the <code>UI</code
 <div class="content">
 <img src="images/remindDiagrams/RemindFeatureSequenceDiagramMain.png" alt="RemindFeatureSequenceDiagramMain">
 </div>
-<div class="title">Figure 19. Sequence diagram of high-level overview of how the <code>remind</code> command works</div>
+<div class="title">Figure 20. Sequence diagram of high-level overview of how the <code>remind</code> command works</div>
 </div>
 <div class="paragraph">
 <p>With reference to <strong>Step 4</strong> above, the implementation of how the <code>RemindCommand</code> object determines
@@ -1446,7 +1443,7 @@ in the sequence diagram below and explained in further detail below the diagram.
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandReferenceSequenceDiagram.png" alt="RemindCommandReferenceSequenceDiagram">
 </div>
-<div class="title">Figure 20. Sequence diagram of checking for due and overdue flashcards</div>
+<div class="title">Figure 21. Sequence diagram of checking for due and overdue flashcards</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1476,7 +1473,7 @@ check for due flashcards.</p>
 <div class="content">
 <img src="images/remindDiagrams/OverdueFlashcards.PNG" alt="OverdueFlashcards">
 </div>
-<div class="title">Figure 21. Method to collect overdue flashcards from a given list of flashcards</div>
+<div class="title">Figure 22. Method to collect overdue flashcards from a given list of flashcards</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1656,7 +1653,7 @@ below:</p>
 <div class="content">
 <img src="images/samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
 </div>
-<div class="title">Figure 22. An overview of the Note class and its associated classes</div>
+<div class="title">Figure 23. An overview of the Note class and its associated classes</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1759,7 +1756,7 @@ Note fragment tags should not be confused with <code>Tags</code>.
 <div class="content">
 <img src="images/samDiagrams/NoteModelDetailedClassDiagram.png" alt="NoteModelDetailedClassDiagram">
 </div>
-<div class="title">Figure 23. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
+<div class="title">Figure 24. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
 </div>
 <div class="paragraph">
 <p>As shown in the diagram above, <code>NoteFragments</code> contain:</p>
@@ -1872,7 +1869,7 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagram.png" alt="AddNoteSequenceDiagram">
 </div>
-<div class="title">Figure 24. Overview of how a Note is added to StudyBuddyPro</div>
+<div class="title">Figure 25. Overview of how a Note is added to StudyBuddyPro</div>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram above, when an <code>add</code> command is entered by the user:</p>
@@ -1903,7 +1900,7 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagramZoomedIn.png" alt="AddNoteSequenceDiagramZoomedIn">
 </div>
-<div class="title">Figure 25. Illustration of how Notes and NoteFragments are created</div>
+<div class="title">Figure 26. Illustration of how Notes and NoteFragments are created</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the zoomed-in diagram above, when an <code>AddNoteCommand</code> is created:</p>
@@ -1975,7 +1972,7 @@ therefore it would be unnecessary to also list all <code>NoteFragments</code>, a
 <div class="content">
 <img src="images/samDiagrams/FilterVersusListActivityDiagram.png" alt="FilterVersusListActivityDiagram">
 </div>
-<div class="title">Figure 26. Differences between filter and list command executions</div>
+<div class="title">Figure 27. Differences between filter and list command executions</div>
 </div>
 <div class="paragraph">
 <p>Whilst <code>filter</code> uses <code>ModelManager#collectTaggedNotes()</code> (as shown in the notes on the diagram above), <code>list</code> uses
@@ -2019,7 +2016,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/ViewVersusViewRawActivityDiagram.png" alt="ViewVersusViewRawActivityDiagram">
 </div>
-<div class="title">Figure 27. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
+<div class="title">Figure 28. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen in the diagram above, the method <code>Note#getContentCleanedFromTags()</code> is used to obtain a copy of the
@@ -2032,7 +2029,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/NoteCleanedContentObjectDiagram.png" alt="NoteCleanedContentObjectDiagram">
 </div>
-<div class="title">Figure 28. A possible instance of a use of ViewNoteCommand</div>
+<div class="title">Figure 29. A possible instance of a use of ViewNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the diagram above, the <code>Note</code> object named 'note' makes use of the <code>NoteFeatureUtil</code> object and
@@ -2951,7 +2948,7 @@ Use case resumes from step 16.</p>
 </dd>
 <dt class="hdlist1"><a id="flash-card"></a> FlashCard</dt>
 <dd>
-<p>A titled digital 'card' that contains a question (image or text), answer, as well as it&#8217;s relevant tags.</p>
+<p>A titled digital 'card' that contains a question (image or text), answer, as well as its relevant tags.</p>
 </dd>
 <dt class="hdlist1"><a id="cheat-sheet"></a> Cheatsheet</dt>
 <dd>
@@ -2966,44 +2963,7 @@ Use case resumes from step 16.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -3021,7 +2981,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3056,7 +3016,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">G.2. Remind feature</a></h3>
+<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">F.2. Remind feature</a></h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -3498,4 +3458,4 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:22:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 05:23:18 UTC</div></div></div></body></html>
