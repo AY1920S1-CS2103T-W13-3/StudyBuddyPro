@@ -54,8 +54,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#saving-data">G.2. Saving data</a></li>
-<li><a href="#remind-feature-2">G.3. Remind feature</a></li>
+<li><a href="#remind-feature-2">G.2. Remind feature</a></li>
 </ul>
 </li>
 </ul>
@@ -614,6 +613,9 @@ The segment below provides more details of the <code>storage</code> components a
 </div>
 <div class="title">Figure 9. Overview of StudyBuddyItems and its sub-classes</div>
 </div>
+<div class="paragraph">
+<p><em>Diagram 5: Implementation of StudyBuddyItem</em></p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.3.2. Design Considerations</a></h4>
@@ -621,6 +623,9 @@ The segment below provides more details of the <code>storage</code> components a
 <ul>
 <li>
 <p>As explained in the class diagram above, each StudyBuddyItem is limited to a total number of 10 tags.</p>
+</li>
+<li>
+<p>The user is not able to create an item in StudyBuddyPro with more than 10 tags.</p>
 </li>
 <li>
 <p>It is designed as such to prevent users from over-cluttering the result display when they view items that have too many tags.</p>
@@ -672,6 +677,12 @@ that might have tags containing [difficult].</p>
 </ul>
 </div>
 </li>
+<li>
+<p>The rationale for this is that it would not make sense if a user wanted to create a cheatsheet for module [cs2100] and with tagged [midterm], that items containing tag [ma1521] (another math module) and [midterm] will be pulled over.</p>
+</li>
+<li>
+<p>Such logic for filtering items by their tag is similar throughout the whole StudyBuddyPro.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -698,6 +709,9 @@ that might have tags containing [difficult].</p>
 <ul>
 <li>
 <p>The user is also able to indicate a tag name get a list view of all the StudyBuddyItems across all 3 modes in StudyBuddyPro (e.g. <code>filterall tag/ma1521</code>).</p>
+</li>
+<li>
+<p>The user can also call the global command, <code>taglist</code> to get a listview of all tags in StudyBuddyPRo.</p>
 </li>
 </ul>
 </div>
@@ -1241,33 +1255,114 @@ object.</p>
 In other words, the current date (according to the user&#8217;s system date) matches the date the
 flashcard was next supposed to be viewed for optimum revision. Similarly, an <em>overdue flashcard</em>
 refers to a flashcard whose view date for optimum revision was <em>before</em> the current date. Further
-details on how the optimum revision date is calculated is provided in this section!</p>
+details on how the optimum revision date is calculated is provided in this section.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For this section the <code>remind</code> command refers specifically to the command itself,
+while the remind feature encompasses the entire feature and all the
+relevant classes.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="overview"><a class="link" href="#overview">4.6.1. Overview</a></h4>
 <div class="paragraph">
 <p>This feature aims to help the user stay on track with the user&#8217;s revision schedule through two
 other sub-features. The first sub-feature is the <code>remind</code> command which helps the user
-keep track of which flashcards are due (or overdue) for revision. The second sub-feature is
-integrated with the <code>exit</code> command, and automatically asks the user for confirmation if they
-wish to exit StudyBuddyPro if the user still has due or overdue flashcards left for revision.
-An activity diagram summarizing how the remind feature works can be found below.</p>
+keep track of which flashcards are due or overdue for revision. The second sub-feature is
+integrated with the <code>exit</code> command and is illustrated in the activity diagram below. For example,
+a typical user may use the <code>exit</code> command to exit the application without realizing they still had
+due or overdue flashcards left to revise. StudyBuddyPro will automatically warn the user about these
+unrevised flashcards after which the user can decide if they wish to revise these flashcards or proceed
+to exit StudyBuddyPro anyway.</p>
 </div>
-<div class="paragraph">
-<p>{To be completed soon}</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/ExitCommandActivityDiagram.png" alt="ExitCommandActivityDiagram">
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
-<p>to be added + caption</p>
-</dd>
-</dl>
+<div class="title">Figure 15. Activity diagram of user trying to exit StudyBuddyPro through the <code>exit</code> command</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="implementation-of-code-remind-code-command"><a class="link" href="#implementation-of-code-remind-code-command">4.6.1. Implementation of <code>remind</code> command</a></h4>
+<h4 id="implementation-of-code-statistics-code-class"><a class="link" href="#implementation-of-code-statistics-code-class">4.6.2. Implementation of <code>Statistics</code> class</a></h4>
+<div class="paragraph">
+<p>In order to fully understand how the remind feature was implemented, it is important
+to understand how a flashcard stores the relevant data fields it needs such as its last viewed
+date. All the relevant statistics pertaining to each flashcard is contained within a <code>Statistics</code>
+object. Each <code>Statistics</code> object also has a <code>ScheduleIncrement</code>, which helps keep track
+of when the flashcard should be next viewed for optimum spaced repetition learning. The relationships between the
+<code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes are summarized in the class diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/RemindCommandModelsClassDiagram.png" alt="RemindCommandModelsClassDiagram">
+</div>
+<div class="title">Figure 16. Class diagram of <code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+There are currently 7 <code>ScheduleIncrements</code> implemented in StudyBuddyPro, each with a
+corresponding integer value. This integer values represent the number of days the flashcard
+should next be viewed (based on spaced repetition principles).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The interactions between the relevant classes can be illustrated through the following
+scenario:</p>
+</div>
+<div class="paragraph">
+<p><em>Today&#8217;s date is 10/10/2019. Jim decides to view a flashcard which was previously
+viewed on 7/10/2019 and was scheduled to be viewed on 8/10/2019.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. Jim views the flashcard, either through a <code>timetrial</code> or by specifically finding the
+relevant flashcard and viewing the flashcard&#8217;s answer using the <code>view</code> and <code>show</code> commands.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. When the relevant command is called, the <code>Flashcard</code> object&#8217;s <code>Statistics#onView()</code>
+method is invoked to update its statistics.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. The <code>onView()</code> method calls its helper functions in the specific order shown in the
+code snippet below. The order is significant as calling the <code>updateToViewNext()</code> method
+before the <code>increaseIncrement()</code> method would result in the wrong <code>ScheduleIncrement</code> being
+used to update the <code>toViewNext</code> attribute.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/OnView.PNG" alt="OnView">
+</div>
+<div class="title">Figure 17. Code snippet of <code>Statistics#onView()</code></div>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. In this case, the "if" clause of the code snippet above is triggered since
+the <code>toViewNext</code> date <em>(8/10/2019)</em> was <strong>before</strong> the current date <em>(10/10/2019)</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>. The various helper methods execute their relevant functions to update their
+respective fields. For example, the <code>lastViewed</code> date is now updated to 10/10/2019.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-of-code-remind-code-command"><a class="link" href="#implementation-of-code-remind-code-command">4.6.3. Implementation of <code>remind</code> command</a></h4>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1281,44 +1376,181 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 </table>
 </div>
 <div class="paragraph">
-<p>The  remind feature is facilitated by ``</p>
+<p>The <code>remind</code> command is facilitated by the <code>RemindFeatureUtil</code> class and extends
+the abstract <code>Command</code> class as summarized in the class diagram below. This diagram
+also provides a summary of the <code>Logic</code> components of the <code>remind</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/remindDiagrams/RemindFeatureRelevantClassDiagram.png" alt="RemindFeatureRelevantClassDiagram">
+<img src="images/remindDiagrams/RemindCommandLogicClassDiagram.png" alt="RemindCommandLogicClassDiagram">
 </div>
+<div class="title">Figure 18. Class diagram of <code>RemindCommand</code></div>
+</div>
+<div class="paragraph">
+<p>The <code>remind</code> command also interacts with the <code>Model</code> component, specifically through indirect
+interactions with each <code>Flashcard</code> object currently in <code>StudyBuddyPro</code>. This was explained
+earlier under section 4.6.2[ADD LINK].</p>
+</div>
+<div class="paragraph">
+<p>The following example serves to provide an overview of the high-level architecture involved for the <code>remind</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The user types "remind" and executes the command to check what flashcards
+the user has due.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. <code>MainWindow</code> would call <code>LogicManager#execute()</code> to hand over control flow to the
+<code>Logic</code> component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. <code>LogicManager</code> parses the user input to determine which command is being called.
+After determining that a <code>remind</code> command is being executed, the relevant <code>RemindCommand</code>
+object is created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4</strong>. The <code>RemindCommand</code> object determines which flashcards are due and overdue, if any,
+and returns the output packaged in a <code>FlashcardCommandResult</code> object.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5</strong>. <code>MainWindow</code> extracts the relevant output to be shown to the viewer from the <code>FlashcardCommandResult</code>
+and displays it.</p>
+</div>
+<div class="paragraph">
+<p>These steps are illustrated in further detail in the sequence diagram below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As is standard in this Developer Guide, red classes are part of the <code>Model</code> package, blue classes are part of
+the <code>Logic</code> package, and green classes are part of the <code>UI</code> package.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/RemindFeatureSequenceDiagramMain.png" alt="RemindFeatureSequenceDiagramMain">
+</div>
+<div class="title">Figure 19. Sequence diagram of high-level overview of how the <code>remind</code> command works</div>
+</div>
+<div class="paragraph">
+<p>With reference to <strong>Step 4</strong> above, the implementation of how the <code>RemindCommand</code> object determines
+which flashcards are due or overdue can be further examined. A broad overview is provided
+in the sequence diagram below and explained in further detail below the diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/RemindCommandReferenceSequenceDiagram.png" alt="RemindCommandReferenceSequenceDiagram">
+</div>
+<div class="title">Figure 20. Sequence diagram of checking for due and overdue flashcards</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Whenever a <code>RemindCommand</code> object is created, it creates its own <code>RemindFeatureUtil</code> object.</p>
+</li>
+<li>
+<p>The <code>RemindCommand</code> object communicates directly with the <code>ModelManager</code> object through
+the exposed <code>Model</code> interface by calling upon the <code>ModelManager#getFilteredFlashcardList()</code> to
+get the current list of flashcards in the application.</p>
+</li>
+<li>
+<p>The <code>RemindCommand</code> passes the list of flashcards to its helper <code>RemindFeatureUtil</code> class which
+retrieves due and overdue flashcards through the <code>RemindFeatureUtil#getDueFlashcards()</code> and
+<code>RemindFeatureUtil#getOverdueFlashcards()</code> respectively.</p>
+</li>
+<li>
+<p>As seen from the code snippet below, overdue flashcards are collected by iterating through
+the entire flashcard list and checking if each flashcard&#8217;s <code>toViewNext</code> attribute is before
+the current system date. The <code>toViewNext</code> attribute is not stored in the <code>Flashcard</code> object
+itself but rather in the flashcard&#8217;s <code>Statistics</code> object. A similar approach is adopted to
+check for due flashcards.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/remindDiagrams/OverdueFlashcards.PNG" alt="OverdueFlashcards">
+</div>
+<div class="title">Figure 21. Method to collect overdue flashcards from a given list of flashcards</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The two lists of due and overdue flashcards are formatted into a String and passed back
+through the <code>FlashcardCommandResult</code> object created.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.6.2. Design Considerations</a></h4>
+<h4 id="implementation-of-the-code-exit-code-command"><a class="link" href="#implementation-of-the-code-exit-code-command">4.6.4. Implementation of the <code>exit</code> command</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>exit</code> command is a global command and can be used in any mode, not just in the <em>flashcard</em> mode.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>exit</code> command is implemented in a similar fashion to the <code>remind</code> command described
+above. Each <code>ExitCommand</code> also contains a <code>RemindFeatureUtil</code> object it uses to check
+which flashcards are due and overdue.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the <code>ExitCommand</code> object calls upon the <code>CommandHistory</code> object to check
+if the last command inputted was an <code>exit</code> command through the <code>CommandHistory#getLastCommand()</code> method.
+This was added to allow the double confirmation feature before the user can exit StudyBuddyPro
+while still having flashcards due or overdue for revision.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-and-implementation-considerations"><a class="link" href="#design-and-implementation-considerations">4.6.5. Design and Implementation Considerations</a></h4>
+<div class="paragraph">
+<p>The following describe two major considerations</p>
+</div>
 <div class="sect4">
-<h5 id="aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was-viewed"><a class="link" href="#aspect-implementation-of-utility-attributes-or-classes-to-keep-track-of-number-of-times-a-code-flashcard-code-object-was-viewed">Aspect: Implementation of utility attributes or classes to keep track of number of times a <code>Flashcard</code> object was viewed.</a></h5>
+<h5 id="implementation-consideration-how-to-keep-track-of-when-a-code-flashcard-code-object-was-last-viewed"><a class="link" href="#implementation-consideration-how-to-keep-track-of-when-a-code-flashcard-code-object-was-last-viewed">Implementation Consideration: How to keep track of when a <code>Flashcard</code> object was last viewed?</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Design a new <code>ViewCount</code> class and make a <code>Flashcard</code> object store a <code>ViewCount</code>
-object.</p>
+<p><strong>Alternative 1 (current choice):</strong> Design a new <code>Statistics</code> class and make a <code>Flashcard</code> object store a <code>Statistics</code>
+object. The <code>Statistics</code> object then keeps track of the flashcard&#8217;s last viewed date.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Using a separate <code>Statistics</code> class is more in line with Object-Oriented Programming (OOP) practices and means
+the same class can be adapted and used to track statistics of other objects in StudyBuddyPro
+in the future.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Additional class adds additional maintenance and issues such as difficulty
+converting this class into a format that can be saved and read.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use an integer attribute field in <code>Flashcard</code> object</p>
+<p><strong>Alternative 2:</strong> Use an integer attribute field in each <code>Flashcard</code> object to keep track of how many times it was
+viewed.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easier to maintain: The addition of a new class increases overall coupling compared to adding a single new
-attribute.</p>
+attribute field.</p>
 </li>
 <li>
-<p>Cons: Bad OOP practice and makes it difficult to implement future changes</p>
+<p>Cons: Bad OOP practice and makes it difficult to implement future changes. It may be unclear what the
+integer value represents and makes debugging more difficult.</p>
 </li>
 </ul>
 </div>
@@ -1327,31 +1559,36 @@ attribute.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect"><a class="link" href="#aspect">Aspect:</a></h5>
+<h5 id="design-consideration-should-the-user-be-given-the-option-to-toogle-the-code-exit-code-command-reminder"><a class="link" href="#design-consideration-should-the-user-be-given-the-option-to-toogle-the-code-exit-code-command-reminder">Design Consideration: Should the user be given the option to toogle the <code>exit</code> command reminder?</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong></p>
+<p><strong>Alternative 1 (current choice):</strong> User is not given the toogle option.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: More in-line with target market. Since StudyBuddyPro is a revision tool the target
+market is likely to always want this feature and probably will not need to toogle it off.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Some users may face additional inconvenience when trying to exit StudyBuddyPro
+if they use StudyBuddyPro for other than its intended purpose. For example, a user that
+only wants to use the cheatsheet auto-generation feature may not care for the automatic reminder.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> User is provided with the toogle option.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: More flexibility and customizability of StudyBuddyPro to suit each individual user&#8217;s needs.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Extra work required to implement the toogle feature. A user may toogle the reminder off when first using the
+application, and forget about the feature since it is now out of sight. Even if the user requires
+such an automatic reminding functionality in the future, they may have forgotten this feature existed.</p>
 </li>
 </ul>
 </div>
@@ -1361,55 +1598,33 @@ attribute.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.3. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.6. [Proposed] Future improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Improved formula for reminding</p>
+<p>Improve the formula used for determining when flashcards should be revised.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Take into account other factors such as user confidence level or number of times flashcard was answered correctly
-or incorrectly to create a more dynamic reminding schedule.</p>
+<p>We could take into account other factors such as user confidence level or number of times flashcard was answered
+correctly or incorrectly to create a more dynamic reminding schedule.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Link to <code>exit</code> command</p>
+<p>Introduce desktop notifications for the user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Checks if the user viewed all flashcards to be revised on the day.</p>
-</li>
-<li>
-<p>If some of the relevant flashcards were not viewed, reminds user about remaining flashcards and stalls
-application exit.</p>
-</li>
-<li>
-<p>User can either go back into StudyBuddyPro and view the relevant flashcards or supply an <code>exit</code> command again to
-close the application.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>More statistics for motivation</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Tracks how often user viewed flashcards on time and how many flashcards users missed viewing on the relevant
-deadline.</p>
+<p>As a user may not open StudyBuddyPro everyday, StudyBuddyPro can be integrated with the
+desktop system calender to provide notifications when flashcards are due for revision.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="implementation-of-code-exit-code-command"><a class="link" href="#implementation-of-code-exit-code-command">4.6.4. Implementation of <code>exit</code> command</a></h4>
-
 </div>
 </div>
 <div class="sect2">
@@ -1441,7 +1656,7 @@ below:</p>
 <div class="content">
 <img src="images/samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
 </div>
-<div class="title">Figure 15. An overview of the Note class and its associated classes</div>
+<div class="title">Figure 22. An overview of the Note class and its associated classes</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1544,7 +1759,7 @@ Note fragment tags should not be confused with <code>Tags</code>.
 <div class="content">
 <img src="images/samDiagrams/NoteModelDetailedClassDiagram.png" alt="NoteModelDetailedClassDiagram">
 </div>
-<div class="title">Figure 16. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
+<div class="title">Figure 23. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
 </div>
 <div class="paragraph">
 <p>As shown in the diagram above, <code>NoteFragments</code> contain:</p>
@@ -1657,7 +1872,7 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagram.png" alt="AddNoteSequenceDiagram">
 </div>
-<div class="title">Figure 17. Overview of how a Note is added to StudyBuddyPro</div>
+<div class="title">Figure 24. Overview of how a Note is added to StudyBuddyPro</div>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram above, when an <code>add</code> command is entered by the user:</p>
@@ -1688,7 +1903,7 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagramZoomedIn.png" alt="AddNoteSequenceDiagramZoomedIn">
 </div>
-<div class="title">Figure 18. Illustration of how Notes and NoteFragments are created</div>
+<div class="title">Figure 25. Illustration of how Notes and NoteFragments are created</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the zoomed-in diagram above, when an <code>AddNoteCommand</code> is created:</p>
@@ -1760,7 +1975,7 @@ therefore it would be unnecessary to also list all <code>NoteFragments</code>, a
 <div class="content">
 <img src="images/samDiagrams/FilterVersusListActivityDiagram.png" alt="FilterVersusListActivityDiagram">
 </div>
-<div class="title">Figure 19. Differences between filter and list command executions</div>
+<div class="title">Figure 26. Differences between filter and list command executions</div>
 </div>
 <div class="paragraph">
 <p>Whilst <code>filter</code> uses <code>ModelManager#collectTaggedNotes()</code> (as shown in the notes on the diagram above), <code>list</code> uses
@@ -1804,7 +2019,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/ViewVersusViewRawActivityDiagram.png" alt="ViewVersusViewRawActivityDiagram">
 </div>
-<div class="title">Figure 20. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
+<div class="title">Figure 27. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen in the diagram above, the method <code>Note#getContentCleanedFromTags()</code> is used to obtain a copy of the
@@ -1817,7 +2032,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/NoteCleanedContentObjectDiagram.png" alt="NoteCleanedContentObjectDiagram">
 </div>
-<div class="title">Figure 21. A possible instance of a use of ViewNoteCommand</div>
+<div class="title">Figure 28. A possible instance of a use of ViewNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the diagram above, the <code>Note</code> object named 'note' makes use of the <code>NoteFeatureUtil</code> object and
@@ -1984,7 +2199,7 @@ Since no two <code>Notes</code> are allowed to have the same <code>Title</code>,
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
 <div class="sect5">
 <h6 id="aspect-method-of-editing"><a class="link" href="#aspect-method-of-editing">Aspect: Method of editing</a></h6>
 <div class="ulist">
@@ -2818,12 +3033,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
-<div class="literalblock">
-<div class="content">
-<pre>{To be edited}</pre>
-</div>
-</div>
+Expected: Shows the GUI with a set of sample flashcards and notes. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -2844,29 +3054,9 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.2. Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">G.3. Remind feature</a></h3>
+<h3 id="remind-feature-2"><a class="link" href="#remind-feature-2">G.2. Remind feature</a></h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -3308,4 +3498,4 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 17:49:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:17:35 UTC</div></div></div></body></html>
