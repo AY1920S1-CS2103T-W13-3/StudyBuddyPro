@@ -21,6 +21,18 @@ notes that can be later used to generate a reference to create a cheat sheet.</p
 <p><em>Figure 1. The graphical user interface for <strong>StudyBuddyPro</strong>.</em></p>
 </div>
 <div class="sect2">
+<h3 id="syntax"><a class="link" href="#syntax">Syntax</a></h3>
+<div class="paragraph">
+<p>Please do take a look at the syntax notations below as they are used throughout the document.</p>
+</div>
+<div class="paragraph">
+<p><code>syntax 1</code>&#8201;&#8212;&#8201;For commands or class objects</p>
+</div>
+<div class="paragraph">
+<p><em>syntax 2</em>&#8201;&#8212;&#8201;For figures, tables, functionality or variables</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="callouts-signs"><a class="link" href="#callouts-signs">Callouts Signs</a></h3>
 <div class="paragraph">
 <p>Please do refer to the signs below as they are used throughout the document.</p>
@@ -99,7 +111,7 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <p><strong>Minor enhancement</strong>: Designed the overall GUI of the StudyBuddyPro application.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#=undefined&amp;search=chanjunren">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#=undefined&amp;search=chanjunren">Functional code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -186,11 +198,11 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <div class="sect2">
 <h3 id="time-trial-code-timetrial-code"><a class="link" href="#time-trial-code-timetrial-code">Time Trial: <code>timetrial</code></a></h3>
 <div class="paragraph">
-<p>Starts a time trial for flashcards with tag &lt;TAG&gt; for &lt;TIME&gt; seconds per flashcard.</p>
+<p>Starts a time trial for flashcards with specified tags &lt;TAG&gt;.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: timetrial tag/TAG...</pre>
+<pre>Format: timetrial TAG...</pre>
 </div>
 </div>
 <div class="literalblock">
@@ -202,6 +214,9 @@ alternatives was necessary to implement the feature in a way that doesn’t disr
 <div class="content">
 <pre>Expected output: Time trial started</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>All of the flashcards containing the specified tags will be then displayed sequentially in the activity below.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -274,6 +289,10 @@ e.g <code>delete 1</code></p>
 <li>
 <p><strong>Filter</strong> : <code>filter tag/TAG&#8230;&#8203;</code><br>
 e.g <code>filter cs2103tuml</code></p>
+</li>
+<li>
+<p><strong>Time Trial</strong> : <code>timetrial TAG&#8230;&#8203;</code><br>
+e.g <code>timetrial cs2103t uml</code></p>
 </li>
 <li>
 <p><strong>View</strong> : <code>view INDEX</code><br>
@@ -397,6 +416,10 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <div class="content">
 <img src="../images/jrImages/TimeTrialClassDiagram.png" alt="TimeTrialClassDiagram">
 </div>
+<div class="title">Figure 1. Class diagram when the timetrial command is executed</div>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>The following <em>figure</em> is an activity diagram of the flow of events when a user attempts to start a time trial.</p>
@@ -405,8 +428,10 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <div class="content">
 <img src="../images/jrImages/TimeTrialActivityDiagram.png" alt="TimeTrialActivityDiagram">
 </div>
+<div class="title">Figure 2. Activity diagram when the timetrial command is executed</div>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
 </li>
@@ -435,12 +460,22 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 </ol>
 </div>
 <div class="paragraph">
-<p>The following <em>figure</em> shows the sequence diagram of when the command <code>timetrial cs2103t</code> is executed.</p>
+<p>The following <em>figure</em> shows the sequence diagram of when the command <code>timetrial cs2103t</code> is executed:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/jrImages/TimeTrialSequenceDiagram.png" alt="TimeTrialSequenceDiagram">
 </div>
+<div class="title">Figure 3. Sequence diagram when the timetrial command is executed</div>
+</div>
+<div class="paragraph">
+<p>The following <em>figure</em> is an activity diagram that summarizes the flow of events when a user attempts to start a time trial as described above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/jrImages/TimeTrialActivityDiagram.png" alt="TimeTrialActivityDiagram">
+</div>
+<div class="title">Figure 4. Activity diagram when the timetrial command is executed</div>
 </div>
 </div>
 <div class="sect3">
@@ -541,6 +576,211 @@ object.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="testing-code-timetrial-code-command"><a class="link" href="#testing-code-timetrial-code-command">Testing <code>timetrial</code> command</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following commands have been provided for ease of testing and can be inputted to test some of the test cases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>add q/Question 1 a/Answer 1 t/q1 tag/test</p>
+</li>
+<li>
+<p>add q/Question 2 a/Answer 2 t/q2 tag/test</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command:  <code>timetrial [tag]</code></p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Time trial started</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The question of the flashcard is displayed together with a timer for 5 seconds.</p>
+</li>
+<li>
+<p>Once the time hits 0, the answer is flashed for 3 seconds.</p>
+</li>
+<li>
+<p>Repeat 2 and 3 until all of the flashcards of the specified tags have been displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Input command: <code>show</code>.</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Flashcard answer loaded</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The answer of the flashcard is loaded, and after a while the time trial continues until all the flashcards have been loaded.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 3</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Input command: <code>view 3</code> (Can be any other flashcard comamand).</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Viewing flashcard:  Title: (Flashcard title)
+Tags: [tags]</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Time trial does not continue and the latest command inputted is executed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 4</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There are no flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>There are no flashcards with the tags specified!</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -548,4 +788,4 @@ object.</p>
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:26:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-12 10:20:55 UTC</div></div></div></body></html>

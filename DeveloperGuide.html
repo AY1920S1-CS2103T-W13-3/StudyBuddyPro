@@ -54,7 +54,8 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#remind-feature-2">F.2. Remind Feature</a></li>
-<li><a href="#auto-generation-feature-of-cheatsheet">F.3. Auto-generation Feature of Cheatsheet</a></li>
+<li><a href="#add-tags-within-notes-feature-2">F.3. Add Tags Within Notes feature</a></li>
+<li><a href="#auto-generation-feature-of-cheatsheet">F.4. Auto-generation Feature of Cheatsheet</a></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +303,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
 <div class="paragraph">
-<p>The <code>logic</code> component&#8217;s class diagram shows the relationships between the components it interacts with. Also, it provides the flow of the actions with arrows.</p>
+<p>The <code>Logic</code> component&#8217;s class diagram shows the relationships between the components it interacts with. Also, it provides the flow of the actions with arrows.</p>
 </div>
 <h4 id="how-the-application-modes-works" class="discrete">How the application modes works?</h4>
 <div class="paragraph">
@@ -405,18 +406,18 @@ The segment below provides more details of the <code>UI</code> components and it
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div class="paragraph">
-<p>This section describes the behaviour of the <code>logic</code> component in details.
-The <em>figure</em> below portrays the internal structures of the <code>logic</code> components and their interactions.</p>
+<p>This section describes the behaviour of the <code>Logic</code> component in details.
+The <em>figure</em> below portrays the internal structures of the <code>Logic</code> components and their interactions.</p>
 </div>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 6. Class diagram of the structure of the <code>logic</code> Component</div>
+<div class="title">Figure 6. Class diagram of the structure of the <code>Logic</code> Component</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above draws out the relationships between the internal components and their flow of actions.
-The segment below provides more details of the <code>logic</code> components and its API&#8217;s link.</p>
+The segment below provides more details of the <code>Logic</code> components and its API&#8217;s link.</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -462,7 +463,7 @@ The segment below provides more details of the <code>logic</code> components and
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 7. Sequence diagram for the interactions Inside the <code>logic</code> Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 7. Sequence diagram for the interactions Inside the <code>Logic</code> Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -485,7 +486,20 @@ The segment below provides more details of the <code>logic</code> components and
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="paragraph">
-<div class="title">Structure of the Model Component</div>
+<p>This section describes the behaviour of the <code>Model</code> component in detail.
+The <em>figure</em> below portrays the internal structures of the <code>Model</code> components and their interactions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/samDiagrams/StudyBuddyProModelClassDiagram.png" alt="StudyBuddyProModelClassDiagram">
+</div>
+<div class="title">Figure 8. Class diagram of the structure of the <code>Model</code> Component</div>
+</div>
+<div class="paragraph">
+<p>The class diagram above draws out the relationships between the internal components and their flow of actions.
+The segment below provides more details of the <code>Model</code> components and its API&#8217;s link.</p>
+</div>
+<div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
@@ -497,6 +511,9 @@ The segment below provides more details of the <code>logic</code> components and
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
+<p>stores the three main packages <code>Flashcard</code>, <code>Note</code>, and <code>CheatSheet</code>.</p>
+</li>
+<li>
 <p>stores the StudyBuddyPro data.</p>
 </li>
 </ul>
@@ -505,18 +522,18 @@ The segment below provides more details of the <code>logic</code> components and
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="paragraph">
-<p>This section describes the behaviour of the <code>storage</code> component in details.
-The <em>figure</em> below portrays the internal structures of the <code>storage</code> components and their interactions.</p>
+<p>This section describes the behaviour of the <code>Storage</code> component in detail.
+The <em>figure</em> below portrays the internal structures of the <code>Storage</code> components and their interactions.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Class diagram of the structure of the <code>Storage</code> Component</div>
+<div class="title">Figure 9. Class diagram of the structure of the <code>Storage</code> Component</div>
 </div>
 <div class="paragraph">
 <p>The class diagram above draws out the relationships between the internal components and their flow of actions.
-The segment below provides more details of the <code>storage</code> components and its API&#8217;s link.</p>
+The segment below provides more details of the <code>Storage</code> components and its API&#8217;s link.</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -611,10 +628,7 @@ The segment below provides more details of the <code>storage</code> components a
 <div class="content">
 <img src="images/kaibindiagrams/studyBuddyItemClassDiagram.png" alt="studyBuddyItemClassDiagram">
 </div>
-<div class="title">Figure 9. Overview of StudyBuddyItems and its sub-classes</div>
-</div>
-<div class="paragraph">
-<p><em>Diagram 5: Implementation of StudyBuddyItem</em></p>
+<div class="title">Figure 10. Overview of StudyBuddyItems and its sub-classes</div>
 </div>
 </div>
 <div class="sect3">
@@ -641,7 +655,7 @@ The segment below provides more details of the <code>storage</code> components a
 <div class="content">
 <img src="images/kaibindiagrams/tagPredicateClassDiagram.png" alt="tagPredicateClassDiagram">
 </div>
-<div class="title">Figure 10. Class Diagram of how StudyBuddyItemContainsTagPredicate is implemented</div>
+<div class="title">Figure 11. Class Diagram of how StudyBuddyItemContainsTagPredicate is implemented</div>
 </div>
 <div class="ulist">
 <ul>
@@ -657,7 +671,7 @@ The segment below provides more details of the <code>storage</code> components a
 <div class="content">
 <img src="images/kaibindiagrams/tagPredicateCodeSnippet.png" alt="tagPredicateCodeSnippet">
 </div>
-<div class="title">Figure 11. Code Snippet of <code>StudyBuddyItemContainsTagPredicate#test()</code></div>
+<div class="title">Figure 12. Code Snippet of <code>StudyBuddyItemContainsTagPredicate#test()</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -729,7 +743,7 @@ that might have tags containing [difficult].</p>
 <div class="content">
 <img src="images/kaibindiagrams/ListAllByTagSequenceDiagram.png" alt="ListAllByTagSequenceDiagram">
 </div>
-<div class="title">Figure 12. Sequence diagram of filtering all StudyBuddyItems by a tag.</div>
+<div class="title">Figure 13. Sequence diagram of filtering all StudyBuddyItems by a tag.</div>
 </div>
 </div>
 <div class="sect4">
@@ -787,7 +801,7 @@ that might have tags containing [difficult].</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements"><a class="link" href="#proposed-future-improvements">4.3.4. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements"><a class="link" href="#proposed-future-improvements">4.3.4. [Proposed] Future Improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -862,7 +876,7 @@ After creation, the cheatsheet is then stored in the <code>studyBuddyBook</code>
 <div class="content">
 <img src="images/jasmineDiagrams/AddCheatSheetSequenceDiagram.png" alt="AddCheatSheetSequenceDiagram">
 </div>
-<div class="title">Figure 13. Sequence diagram to illustrate auto-generation operation</div>
+<div class="title">Figure 14. Sequence diagram to illustrate auto-generation operation</div>
 </div>
 <div class="paragraph">
 <p>From the sequence diagram above, it portrays the relationships between the components to execute the creation mechanism. The <em>figure</em> below explains the details within the sequence diagram.</p>
@@ -871,7 +885,7 @@ After creation, the cheatsheet is then stored in the <code>studyBuddyBook</code>
 <div class="content">
 <img src="images/jasmineDiagrams/AddCheatSheetDetailedSequenceDiagram.png" alt="AddCheatSheetDetailedSequenceDiagram">
 </div>
-<div class="title">Figure 14. Detailed sequence diagram for retrieval of tagged contents</div>
+<div class="title">Figure 15. Detailed sequence diagram for retrieval of tagged contents</div>
 </div>
 <div class="paragraph">
 <p>The above sequence diagram shows the complete action flow for the execution of methods.
@@ -936,7 +950,7 @@ Here is a brief summary of the steps taken to create the cheatsheet:</p>
 <div class="content">
 <img src="images/jasmineDiagrams/EditCheatSheetCommandActivityDiagram.png" alt="EditCheatSheetCommandActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity diagram of the <code>edit</code> command for the removal of contents</div>
+<div class="title">Figure 16. Activity diagram of the <code>edit</code> command for the removal of contents</div>
 </div>
 <div class="paragraph">
 <p>The activity diagram above shows the general flow of customization of cheatsheet feature. The changes for <em>contents</em> have to come first before the changes for <em>tags</em>. This is to ensure that the <em>contents</em> are still relevant to the <em>tags</em> specified. An example is provided below.</p>
@@ -1043,7 +1057,7 @@ Here is a brief summary of the steps taken to create the cheatsheet:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements-2"><a class="link" href="#proposed-future-improvements-2">4.4.3. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements-2"><a class="link" href="#proposed-future-improvements-2">4.4.3. [Proposed] Future Improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1085,6 +1099,9 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <ol class="loweralpha" type="a">
 <li>
 <p>The time trial mechanism is facilitated by the <code>FlashcardTabWindowController</code>, and mainly uses the <code>Timeline</code>, <code>KeyFrame</code> and <code>KeyValue</code> class from the JavaFX package to support its functionality.</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p>The following <em>figure</em> shows a class diagram of the relevant classes of the time trial feature.</p>
 </div>
@@ -1092,8 +1109,10 @@ The following commands assume that the user is in the <em>flashcard</em> mode.
 <div class="content">
 <img src="images/jrImages/TimeTrialClassDiagram.png" alt="TimeTrialClassDiagram">
 </div>
+<div class="title">Figure 17. Class diagram when the timetrial command is executed</div>
 </div>
-</li>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>Given below is an example usage scenario and how the time trial mechanism behaves at each step.</p>
 </li>
@@ -1131,6 +1150,7 @@ construct a <code>Timeline</code> with the following added for 3 flashcards:</p>
 <div class="content">
 <img src="images/jrImages/TimeTrialSequenceDiagram.png" alt="TimeTrialSequenceDiagram">
 </div>
+<div class="title">Figure 18. Sequence diagram when the timetrial command is executed</div>
 </div>
 <div class="paragraph">
 <p>The following <em>figure</em> is an activity diagram that summarizes the flow of events when a user attempts to start a time trial as described above:</p>
@@ -1139,6 +1159,7 @@ construct a <code>Timeline</code> with the following added for 3 flashcards:</p>
 <div class="content">
 <img src="images/jrImages/TimeTrialActivityDiagram.png" alt="TimeTrialActivityDiagram">
 </div>
+<div class="title">Figure 19. Activity diagram when the timetrial command is executed</div>
 </div>
 </div>
 <div class="sect3">
@@ -1212,7 +1233,7 @@ object.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements-3"><a class="link" href="#proposed-future-improvements-3">4.5.3. [Proposed] Future Improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1289,7 +1310,7 @@ to exit StudyBuddyPro anyway.</p>
 <div class="content">
 <img src="images/remindDiagrams/ExitCommandActivityDiagram.png" alt="ExitCommandActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity diagram of user trying to exit StudyBuddyPro through the <code>exit</code> command</div>
+<div class="title">Figure 20. Activity diagram of user trying to exit StudyBuddyPro through the <code>exit</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1306,7 +1327,7 @@ of when the flashcard should be next viewed for optimum spaced repetition learni
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandModelsClassDiagram.png" alt="RemindCommandModelsClassDiagram">
 </div>
-<div class="title">Figure 17. Class diagram of <code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes</div>
+<div class="title">Figure 21. Class diagram of <code>Flashcard</code>, <code>Statistics</code> and <code>ScheduleIncrement</code> classes</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1348,7 +1369,7 @@ used to update the <code>toViewNext</code> attribute.</p>
 <div class="content">
 <img src="images/remindDiagrams/OnView.PNG" alt="OnView">
 </div>
-<div class="title">Figure 18. Code snippet of <code>Statistics#onView()</code></div>
+<div class="title">Figure 22. Code snippet of <code>Statistics#onView()</code></div>
 </div>
 <div class="paragraph">
 <p><strong>Step 4</strong>. In this case, the "if" clause of the code snippet above is triggered since
@@ -1382,12 +1403,12 @@ also provides a summary of the <code>Logic</code> components of the <code>remind
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandLogicClassDiagram.png" alt="RemindCommandLogicClassDiagram">
 </div>
-<div class="title">Figure 19. Class diagram of <code>RemindCommand</code></div>
+<div class="title">Figure 23. Class diagram of <code>RemindCommand</code></div>
 </div>
 <div class="paragraph">
 <p>The <code>remind</code> command also interacts with the <code>Model</code> component, specifically through indirect
 interactions with each <code>Flashcard</code> object currently in <code>StudyBuddyPro</code>. This was explained
-earlier under section 4.6.2[ADD LINK].</p>
+earlier through Figure 20.</p>
 </div>
 <div class="paragraph">
 <p>The following example serves to provide an overview of the high-level architecture involved for the <code>remind</code> command.</p>
@@ -1433,7 +1454,7 @@ the <code>Logic</code> package, and green classes are part of the <code>UI</code
 <div class="content">
 <img src="images/remindDiagrams/RemindFeatureSequenceDiagramMain.png" alt="RemindFeatureSequenceDiagramMain">
 </div>
-<div class="title">Figure 20. Sequence diagram of high-level overview of how the <code>remind</code> command works</div>
+<div class="title">Figure 24. Sequence diagram of high-level overview of how the <code>remind</code> command works</div>
 </div>
 <div class="paragraph">
 <p>With reference to <strong>Step 4</strong> above, the implementation of how the <code>RemindCommand</code> object determines
@@ -1444,7 +1465,7 @@ in the sequence diagram below and explained in further detail below the diagram.
 <div class="content">
 <img src="images/remindDiagrams/RemindCommandReferenceSequenceDiagram.png" alt="RemindCommandReferenceSequenceDiagram">
 </div>
-<div class="title">Figure 21. Sequence diagram of checking for due and overdue flashcards</div>
+<div class="title">Figure 25. Sequence diagram of checking for due and overdue flashcards</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1474,7 +1495,7 @@ check for due flashcards.</p>
 <div class="content">
 <img src="images/remindDiagrams/OverdueFlashcards.PNG" alt="OverdueFlashcards">
 </div>
-<div class="title">Figure 22. Method to collect overdue flashcards from a given list of flashcards</div>
+<div class="title">Figure 26. Method to collect overdue flashcards from a given list of flashcards</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1596,7 +1617,7 @@ such an automatic reminding functionality in the future, they may have forgotten
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.6. [Proposed] Future improvements</a></h4>
+<h4 id="proposed-future-improvements-4"><a class="link" href="#proposed-future-improvements-4">4.6.6. [Proposed] Future Improvements</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1654,7 +1675,7 @@ below:</p>
 <div class="content">
 <img src="images/samDiagrams/NoteModelClassDiagram.png" alt="NoteModelClassDiagram">
 </div>
-<div class="title">Figure 23. An overview of the Note class and its associated classes</div>
+<div class="title">Figure 27. An overview of the Note class and its associated classes</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1672,7 +1693,7 @@ the <code>Logic</code> package.
 <div class="paragraph">
 <p>As the diagram above shows, <code>Notes</code> are <code>StudyBuddyItems</code>, and can contain any number of <code>NoteFragments</code>.
 <code>NoteFragment</code> objects are used to represent the specific areas within a <code>Note</code> that have been tagged. Each tag
-within a <code>Note</code> is referred to as a <strong>note fragment tag</strong> (which is represented by a <code>NoteFragment</code> object).</p>
+within a <code>Note</code> is referred to as a <em>note fragment tag</em> (which is represented by a <code>NoteFragment</code> object).</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1757,7 +1778,7 @@ Note fragment tags should not be confused with <code>Tags</code>.
 <div class="content">
 <img src="images/samDiagrams/NoteModelDetailedClassDiagram.png" alt="NoteModelDetailedClassDiagram">
 </div>
-<div class="title">Figure 24. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
+<div class="title">Figure 28. A detailed view of the Note, NoteFragment, and NoteFeatureUtil classes</div>
 </div>
 <div class="paragraph">
 <p>As shown in the diagram above, <code>NoteFragments</code> contain:</p>
@@ -1870,7 +1891,7 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagram.png" alt="AddNoteSequenceDiagram">
 </div>
-<div class="title">Figure 25. Overview of how a Note is added to StudyBuddyPro</div>
+<div class="title">Figure 29. Overview of how a Note is added to StudyBuddyPro</div>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram above, when an <code>add</code> command is entered by the user:</p>
@@ -1895,13 +1916,13 @@ itself is instead tagged with the <code>Tag</code> 'about'.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram elaborates upon the creation process of <code>Notes</code> and <code>NoteFragments</code>.</p>
+<p>The following sequence diagram elaborates upon the creation process of <code>Notes</code> and <code>NoteFragments</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/samDiagrams/AddNoteSequenceDiagramZoomedIn.png" alt="AddNoteSequenceDiagramZoomedIn">
 </div>
-<div class="title">Figure 26. Illustration of how Notes and NoteFragments are created</div>
+<div class="title">Figure 30. Illustration of how Notes and NoteFragments are created</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the zoomed-in diagram above, when an <code>AddNoteCommand</code> is created:</p>
@@ -1973,7 +1994,7 @@ therefore it would be unnecessary to also list all <code>NoteFragments</code>, a
 <div class="content">
 <img src="images/samDiagrams/FilterVersusListActivityDiagram.png" alt="FilterVersusListActivityDiagram">
 </div>
-<div class="title">Figure 27. Differences between filter and list command executions</div>
+<div class="title">Figure 31. Differences between filter and list command executions</div>
 </div>
 <div class="paragraph">
 <p>Whilst <code>filter</code> uses <code>ModelManager#collectTaggedNotes()</code> (as shown in the notes on the diagram above), <code>list</code> uses
@@ -2017,7 +2038,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/ViewVersusViewRawActivityDiagram.png" alt="ViewVersusViewRawActivityDiagram">
 </div>
-<div class="title">Figure 28. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
+<div class="title">Figure 32. Difference between ViewNoteCommand and ViewRawNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen in the diagram above, the method <code>Note#getContentCleanedFromTags()</code> is used to obtain a copy of the
@@ -2030,7 +2051,7 @@ from the content of the <code>Note</code>, while <code>ViewRawNoteCommand</code>
 <div class="content">
 <img src="images/samDiagrams/NoteCleanedContentObjectDiagram.png" alt="NoteCleanedContentObjectDiagram">
 </div>
-<div class="title">Figure 29. A possible instance of a use of ViewNoteCommand</div>
+<div class="title">Figure 33. A possible instance of a use of ViewNoteCommand</div>
 </div>
 <div class="paragraph">
 <p>As can be seen from the diagram above, the <code>Note</code> object named 'note' makes use of the <code>NoteFeatureUtil</code> object and
@@ -2072,7 +2093,7 @@ must be searched through to filter them out.</p>
 <code>UniqueNoteList</code>.</p>
 </li>
 <li>
-<p>Cons: Difficult to maintain; deletion of a parent Note requires searching the <code>UniqueNoteFragmentList</code> for any
+<p>Cons: Difficult to maintain; deletion of a parent <code>Note</code> requires searching the <code>UniqueNoteFragmentList</code> for any
 child <code>NoteFragments</code> to delete as well.</p>
 </li>
 </ul>
@@ -2522,9 +2543,6 @@ The following is an example of an appendix heading.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2682,7 +2700,7 @@ generation feature will help me save time on creating cheatsheets and let me spe
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Extensions</strong></p>
+<p><strong>Proposed Extensions</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -2691,15 +2709,11 @@ generation feature will help me save time on creating cheatsheets and let me spe
 <div class="paragraph">
 <p>2a1. User <em>edits cheatsheet (UC03)</em>.</p>
 </div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>{Fix indent}</p>
-</div>
-<div class="paragraph">
-<p>+
-Use case ends.</p>
 </div>
 <h3 id="user-story-2" class="discrete">User story 2:</h3>
 <div class="paragraph">
@@ -2770,63 +2784,6 @@ Use case ends.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>15a. User wants to input additional flashcard hint.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>15a1. User inputs flashcard’s hint.</p>
-</div>
-<div class="paragraph">
-<p>{Todo markup indent}</p>
-</div>
-<div class="paragraph">
-<p>+
-Use case resumes from step 16.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>15b. User wants to input additional flashcard tags.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>15a2. User inputs flashcard’s tags.</p>
-</div>
-<div class="paragraph">
-<p>{Todo markup indent}</p>
-</div>
-<div class="paragraph">
-<p>+
-Use case resumes from step 16.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>15c. User wants to input additional hint and tags.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>15c1. User inputs flashcard’s hint.</p>
-</div>
-<div class="paragraph">
-<p>15c2. User inputs flashcard’s tags.</p>
-</div>
-<div class="paragraph">
-<p>{Todo markup indent}</p>
-</div>
-<div class="paragraph">
-<p>+
-Use case resumes from step 16.</p>
-</div>
 <h3 id="use-case-uc06-start-a-href-time-trial-time-trial-a" class="discrete">Use case: UC06 – Start <a href="#time-trial">time trial</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2858,55 +2815,6 @@ Use case resumes from step 16.</p>
 </div>
 </li>
 </ol>
-</div>
-<h3 id="use-case-user-story-2" class="discrete">Use case: User story 2</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User <em>creates flashcards from image (UC05)</em> with tag “tutorial questions”.</p>
-</li>
-<li>
-<p>User <em>starts time trial (UC06)</em> with tag “tutorial questions”.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>{Todo delete later}</p>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-<li>
-<p>3a. The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a1. StudyBuddyPro shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -3291,7 +3199,208 @@ flashcards.</p>
 </div>
 </li>
 <li>
-<p>Testing <code>exit</code> command</p>
+<p>Testing <code>timetrial</code> command</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>The following commands have been provided for ease of testing and can be inputted to test some of the test cases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>add q/Question 1 a/Answer 1 t/q1 tag/test</p>
+</li>
+<li>
+<p>add q/Question 2 a/Answer 2 t/q2 tag/test</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command:  <code>timetrial [tag]</code></p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Time trial started</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The question of the flashcard is displayed together with a timer for 5 seconds.</p>
+</li>
+<li>
+<p>Once the time hits 0, the answer is flashed for 3 seconds.</p>
+</li>
+<li>
+<p>Repeat 2 and 3 until all of the flashcards of the specified tags have been displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Input command: <code>show</code>.</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Flashcard answer loaded</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The answer of the flashcard is loaded, and after a while the time trial continues until all the flashcards have been loaded.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 3</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There exist flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Input command: <code>view 3</code> (Can be any other flashcard comamand).</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Viewing flashcard:  Title: (Flashcard title)
+Tags: [tags]</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Time trial does not continue and the latest command inputted is executed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case 4</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in flashcard mode with the Flashcard icon highlighted.</p>
+</li>
+<li>
+<p>There are no flashcards with the tags that you would like to specify.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Input command: <code>timetrial [tag]</code>.</p>
+</li>
+<li>
+<p>Expected:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Feedback box outputs:</p>
+<div class="literalblock">
+<div class="content">
+<pre>There are no flashcards with the tags specified!</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>3) Testing <code>exit</code> command</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -3380,17 +3489,17 @@ Type 'exit' again to exit the application!</pre>
 will prompt the same feedback as shown above in part c. This highlights how entering another
 valid command will refresh the "state" of the exit command which again requires a
 double-confirmation before the user can exit StudyBuddyPro.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Combination testing: <code>remind</code> and <code>exit</code> command with <code>timetrial</code></p>
 </li>
 </ol>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </li>
-<li>
-<p>Combination testing: <code>remind</code> and <code>exit</code> command with <code>timetrial</code></p>
-<div class="ulist">
-<ul>
 <li>
 <p>Test case 1</p>
 <div class="olist loweralpha">
@@ -3454,12 +3563,187 @@ tried to exit, only the one overdue flashcard which was still not viewed was fla
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="add-tags-within-notes-feature-2"><a class="link" href="#add-tags-within-notes-feature-2">F.3. Add Tags Within Notes feature</a></h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Refer to the <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#creating-a-note-add">Note add</a> section of the User Guide for a reminder of the syntax used.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Testing of Note <code>add</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in <em>notes</em> mode</p>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>Test command: <code>add t/Sample Title c/Sample Content /* C/with a note fragment tag. TAG/insidetag */ tag/outsidetag</code></p>
+</li>
+<li>
+<p>Expected result: Feedback box outputs message:</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>New note added:
+    Title: Sample Title
+    Content: Sample Content /* C/with a note fragment tag. TAG/insidetag */
+    Tags: [outsidetag]
+
+Note fragment tags detected:
+    Title: Sample Title
+    Content: with a note fragment tag.
+    Tags: [insidetag]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in <em>notes</em> mode</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test command: <code>add t/Sample Title c/Sample Content without any note fragment tags. tag/outsidetag</code></p>
+</li>
+<li>
+<p>Expected result: Feedback box outputs message:</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>New note added:
+	Title: Sample Title
+	Content: Sample Content without any note fragment tags.
+	Tags: [outsidetag]
+
+The added Note has no detected note fragment tags!</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Testing of Note <code>view</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Test case 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in <em>notes</em> mode</p>
+</li>
+<li>
+<p>Have a cleared StudyBuddyPro, with a note added as above in Test case 1 of "Testing of Note <code>add</code> "</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test command: <code>view 1</code></p>
+</li>
+<li>
+<p>Expected result: Feedback box outputs message:</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Viewing note:
+	Title: Sample Title
+	Content: Sample Content WITH A NOTE FRAGMENT TAG.
+	Tags: [outsidetag]</code></pre>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case 2</p>
+</li>
+<li>
+<p>Prerequisites</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Currently in <em>notes</em> mode</p>
+</li>
+<li>
+<p>Have a cleared StudyBuddyPro, with a note added as above in Test case 1 of "Testing of Note <code>add</code> "</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test command: <code>viewraw 1</code></p>
+</li>
+<li>
+<p>Expected result: Feedback box outputs message:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Viewing raw note:
+	Title: Sample Title
+	Content: Sample Content /* C/with a note fragment tag. TAG/insidetag */
+	Tags: [outsidetag]</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="auto-generation-feature-of-cheatsheet"><a class="link" href="#auto-generation-feature-of-cheatsheet">F.3. Auto-generation Feature of Cheatsheet</a></h3>
+<h3 id="auto-generation-feature-of-cheatsheet"><a class="link" href="#auto-generation-feature-of-cheatsheet">F.4. Auto-generation Feature of Cheatsheet</a></h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -3520,4 +3804,4 @@ Tags: [manualtesting]
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:26:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-12 10:20:55 UTC</div></div></div></body></html>

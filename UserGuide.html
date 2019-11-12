@@ -41,31 +41,31 @@
 <li><a href="#editing-a-flashcard-code-edit-code-coming-in-v2-0">5.4. Editing a flashcard: <code>edit</code> (Coming in v2.0)</a></li>
 <li><a href="#how-to-view-a-list-of-all-available-flashcards-code-list-code">5.5. How to view a list of all available flashcards: <code>list</code></a></li>
 <li><a href="#how-to-delete-a-flashcard-code-delete-code">5.6. How to delete a flashcard: <code>delete</code></a></li>
-<li><a href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></li>
+<li><a href="#how-to-enter-the-timetrial-mode-code-timetrial-code">5.7. How to enter the timetrial mode: <code>timetrial</code></a></li>
+<li><a href="#how-to-filter-flashcards-based-on-the-tags-provided-code-filter-code">5.8. How to filter flashcards based on the tags provided: <code>filter</code></a></li>
 <li><a href="#find-out-what-flashcards-to-revise-today-or-ones-you-may-have-missed-code-remind-code">5.9. Find out what flashcards to revise today, or ones you may have missed: <code>remind</code></a></li>
 </ul>
 </li>
 <li><a href="#notes-feature">6. Notes Feature:</a>
 <ul class="sectlevel2">
-<li><a href="#creating-a-note-code-add-code">6.1. Creating a note: <code>add</code></a></li>
-<li><a href="#deleting-a-note-code-delete-code">6.2. Deleting a note: <code>delete</code></a></li>
-<li><a href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></li>
+<li><a href="#to-create-a-note-code-add-code">6.1. To create a note: <code>add</code></a></li>
+<li><a href="#to-delete-a-note-code-delete-code">6.2. To delete a note: <code>delete</code></a></li>
+<li><a href="#to-view-a-note-code-view-code">6.3. To view a note: <code>view</code></a></li>
 <li><a href="#viewing-a-raw-note-code-viewraw-code">6.4. Viewing a raw note: <code>viewraw</code></a></li>
-<li><a href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></li>
+<li><a href="#to-list-all-notes-code-list-code">6.5. To list all notes: <code>list</code></a></li>
 <li><a href="#filtering-by-tags-code-filter-code">6.6. Filtering by tags: <code>filter</code></a></li>
 <li><a href="#editing-a-note-code-edit-code-coming-in-v2-0">6.7. Editing a note: <code>edit</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
 <li><a href="#cheatsheet-feature">7. CheatSheet Feature:</a>
 <ul class="sectlevel2">
-<li><a href="#creating-a-cheatsheet-code-add-code">7.1. Creating a Cheatsheet: <code>add</code></a></li>
-<li><a href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a Cheatsheet: <code>edit</code></a></li>
+<li><a href="#to-auto-generate-a-cheatsheet-code-add-code">7.1. To auto-generate a Cheatsheet: <code>add</code></a></li>
+<li><a href="#to-edit-a-cheatsheet-code-edit-code">7.2. To edit a Cheatsheet: <code>edit</code></a></li>
 <li><a href="#deleting-a-cheatsheet-code-delete-code">7.3. Deleting a Cheatsheet: <code>delete</code></a></li>
-<li><a href="#viewing-cheatsheets-code-view-code">7.4. Viewing Cheatsheets: <code>view</code></a></li>
-<li><a href="#viewing-cheatsheets-of-specific-tag-code-show-code">7.5. Viewing Cheatsheets of Specific Tag: <code>show</code></a></li>
-<li><a href="#listing-cheatsheets-code-list-code">7.6. Listing Cheatsheets: <code>list</code></a></li>
-<li><a href="#listing-by-tags-code-filter-code-2">7.7. Listing by tags: <code>filter</code></a></li>
+<li><a href="#to-view-cheatsheets-code-view-code">7.4. To view Cheatsheets: <code>view</code></a></li>
+<li><a href="#to-view-cheatsheets-of-a-specific-tag-code-show-code">7.5. To view Cheatsheets of a Specific Tag: <code>show</code></a></li>
+<li><a href="#to-list-all-cheatsheets-code-list-code">7.6. To list all Cheatsheets: <code>list</code></a></li>
+<li><a href="#listing-by-tags-code-filter-code">7.7. Listing by tags: <code>filter</code></a></li>
 <li><a href="#updating-a-cheatsheet-code-update-code-coming-in-v2-0">7.8. Updating a Cheatsheet: <code>update</code> (Coming in v2.0)</a></li>
 </ul>
 </li>
@@ -201,7 +201,7 @@ refer to the first question in the
 for help!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.PNG" alt="Ui" width="700">
+<img src="images/UiHighlight.PNG" alt="UiHighlight" width="700">
 </div>
 <div class="title">Figure 1. GUI of StudyBuddyPro application displayed on startup</div>
 </div>
@@ -211,6 +211,14 @@ for help!</p>
 will appear in the CLI highlighted in the purple box in the diagram above. Refer to the
 <a href="https://github.com/AY1920S1-CS2103T-W13-3/main/blob/master/docs/UserGuide.adoc#9-command-summary">Command Summary</a>
 section for a quick overview of all the available commands!</p>
+</li>
+<li>
+<p>Output from the command will be shown in the boxes highlighted in orange and green in
+the diagram above. The green box is used to display a flashcard, note or cheatsheet
+while the orange box outputs feedback from commands.</p>
+</li>
+</ol>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -225,14 +233,6 @@ the relevant mode&#8217;s logo in an orange circle, as shown in this
 </td>
 </tr>
 </table>
-</div>
-</li>
-<li>
-<p>Output from the command will be shown in the boxes highlighted in orange and green in
-the diagram above. The green box is used to display a flashcard, note or cheatsheet
-while the orange box outputs feedback from commands.</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -361,7 +361,7 @@ mode regardless of where the user is.</p>
 <div class="sect2">
 <h3 id="listing-all-current-tags-in-studybuddypro-code-taglist-code"><a class="link" href="#listing-all-current-tags-in-studybuddypro-code-taglist-code">4.3. Listing all current Tags in StudyBuddyPro : <code>taglist</code></a></h3>
 <div class="paragraph">
-<p>Displays a full list of all tags currently in StudyBuddyPro.</p>
+<p>Displays to you a full list of all tags you have currently in StudyBuddyPro.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -505,13 +505,15 @@ For example,</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Proceed with care when using this function!! Using the clear function will IMMEDIATELY clear ALL of the data depending on the mode you are in!
+Proceed with care when using this function!! Using the clear function will IMMEDIATELY clear ALL of the data from the
+mode you are in!
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Clears the data in specific feature. Depending on the <em>mode</em> that the user is in, the <code>clear</code> command will only clear the specific feature&#8217;s data.</p>
+<p>Clears the data in a specific feature. Depending on the <em>mode</em> that the user is in, the <code>clear</code> command will only
+clear the specific feature&#8217;s data.</p>
 </div>
 <div class="paragraph">
 <p>Example usage:</p>
@@ -758,8 +760,7 @@ screen should now look like the one found in the screenshot below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New flashcard added:
-    New flashcard added: Title: Binary Stuff
+<pre class="CodeRay highlight"><code>New flashcard added: Title: Binary Stuff
     Tags: [cs2100]</code></pre>
 </div>
 </div>
@@ -897,16 +898,16 @@ and <em>title</em> fields were all edited at once.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Listed all flashcards:
-    Title: Pipelineing Question 1
-    Tags: [CS2100]</code></pre>
+<pre class="CodeRay highlight"><code>Listing all flashcards:
+1.  Title: Pipelining Question 1
+    Tags: [cs2100]</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="how-to-delete-a-flashcard-code-delete-code"><a class="link" href="#how-to-delete-a-flashcard-code-delete-code">5.6. How to delete a flashcard: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the flashcard by &lt;FLASHCARD_INDEX&gt;.</p>
+<p>Deletes the flashcard by &lt;FLASHCARD_INDEX&gt; provided by the user.</p>
 </div>
 <div class="paragraph">
 <p>The user will be prompted again to confirm their deletion.</p>
@@ -960,15 +961,29 @@ For example, calling <code>delete 3</code>, then an <code>invalid command</code>
     Tags: [cs2100]</code></pre>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you were viewing a flashcard and then delete it, it will still remain shown as the last
+loaded flashcard in the GUI. Use the <code>view</code> command to view another flashcard instead and
+refresh the GUI!
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="time-trial-code-timetrial-code"><a class="link" href="#time-trial-code-timetrial-code">5.7. Time Trial: <code>timetrial</code></a></h3>
+<h3 id="how-to-enter-the-timetrial-mode-code-timetrial-code"><a class="link" href="#how-to-enter-the-timetrial-mode-code-timetrial-code">5.7. How to enter the timetrial mode: <code>timetrial</code></a></h3>
 <div class="paragraph">
-<p>Starts a time trial for flashcards with tag &lt;TAG&gt; for &lt;TIME&gt; seconds per flashcard.</p>
+<p>Starts a time trial for flashcards with specified tags.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Format: timetrial tag/TAG...</pre>
+<pre>Format: timetrial TAG...</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -987,6 +1002,9 @@ For example, calling <code>delete 3</code>, then an <code>invalid command</code>
 <pre class="CodeRay highlight"><code>Time trial started</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>All of the flashcards containing the specified tags will be then displayed sequentially in the activity below.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1002,7 +1020,7 @@ For example, calling <code>delete 3</code>, then an <code>invalid command</code>
 <p>Answer will be flashed for 3 seconds.</p>
 </li>
 <li>
-<p>If a command (other than <code>show</code>) is inputted during the time trial, the time trial will be terminated and the inputted
+<p>If a flashcard command (other than <code>show</code>) is inputted during the time trial, the time trial will be terminated and the inputted
 command will be executed.</p>
 </li>
 <li>
@@ -1012,7 +1030,7 @@ command will be executed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">5.8. Listing by tags: <code>filter</code></a></h3>
+<h3 id="how-to-filter-flashcards-based-on-the-tags-provided-code-filter-code"><a class="link" href="#how-to-filter-flashcards-based-on-the-tags-provided-code-filter-code">5.8. How to filter flashcards based on the tags provided: <code>filter</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1062,7 +1080,7 @@ command will be executed.</p>
 <h3 id="find-out-what-flashcards-to-revise-today-or-ones-you-may-have-missed-code-remind-code"><a class="link" href="#find-out-what-flashcards-to-revise-today-or-ones-you-may-have-missed-code-remind-code">5.9. Find out what flashcards to revise today, or ones you may have missed: <code>remind</code></a></h3>
 <div class="paragraph">
 <p>This feature helps the user check which flashcards are due for revision today and which flashcards
-overdue for revision. Don&#8217;t worry, StudyBuddyPro automatically sets the date the flashcard should next be
+overdue for revision. StudyBuddyPro automatically sets the date the flashcard should next be
 viewed at for optimal learning. These increments also scale with time i.e. newer flashcards will
 have to be viewed more often.</p>
 </div>
@@ -1156,6 +1174,9 @@ Here are your overdue flashcards:
 <div class="sect1">
 <h2 id="notes-feature"><a class="link" href="#notes-feature">6. Notes Feature:</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Have too many things memorized in your head, with nowhere to write them down? Tired of jotting down thoughts in loose text files on your computer? Then give our Notes a try! Quick and easy to use, they help you keep track of all the loose bits of knowledge that you want to keep around but don&#8217;t have the brain space to keep! Take note of these Notes and studying will be a breeze!</p>
+</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1165,7 +1186,7 @@ Here are your overdue flashcards:
 <td class="content">
 <div class="paragraph">
 <p>All the operations in this section assume that the user is in the <em>notes</em> mode. To be sure
-you are <em>notes</em> mode, please ensure you used the <code>switch notes</code> command before this. Your
+you are in the <em>notes</em> mode, please ensure you used the <code>switch notes</code> command before this. Your
 screen should now look like the one found in the screenshot below.</p>
 </div>
 </td>
@@ -1174,13 +1195,13 @@ screen should now look like the one found in the screenshot below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/NotesSuccess.PNG" alt="NotesSuccess" width="700">
+<img src="images/NotesSuccess.png" alt="NotesSuccess" width="700">
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-note-code-add-code"><a class="link" href="#creating-a-note-code-add-code">6.1. Creating a note: <code>add</code></a></h3>
+<h3 id="to-create-a-note-code-add-code"><a class="link" href="#to-create-a-note-code-add-code">6.1. To create a note: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a note from user input with title <code>TITLE</code> and content <code>CONTENT</code>. The title of the note cannot be a duplicate
+<p>Adds a note from user input with title <code>TITLE</code> and content <code>CONTENT</code>, that you can conveniently access later. The title of the note cannot be a duplicate
 of an existing note title.</p>
 </div>
 <div class="listingblock">
@@ -1210,11 +1231,12 @@ The added Note has no detected note fragment tags!</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>More advanced usage: Tagging of note fragments is also supported. The note fragment tagging is added at the
+<p>More advanced usage: This is where our Notes feature stands out from the others!
+Tagging of note fragments is also supported. The note fragment tagging is added at the
 same time as the note is created.</p>
 </div>
 <div class="paragraph">
-<p>Note fragment tags are added with content <code>FRAGMENT_CONTENT</code>, at least one tag
+<p>Note fragments can be visualised as a form of highlighting your notes. Its tags are added with content <code>FRAGMENT_CONTENT</code>, at least one tag
 <code>FRAGMENT_TAG</code>, and any number of additional tags <code>ADDITIONAL_FRAGMENT_TAG</code>:</p>
 </div>
 <div class="listingblock">
@@ -1265,14 +1287,14 @@ still be added). StudyBuddyPro will assume that the user has typed the tags corr
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>New note added:
-	Title: About Notes
-	Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
-	Tags: [about]
+    Title: About Notes
+    Content: Notes can be /* C/highlighted TAG/highlight TAG/important */ if needed.
+    Tags: [about]
 
 Note fragment tags detected:
-	Title: About Notes
-	Content: highlighted
-	Tags: [important][highlight]</code></pre>
+    Title: About Notes
+    Content: highlighted
+    Tags: [important][highlight]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1324,7 +1346,10 @@ commands.
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-note-code-delete-code"><a class="link" href="#deleting-a-note-code-delete-code">6.2. Deleting a note: <code>delete</code></a></h3>
+<h3 id="to-delete-a-note-code-delete-code"><a class="link" href="#to-delete-a-note-code-delete-code">6.2. To delete a note: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Simply get rid of any unwanted notes and make your life easier using <code>delete</code>.</p>
+</div>
 <div class="paragraph">
 <p>Deletes the note of index <code>NOTE_INDEX</code>.</p>
 </div>
@@ -1383,7 +1408,7 @@ For example, calling <code>delete 3</code>, then an <code>invalid command</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-a-note-code-view-code"><a class="link" href="#viewing-a-note-code-view-code">6.3. Viewing a note: <code>view</code></a></h3>
+<h3 id="to-view-a-note-code-view-code"><a class="link" href="#to-view-a-note-code-view-code">6.3. To view a note: <code>view</code></a></h3>
 <div class="paragraph">
 <p>Views the note of index <code>NOTE_INDEX</code>. If the note contains any note fragment tags, those tags will be hidden.</p>
 </div>
@@ -1455,7 +1480,7 @@ To view the note with its note fragment tags, use the <code>viewraw</code> comma
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-notes-code-list-code"><a class="link" href="#listing-notes-code-list-code">6.5. Listing notes: <code>list</code></a></h3>
+<h3 id="to-list-all-notes-code-list-code"><a class="link" href="#to-list-all-notes-code-list-code">6.5. To list all notes: <code>list</code></a></h3>
 <div class="paragraph">
 <p>Lists all notes found in StudyBuddyPro.</p>
 </div>
@@ -1504,6 +1529,9 @@ visualize specific note fragment tags, use the <code>filter</code> command (see 
 </div>
 <div class="sect2">
 <h3 id="filtering-by-tags-code-filter-code"><a class="link" href="#filtering-by-tags-code-filter-code">6.6. Filtering by tags: <code>filter</code></a></h3>
+<div class="paragraph">
+<p><code>filter</code> allows you to quickly search for your notes by their specified tags.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1624,7 +1652,7 @@ information, and to simply, save the day.</p>
 <td class="content">
 <div class="paragraph">
 <p>All the operations in this section assume that the user is in the <em>cheatsheet</em> mode. To be sure
-you are <em>cheatsheet</em> mode, please ensure you used the <code>switch cs</code> command before this. Your
+you are in the <em>cheatsheet</em> mode, please ensure you used the <code>switch cs</code> command before this. Your
 screen should now look like the one found in the screenshot below.</p>
 </div>
 </td>
@@ -1633,13 +1661,14 @@ screen should now look like the one found in the screenshot below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CheatSheetSuccess.PNG" alt="CheatSheetSuccess" width="700">
+<img src="images/CheatSheetSuccess.png" alt="CheatSheetSuccess" width="700">
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-cheatsheet-code-add-code"><a class="link" href="#creating-a-cheatsheet-code-add-code">7.1. Creating a Cheatsheet: <code>add</code></a></h3>
+<h3 id="to-auto-generate-a-cheatsheet-code-add-code"><a class="link" href="#to-auto-generate-a-cheatsheet-code-add-code">7.1. To auto-generate a Cheatsheet: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a cheatsheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;. Flashcards and notes in StudyBuddyPro that have the specified tag upon creation of the cheatsheet will be used as contents.</p>
+<p>Adds a cheatsheet from user input title &lt;TITLE&gt; and content &lt;CONTENT&gt;.
+Voila! To your convenience, flashcards and notes in StudyBuddyPro that have the specified tag upon creation of the cheatsheet will be used as contents.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1681,9 +1710,10 @@ Tags: [cs2100midterm]
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-cheatsheet-code-edit-code"><a class="link" href="#editing-a-cheatsheet-code-edit-code">7.2. Editing a Cheatsheet: <code>edit</code></a></h3>
+<h3 id="to-edit-a-cheatsheet-code-edit-code"><a class="link" href="#to-edit-a-cheatsheet-code-edit-code">7.2. To edit a Cheatsheet: <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits cheatsheet&#8217;s title, tag, content by a specified &lt;CHEATSHEET_INDEX&gt;. At least one of the optional fields must be specified to edit.</p>
+<p>Oh no! It appears that you might have accidentally misspelled something during creating a cheatsheet.
+Fret not, edit allows you to edit a cheatsheet&#8217;s title or remove tag or content by a specified &lt;CHEATSHEET_INDEX&gt;. At least one of the optional fields must be specified to edit.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1799,9 +1829,8 @@ Please use `delete 8` again to confirm your deletion.</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>Deleted Cheatsheet:
-    Title: CS2100 Finals CheatSheet Tags: [finalcheatsheet]
-    Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
-        [ 2. 110 in Binary is 6 is Decimal ]</code></pre>
+    Title: CS2100 Finals CheatSheet
+    Tags: [finalcheatsheet]</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -1819,9 +1848,9 @@ For example, calling <code>delete 3</code>, then an <code>invalid command</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-cheatsheets-code-view-code"><a class="link" href="#viewing-cheatsheets-code-view-code">7.4. Viewing Cheatsheets: <code>view</code></a></h3>
+<h3 id="to-view-cheatsheets-code-view-code"><a class="link" href="#to-view-cheatsheets-code-view-code">7.4. To view Cheatsheets: <code>view</code></a></h3>
 <div class="paragraph">
-<p>Views a cheatsheet by the specified index.</p>
+<p>Views a cheatsheet and its contents by the specified index.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1861,7 +1890,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-cheatsheets-of-specific-tag-code-show-code"><a class="link" href="#viewing-cheatsheets-of-specific-tag-code-show-code">7.5. Viewing Cheatsheets of Specific Tag: <code>show</code></a></h3>
+<h3 id="to-view-cheatsheets-of-a-specific-tag-code-show-code"><a class="link" href="#to-view-cheatsheets-of-a-specific-tag-code-show-code">7.5. To view Cheatsheets of a Specific Tag: <code>show</code></a></h3>
 <div class="paragraph">
 <p>Views a cheatsheet&#8217;s content for a specified tag. User must be in a <code>view</code> command before using <code>show</code> command.</p>
 </div>
@@ -1920,7 +1949,7 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-cheatsheets-code-list-code"><a class="link" href="#listing-cheatsheets-code-list-code">7.6. Listing Cheatsheets: <code>list</code></a></h3>
+<h3 id="to-list-all-cheatsheets-code-list-code"><a class="link" href="#to-list-all-cheatsheets-code-list-code">7.6. To list all Cheatsheets: <code>list</code></a></h3>
 <div class="paragraph">
 <p>Lists all cheatsheets found in StudyBuddyPro.</p>
 </div>
@@ -1929,11 +1958,20 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 <pre>Format: list</pre>
 </div>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>Example output: Listing all cheatsheets:
+1.  Title: CS2100 midterms
+Tags: [cs2100][midterms]
+2.  Title: ma1521 finals
+ Tags: [finals][ma1521]</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="listing-by-tags-code-filter-code-2"><a class="link" href="#listing-by-tags-code-filter-code-2">7.7. Listing by tags: <code>filter</code></a></h3>
+<h3 id="listing-by-tags-code-filter-code"><a class="link" href="#listing-by-tags-code-filter-code">7.7. Listing by tags: <code>filter</code></a></h3>
 <div class="paragraph">
-<p>Filters the cheatsheet library by the user specified tag(s).</p>
+<p>Want to quickly acccess your items? <code>filter</code> helps to list the cheatsheet library by the user specified tag(s).</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1999,7 +2037,8 @@ Contents: [ 1. Question: What is 110 Binary in its Decimal Form?; Answer: 6 ]
 <div class="sect2">
 <h3 id="updating-a-cheatsheet-code-update-code-coming-in-v2-0"><a class="link" href="#updating-a-cheatsheet-code-update-code-coming-in-v2-0">7.8. Updating a Cheatsheet: <code>update</code> (Coming in v2.0)</a></h3>
 <div class="paragraph">
-<p>Updates cheatsheet&#8217;s contents by a specified &lt;CHEATSHEET_INDEX&gt;. Tags specified are added into the list of tags for the cheatsheet if it not already exist.</p>
+<p>Ever wanted to re-use your midterm cheatsheet by adding more contents into it and then use it for your final examinations?
+Our <code>update</code> feature updates cheatsheet&#8217;s contents by a specified &lt;CHEATSHEET_INDEX&gt;. Tags specified are added into the list of tags for the cheatsheet if it not already exist.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2180,6 +2219,10 @@ e.g <code>delete 1</code></p>
 e.g <code>filter cs2103tuml</code></p>
 </li>
 <li>
+<p><strong>Time Trial</strong> : <code>timetrial TAG&#8230;&#8203;</code><br>
+e.g <code>timetrial cs2103t uml</code></p>
+</li>
+<li>
 <p><strong>View</strong> : <code>view INDEX</code><br>
 e.g <code>view 1</code></p>
 </li>
@@ -2260,4 +2303,4 @@ e.g <code>filter tag/hard tag/cs2100</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 08:26:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-12 10:20:55 UTC</div></div></div></body></html>
